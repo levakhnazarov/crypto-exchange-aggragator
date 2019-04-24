@@ -1,0 +1,8 @@
+mixin how-item(img, title, text)
+  .how-item
+    .how-title= title
+    .how-img
+      img(src=img, width=128, height=128)
+    .how-text
+      if block
+        block

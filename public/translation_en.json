@@ -1,0 +1,826 @@
+[
+  {
+    "stringKey": "HOME__META__TITLE",
+    "string": "Convert %d cryptocurrencies at their best rates.\nHere & now."
+  },
+  {
+    "stringKey": "HOME__META__KEYWORDS",
+    "string": "smartjex, convert, cryptocurrencies"
+  },
+  {
+    "stringKey": "HOME__META__DESCRIPTION",
+    "string": "Smartjex examines different exchanges and provides the best offers in regards to amount, fees and speed, and allows them to be anonymously transacted right from your wallet."
+  },
+  {
+    "stringKey": "HOME__PAGE__TITLE",
+    "string": "Convert %d cryptocurrencies at their best rates.\nHere & now."
+  },
+  {
+    "stringKey": "HOME__PAGE__SUBTITLE",
+    "string": "Smartjex examines different exchanges and provides the best offers in regards to amount, fees and speed, and allows them to be anonymously transacted right from your wallet."
+  },
+  {
+    "stringKey": "ABOUT__MENU__ITEM",
+    "string": "About us"
+  },
+  {
+    "stringKey": "ABOUT__META__TITLE",
+    "string": "About meta title"
+  },
+  {
+    "stringKey": "ABOUT__META__KEYWORDS",
+    "string": "About meta keywords"
+  },
+  {
+    "stringKey": "ABOUT__META__DESCRIPTION",
+    "string": "About meta description"
+  },
+  {
+    "stringKey": "ABOUT__PAGE__TITLE",
+    "string": "About Us"
+  },
+  {
+    "stringKey": "ABOUT__PAGE__SUBTITLE",
+    "string": "About the service"
+  },
+  {
+    "stringKey": "ABOUT__PAGE__CONTENT",
+    "string": "We are an independent company with hands-on experience in cryptomarkets. Our mission is to deal with routine and create new ways of implementing cryptocurrency into practice by developing blockchain-based products. <br/> We underpin the needs of the market and try to offer brand-new or upgraded solutions to be used as the new status quo.<br/> Last year appeared to be the year of altcoins. Thus, it is necessary to have a tool to easily send and receive any currency, converted one into another. That is why we created Smartjex — multiconverter, a crypto-specialized project, designed to raise cryptocurrency exchange to new levels of clarity and comfort.<br/>Smartjex exchanges bitcoins and lots of other crypto, calculates their best rates, and quickly sends already converted assets directly to your wallet. <br/>Smartjex refers to exchange platforms via their API, it does not request any personal data and has transparent fees: <ul><li>it’s own fee will not exceed 1% of the transaction. The platforms’ fees are usually mentioned on their sites (we reflect what platform is used as the intermediary) — and all this is already included in the offered rates, so you see the total sum except the blockchain fee;</li> <li>independent blockchain fees are shown in your wallet during the very transaction.</li></ul> Stay tuned!"
+  },
+  {
+    "stringKey": "CONTACT_FORM__TITLE",
+    "string": "Contact form"
+  },
+  {
+    "stringKey": "CONTACT_FORM__EMAIL_FIELD__LABEL",
+    "string": "E-mail"
+  },
+  {
+    "stringKey": "CONTACT_FORM__NAME_FIELD__LABEL",
+    "string": "Name"
+  },
+  {
+    "stringKey": "CONTACT_FORM__SUBJECT_FIELD__LABEL",
+    "string": "Subject"
+  },
+  {
+    "stringKey": "CONTACT_FORM__MESSAGE_FIELD__LABEL",
+    "string": "Enter text..."
+  },
+  {
+    "stringKey": "CONTACT_FORM__SUBMIT_BTN__LABEL",
+    "string": "Send"
+  },
+  {
+    "stringKey": "PRIVACY__MENU__ITEM",
+    "string": "Privacy Policy"
+  },
+  {
+    "stringKey": "PRIVACY__META__TITLE",
+    "string": "Privacy meta title"
+  },
+  {
+    "stringKey": "PRIVACY__META__KEYWORDS",
+    "string": "Privacy meta keywords"
+  },
+  {
+    "stringKey": "PRIVACY__META__DESCRIPTION",
+    "string": "Privacy meta description"
+  },
+  {
+    "stringKey": "PRIVACY__PAGE__TITLE",
+    "string": "Privacy page title"
+  },
+  {
+    "stringKey": "PRIVACY__PAGE__SUBTITLE",
+    "string": "Privacy page subtitle"
+  },
+  {
+    "stringKey": "PRIVACY__PAGE__CONTENT",
+    "string": "Smartjex.com (“smartjex.com” or “we”) controls and provides access to the smartjex.com website, currently located at www.smartjex.com (the “Website”). At smartjex.com, we are fully committed to respecting your privacy and to protecting any information that our clients provide. Your privacy and security are both our highest priorities and we make every effort to ensure that all the information provided by you is protected. This Privacy Policy (the “Policy”) is designed to inform you about the terms of treating your personal data."
+  },
+  {
+    "stringKey": "PRIVACY__PAGE__PERSONAL__TITLE",
+    "string":"## Personal Information"
+  },
+  {
+    "stringKey": "PRIVACY__PAGE__PERSONAL",
+    "string":"In order to access the functionality of the Website, you will need to register. When registering, you will be asked to provide an email address and create a password. You may also choose to link to the Website using one of your accounts on the social networks, such as Twitter, Facebook and Google+."
+  },
+  {
+    "stringKey": "PRIVACY__PAGE__RECORD__TITLE",
+    "string":"## Record Collection"
+  },
+  {
+    "stringKey": "PRIVACY__PAGE__RECORD__CONTENT",
+    "string":"From the moment you register on smartjex.com, our software will start collecting your non-personal identification information. Such information may include your browser’s name and technical information about your means of connection to our Website, in particular the operating system and the Internet service providers used among other similar information."
+  },
+  {
+    "stringKey": "PRIVACY__PAGE__CONTACT__TITLE",
+    "string":"## Contacting us"
+  },
+  {
+    "stringKey": "PRIVACY__PAGE__CONTACT__CONTENT",
+    "string":"If you have any questions about this Privacy Policy or the rules of smartjex.com, please contact us at: [support@smartjex.com](mailto:support@smartjex.com)"
+  },
+  {
+    "stringKey": "TERMS__MENU__ITEM",
+    "string": "Terms of Use and Privacy Policy"
+  },
+  {
+    "stringKey": "TERMS__META__TITLE",
+    "string": "Terms of Service"
+  },
+  {
+    "stringKey": "TERMS__META__KEYWORDS",
+    "string": "terms, privacy"
+  },
+  {
+    "stringKey": "TERMS__META__DESCRIPTION",
+    "string": "Terms of Use meta description"
+  },
+  {
+    "stringKey": "TERMS__PAGE__TITLE",
+    "string": "Terms of Service"
+  },
+  {
+    "stringKey": "TERMS__PAGE__SUBTITLE",
+    "string": "Detailed conditions"
+  },
+  {
+    "stringKey": "TERMS__PAGE__CONTENT",
+    "string": "Smartjex.com is a website and online platform which enables crypto-currency exchange, i.e., the exchange of unregulated digital money, which is issued and usually controlled by its developers, and used and accepted among the members of specific virtual communities, including but not limited to Bitcoin, NEO, Ether, Litecoin, Ripple, Dash, etc. using the best exchange rate.\nBy using the Website https://smartjex.com/ and further by accepting to avail the services offered by the Website (“Service”), you hereby agree to accept and comply with the Terms and Conditions of use stated herein below (“Terms of Use”).\nBy accessing the website, you agree to be bound by our Terms and all applicable laws, rules and regulations, and that you are responsible for your compliance with them, and that you are compliant with all applicable laws, rules, and regulations. If you do not agree with any of our Terms, you must stop using the Website. Any use of the Website implies your deemed acceptance of our Terms.\nSmartjex reserves the right to make changes to our site, policies and terms of use at any time. The content of the pages of the website is for your general information and use only. It is subject to change without notice.\nBy using the Website, you affirm that you are at least 18 years old, and are fully entitled to contract under applicable law, complying with and obeying all applicable laws, rules and regulations both of your country of Residence and Smartjex’s domain of jurisdiction (“Legislation”).\nThese Terms of Service, the Privacy and Transparency Statement (the “Terms”) and any and all other agreements between Smartjex and its users will use the following definitions:\na. “Customer”, “user”, “client”, “you”,  and “our” refers to the person or entity accessing and/or using Smartjex.\nb. “Company”, “Smartjex”, “Website”, “Service”, “we” and “us” collectively refers to the online website and all products using the Smartjex API, its owners, directors, officers, employees, operators, agents, insurers, suppliers, and attorneys.\nd. “Asset,” “digital asset,” “coin,” “crypto currency,” “funds,” “good,” “ledger entry,” and “token” collectively refers to unregulated digital money, which is issued and usually controlled by its developers, and used and accepted among the members of specific virtual communities, including, but not limited, to Bitcoin, NEO, Ether, Litecoin, Ripple, Dash, etc.\ne. “Partners” are services which Smartjex use to conduct exchange operations, they are listed in Site’s footer;"
+  },
+  {
+    "stringKey": "TERMS__PAGE__CONTENT__FOOTER",
+    "string": "1. Smartjex is neither the creator nor the administrator of any cryptocurrency. It merely acts as an aggregator and intermediary between the user and the various partners across the globe through external websites.\n2.The service provided by Smartjex allows all users of the website to exchange cryptocurrency  directly to other cryptocurrency from various virtual currency exchanges.\n3.Smartjex offers intermediary information services for users. We serve only as an interface and compilation of platforms. Financial transactions are performed by partners.\n4.Smartjex grants you a limited nonexclusive nontransferable revocable license to use the Service free of charge.\n5.Smartjex takes an exchange fee for using the service. The fee is 1% of the transaction. The fee can be a subject to reasonable fluctuations due to mathematical rounding. The fee is already included in the listed offerings. Independent blockchain fees are not included in the total sum, you can check them in your wallet during the very transaction.\n6.Smartjex has the right to refuse operations and not to refund your Assets if you violate Terms or Legislation.\n7.You agree to use your own digital wallets, their addresses (“Wallet”), and Assets. You must not use someone else's Wallet or Assets.\n8.You are prohibited from using or accessing Smartjex in an abusive manner. This may include, without limitation and in Smartjex's sole discretion, submission of transactions or other data which imposes an unreasonable or unmanageably large load on the Smartjex platform, regardless of whether or not it interferes with normal operations.\n9.Smartjex is not responsible for changing the exchange rate due to the volatility of the market. We fix the exchange rate at the time of sending, accurate to within 90 min. We take the data from the following sites through their API. We cannot predict how long the transaction will take and cannot state the ultimate amount of Assets you will receive.\n10.Smartjex will return your initial Assets on the Stated Wallet if the exchange operation does not pass within the 90 minute period.\n11.You cannot cancel the operation after you have transferred money from your wallet.\n12.No valuable data is collected, stored by Smartjex or transmitted to third-party entities.\n13.Smartjex does not operate, transact and otherwise conduct business related ventures with fiat money. We only operate, transact and otherwise conduct business related ventures with crypto-active assets.\n14.No commentary, opinions, posts, review or other written or audio media on the Site, blog, or any side-projects using Smartjex’s code is to be considered official or certified financial advice or recommendation for investment. Smartjex is not responsible for the security of Coins and Tokens offered by the Partners.\n15.Users are responsible for the accuracy of specifying their data, including but not limited to wallet addresses and assets’ specifications. Otherwise Smartjex will not be able to return, transfer and conduct other transactions.\n16.Smartjex makes a unilateral decision about the return of funds and the reimbursement rate. You can not appeal against it. \n17.Smartjex is not responsible for loss, harm or damage that comes as a result of accessing any false portrayal of the site or related services by unaffiliated entities portraying themselves intentionally or unintentionally to be related to or connected with the site. We advise that you verify that the web address is https://smartjex.com/\n18.All disagreements and legal obligations are resolved according to the laws and legislation of the Republic of Cyprus.\n19.Smartjex is not responsible for any loss, caused by any reason, while working with the Exchange. Any losses caused by third-party activities must be resolved by the user."
+  },
+  {
+    "stringKey": "CURRENCIES__MENU__ITEM",
+    "string": "Supported currency"
+  },
+  {
+    "stringKey": "CURRENCIES__META__TITLE",
+    "string": "Coins meta title"
+  },
+  {
+    "stringKey": "CURRENCIES__META__KEYWORDS",
+    "string": "Coins meta keywords"
+  },
+  {
+    "stringKey": "CURRENCIES__META__DESCRIPTION",
+    "string": "Coins meta description"
+  },
+  {
+    "stringKey": "CURRENCIES__PAGE__TITLE",
+    "string": "Supported currency"
+  },
+  {
+    "stringKey": "CURRENCIES__PAGE__SUBTITLE",
+    "string": "We are now supporting over %d cryptocurrencies to trade across all major exchanges"
+  },
+  {
+    "stringKey": "CURRENCIES__SEARCH_FIELD__PLACEHOLDER",
+    "string": "Search currencies"
+  },
+  {
+    "stringKey": "CURRENCIES__TABLE__COLUMN__NAME_AND_SYMBOL",
+    "string": "Name & Ticker"
+  },
+  {
+    "stringKey": "CURRENCIES__TABLE__COLUMN__RATE",
+    "string": "Rate"
+  },
+  {
+    "stringKey": "CURRENCIES__TABLE__COLUMN__1_HOUR_CHANGES",
+    "string": "1h"
+  },
+  {
+    "stringKey": "CURRENCIES__TABLE__COLUMN__24_HOURS_CHANGES",
+    "string": "24h"
+  },
+  {
+    "stringKey": "CURRENCIES__TABLE__COLUMN__7_DAYS_CHANGES",
+    "string": "7d"
+  },
+  {
+    "stringKey": "CURRENCIES__TABLE__EXCHANGE_BUTTON",
+    "string": "Exchange %s"
+  },
+  {
+    "stringKey": "FAQ__MENU__ITEM",
+    "string": "FAQ"
+  },
+  {
+    "stringKey": "FAQ__META__TITLE",
+    "string": "FAQ meta title"
+  },
+  {
+    "stringKey": "FAQ__META__KEYWORDS",
+    "string": "FAQ meta keywords"
+  },
+  {
+    "stringKey": "FAQ__META__KEYWORDS",
+    "string": "FAQ meta keywords"
+  },
+  {
+    "stringKey": "FAQ__META__DESCRIPTION",
+    "string": "FAQ meta description"
+  },
+  {
+    "stringKey": "FAQ__PAGE__TITLE",
+    "string": "FAQ"
+  },
+  {
+    "stringKey": "FAQ__PAGE__SUBTITLE",
+    "string": "Basic questions and answers"
+  },
+  {
+    "stringKey": "FAQ__HAVE_QUESTION__TITLE",
+    "string": "Your issue not listed here?"
+  },
+  {
+    "stringKey": "FAQ__HAVE_QUESTION__CONTENT",
+    "string": "You have a problem or a question about our service?"
+  },
+  {
+    "stringKey": "FAQ__HAVE_QUESTION__CONTACT_BUTTON",
+    "string": "Reach us"
+  },
+  {
+    "stringKey": "FAQ__SECTION__STEP_1__TITLE",
+    "string": "Step 1. Offers"
+  },
+  {
+    "stringKey": "FAQ__SECTION__STEP_2__TITLE",
+    "string": "Step 2. Details"
+  },
+  {
+    "stringKey": "FAQ__SECTION__STEP_3__TITLE",
+    "string": "Step 3. Summary"
+  },
+  {
+    "stringKey": "TRACK_ORDER__INPUT_PLACEHOLDER",
+    "string": "Enter the order ID"
+  },
+  {
+    "stringKey": "TRACK_ORDER__SUBMIT_BTN",
+    "string": "Track"
+  },
+  {
+    "stringKey": "TRACK_ORDER__MENU_ITEM",
+    "string": "Tack order"
+  },
+  {
+    "stringKey": "ADVANTAGE__SECTION__TITLE",
+    "string": "Advantages"
+  },
+  {
+    "stringKey": "ADVANTAGE__ITEM__TRUSTY__TITLE",
+    "string": "Trusty"
+  },
+  {
+    "stringKey": "ADVANTAGE__ITEM__TRUSTY__CONTENT",
+    "string": "Trusty. We do not run the exchange — it is processed by the trusted platforms. Smartjex serve only as interface and compilation of these platforms."
+  },
+  {
+    "stringKey": "ADVANTAGE__ITEM__ANONYMOUS__CONTENT",
+    "string": "We neither request nor store your personal data. All we need is your wallet address for target coins."
+  },
+  {
+    "stringKey": "ADVANTAGE__ITEM__ANONYMOUS__TITLE",
+    "string": "Anonymous"
+  },
+  {
+    "stringKey": "ADVANTAGE__ITEM__FAST__CONTENT",
+    "string": "Simple three-step process: 1) pick the necessary cryptocurrency, 2) fill in the wallet address, 3) send the initial crypto to any given wallet. That’s it!"
+  },
+  {
+    "stringKey": "ADVANTAGE__ITEM__FAST__TITLE",
+    "string": "Fast"
+  },
+  {
+    "stringKey": "ADVANTAGE__ITEM__FAIR__TITLE",
+    "string": "Fair"
+  },
+  {
+    "stringKey": "ADVANTAGE__ITEM__FAIR__CONTENT",
+    "string": "There is no hidden exchange fees – you pay just the platforms’ fee, already included in the list (moreover, we will offer the best option!). And you are able to access %d coins & tokens, and get them directly to your wallet. To compare to a stock exchange, you pay both exchange and withdrawal fees."
+  },
+  {
+    "stringKey": "PARTNERS__SECTION__TITLE",
+    "string": "Our partners"
+  },
+  {
+    "stringKey": "HOW_IT_WORKS__SECTION__TITLE",
+    "string": "How it works"
+  },
+  {
+    "stringKey": "HOW_IT_WORKS__ITEM__COMPARE__TITLE",
+    "string": "Pick"
+  },
+  {
+    "stringKey": "HOW_IT_WORKS__ITEM__COMPARE__CONTENT",
+    "string": "Once you set the exchange pair, we do the rest: research, compare options and offer the best rates."
+  },
+  {
+    "stringKey": "HOW_IT_WORKS__ITEM__CONVERT__TITLE",
+    "string": "Convert"
+  },
+  {
+    "stringKey": "HOW_IT_WORKS__ITEM__CONVERT__CONTENT",
+    "string": "Set coin pair and choose the exchange platform, fill in your wallet’s addresses, send crypto — and just wait."
+  },
+  {
+    "stringKey": "HOW_IT_WORKS__ITEM__TRACK__TITLE",
+    "string": "Track"
+  },
+  {
+    "stringKey": "HOW_IT_WORKS__ITEM__TRACK__CONTENT",
+    "string": "You can track the status of your exchange via the direct link to operation on Block Explorer. Also, we provide accurate feedback during the whole operation on the very page."
+  },
+  {
+    "stringKey": "SEO__SECTION__TITLE",
+    "string": "Exchange cryptocurrency"
+  },
+  {
+    "stringKey": "SEO__SECTION__CONTENT",
+    "string": "The number of cryptocurrencies and methods of handling them are extremely diverse: at least, trading vs. holding-and-rebalancing approaches. As a rule, people exchange bitcoin and altcoins at a stock exchange, but if you are not a daytrader, the process becomes painful. A stock exchange requires registration. It is unsafe to store funds because there is no light wallet. You have to pay both exchange and withdrawal fees and there is no place where all the types of altcoins are listed. A smart solution to getting quick & safe access to various cryptos, and bypassing exchanges, is through a cryptoconverter. Allow us introduce Smartjex — a smart multiconverter which can exchange bitcoins or any crypto, calculates the best rates, and quickly send it directly to your wallet. Additionally, Smartjex offers a wider variety of altcoins because it is integrated through a set of trusty platforms. We want Smartjex to ease your “cryptostory!”"
+  },
+  {
+    "stringKey": "REVIEWS__SECTION__TITLE",
+    "string": "Reviews"
+  },
+  {
+    "stringKey": "FAQ__QUESTION__1",
+    "string": "Ok, I want to exchange some cryptocurrency. Does it mean you will get access to my wallet?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__1",
+    "string": "No. You will receive an address and can send your cryptocurrency from there by yourself. Smartjex won’t demand any access.\nAnd you can never be too thorough: don’t your seed phrase, your private key and password to anybody!"
+  },
+  {
+    "stringKey": "FAQ__QUESTION__2",
+    "string": "How  will I know that I am on the official site?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__2",
+    "string": "Look at the address bar: the official Smartjex site has a secure https://, security mark, and its one and only address is https://smartjex.com"
+  },
+  {
+    "stringKey": "FAQ__QUESTION__3",
+    "string": "How do you know the best rate?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__3",
+    "string": "Our algorithms examine rates and fees according to the amount exchanged and compare  it to 4 platforms (exchanges, etc.) in order to calculate the best rate."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__4",
+    "string": "What is a “bottom offer”?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__4",
+    "string": "It is the most unprofitable available offer. It helps you see the difference between it and the most profitable offer."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__5",
+    "string": "What is a “minimum amount”?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__5",
+    "string": "It is the lowest amount of the selected crypto you can exchange. Note that the amount is different for every coin/token. It depends on the transaction fee, the platforms’ specifications and fees, and your required quantity of the crypto."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__6",
+    "string": "What does  “I save 25%” mean?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__6",
+    "string": "It means the margin between the bottom and the top offer, according to your demand."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__7",
+    "string": "Why do you offer different options if there is always the best one?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__7",
+    "string": "By giving different options we provide our users an overview of the state of things. Also to let them choose according to their preferences."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__8",
+    "string": "What does  “in USD” mean?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__8",
+    "string": "You can set the estimated amount you want to exchange in US dollars (USD). We will recalculate it in crypto."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__9",
+    "string": "What means “needs limit adjust”?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__9",
+    "string": "We suggest every possible way to exchange your crypto. If the platforms follow everything else except the primarily set amount, there will be a hint on how you can change it to include it in the platform, if you decide to."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__10",
+    "string": "Why are  different platforms offered every time?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__10",
+    "string": "Some platforms don’t support chosen pairs or could be unavailable – we suggest only selected list, to save your time and money!"
+  },
+  {
+    "stringKey": "FAQ__QUESTION__11",
+    "string": "How do you know when I sent you my coins?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__11",
+    "string": "We create a unique address for every demand. You will get the hash-code (encrypted details of the transaction) to check it on the blockchain if you wish.\nWe check and refresh the status every 60 seconds. As a rule, this is enough, but in rare cases it can take longer (3-4 checkups)"
+  },
+  {
+    "stringKey": "FAQ__QUESTION__12",
+    "string": "Can I get new coins sent directly to my exchange address?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__12",
+    "string": "Yes, you can set the exchange deposit address and we will send your coins there. Go to Profile > Deposit/Withdrawals and choose the Deposit address for the selected currency.\nNotice that in this case the transaction could take longer.\nWe also suggest checking  the withdrawal limit for each coin because different exchanges have different rules on how much crypto can be exchanged. It is important for your holdings to not to be “held back”."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__13",
+    "string": "Can I deposit coins from an exchange?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__13",
+    "string": "Yes, you can, but be aware of additional fees and a prolonged period of time."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__14",
+    "string": "Tell me more about the fees"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__14",
+    "string": "There are exchange platforms’ fees – the reward that a platform demands for its service. Smartjex examines all this data and comes up with the best overall option.\nАnd there are network fees which let the blockchain operate. You will see it directly in your account."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__15",
+    "string": "How long will the transaction take?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__15",
+    "string": "15-60 minutes overall, 30 minutes on average. "
+  },
+  {
+    "stringKey": "FAQ__QUESTION__16",
+    "string": "What if the rate changes during the operation?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__16",
+    "string": "We consider a ~10% safety margin to cover the possible rate volatility when a transaction in process. You will get 100% of the funds available  exchanged at the moment of transaction."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__17",
+    "string": "I calculated that I will receive one amount of crypto, but I got a slightly different amount – why?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__17",
+    "string": "This is because of volatility. The rate is extremely volatile due to macroeconomic reasons. For example, Bitcoin (BTC) rate changes within 1% every second. Don’t buy the exact amount of crypto you need, but leave some room for error."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__18",
+    "string": "What is a refund address?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__18",
+    "string": "It is the address where you store the coins you want to exchange. For example, if you have BTC and want to get DogeCoin (DOGE), your refund address will be your BTC address.\nIt is not necessary for it to be  the same address or wallet you send BTC from.\nIf something goes wrong and the operation is called off, we will send your initial cryptocurrency to this address. \nThere is an extremely low probability of this occurring, but to be safe, we provide a refund address.."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__19",
+    "string": "What is a destination address?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__19",
+    "string": "It is the address where you will receive coins after exchange is made. For example, if you have BTC and want to exchange it for  DOGE, your destination address would be your DOGE address."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__20",
+    "string": "What if I put the wrong address?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__20",
+    "string": "We have the initial check for the address and to correlate with selected crypto currencies (e.g. Bitcoin Cash (BCC) address to start with its prefix, etc.), but if you make mistake, you risk sending your funds to a stranger or lose them in blockchain forever. This operation is irreversible.\nTo avoid mistakes, do not copy your address, but manually, use the “copy” button:\n[for example: https://d.pr/i/QYVCfy]"
+  },
+  {
+    "stringKey": "FAQ__QUESTION__21",
+    "string": "Why can't I change the cryptocurrency’s destination during step three?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__21",
+    "string": "Once you chose the desired pair, we show you the conditions and benefits. Since you accept it, we focus on the very transaction details so you won’t be confused by the extra data. Therefore, you will be able to fill in your addresses correctly.\nIf you want to exchange other cryptocurrencies, please visit the previous steps and make choice again."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__22",
+    "string": "What is an “order ID”?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__22",
+    "string": "It is the unique access address link to the operation report. You need it to check the status of the operation. You can also send the link to your email"
+  },
+  {
+    "stringKey": "FAQ__QUESTION__23",
+    "string": "Can I refresh the page or close my browser window?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__23",
+    "string": "Yes, you can, and it won’t affect anything. You can always reopen the summary step.\nIf you closed the tab by accident, but haven’t saved the link, the quickest way to restore it is to press SHIFT+CMD/CTRL+T."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__24",
+    "string": "What does “view on blockchain” mean?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__24",
+    "string": "Once the cryptocurrency is sent, every transaction is written on blockchain and the information is stored there forever.\nA unique reference to the transaction called “hash” is created and you can track its status there."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__25",
+    "string": "What does QR-code redeem?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__25",
+    "string": "We create a unique address and a unique QR-code for every transaction."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__26",
+    "string": "What if I send the crypto two times? "
+  },
+  {
+    "stringKey": "FAQ__ANSWER__26",
+    "string": "We will send you the exchanged amount twice, your money will not be lost."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__27",
+    "string": "What if I send a higher or lower amount of crypto than the one I originally stated?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__27",
+    "string": "If you send more than you initially set, we will exchange all the funds.\nIf you send less than you initially set, but over the minimum, we will exchange the funds.\nIf you send less than the necessary minimum, the transaction won’t work and you’ll be refunded. Please, consider the announced minimum amount."
+  },
+  {
+    "stringKey": "FAQ__QUESTION__28",
+    "string": "How do I know the operation is complete?"
+  },
+  {
+    "stringKey": "FAQ__ANSWER__28",
+    "string": "You will see the “All done” status in the Summary page. Or you can check your brand-new coins/tokens in your wallet. As a rule, the exchange process takes about 15-60 min depending on the network load and selected platforms."
+  },
+  {
+    "stringKey": "CONVERTER__YOU__SEND",
+    "string": "You send"
+  },
+  {
+    "stringKey": "CONVERTER__YOU__GET",
+    "string": "You get"
+  },
+  {
+    "stringKey": "CONVERTER__RECENT__TRANSACTIONS",
+    "string": "Recent transactions"
+  },
+  {
+    "stringKey": "CONVERTER__EXCHANGE__BUTTON",
+    "string": "Exchange"
+  },
+  {
+    "stringKey": "CONVERTER__EXCHANGE__OR__COMPARE",
+    "string": "or compare"
+  },
+  {
+    "stringKey": "CONVERTER__EXCHANGE__BY",
+    "string": "by"
+  },
+  {
+    "stringKey": "CONVERTER__EXCHANGE__SAVED",
+    "string": "saved"
+  },
+  {
+    "stringKey": "EXCHANGE__PAGE__STEPS__OFFERS",
+    "string": "Offers"
+  },  {
+    "stringKey": "EXCHANGE__PAGE__STEPS__DETAILS",
+    "string": "Details"
+  },  {
+    "stringKey": "EXCHANGE__PAGE__STEPS__SUMMARY",
+    "string": "Summary"
+  },{
+    "stringKey": "CONVERTER__EXCHANGE__BY__FULL",
+    "string": "Exchange by"
+  },{
+    "stringKey": "EXCHANGE__PAGE__EXCHANGE__BEST__OFFER",
+    "string": "Best rate offer"
+  },{
+    "stringKey": "CONVERTER__EXCHANGE__REFUND",
+    "string": "refund address"
+  },{
+    "stringKey": "CONVERTER__EXCHANGE__AGREE",
+    "string": "I agree with the "
+  },{
+    "stringKey": "CONVERTER__EXCHANGE__TERMS",
+    "string": "Terms Of Use"
+  },{
+    "stringKey": "CONVERTER__EXCHANGE__BUTTON__SUBMIT",
+    "string": "Check & exchange"
+  },{
+    "stringKey": "FOOTER__MENU__HELP",
+    "string": "Help & Support"
+  },{
+    "stringKey": "FOOTER__MENU__SUPPORT",
+    "string": "Support"
+  },{
+    "stringKey": "FOOTER__MENU__TEAM",
+    "string": "Company & Team"
+  },{
+    "stringKey": "FOOTER__MENU__TEAM",
+    "string": "Company & Team"
+  },{
+    "stringKey": "FOOTER__MENU__FOLLOW",
+    "string": "Follow us"
+  },{
+    "stringKey": "CURRENCIES__PROMO__TITLE",
+    "string": "Convert {FROM__NAME} to {TO__NAME} right now at best price"
+  },{
+    "stringKey": "CURRENCIES__PROMO__SUBTITLE",
+    "string": "But we also have {PROMO__ONE}, {PROMO__TWO}, {PROMO__THREE} and {COUNT} others"
+  },{
+    "stringKey": "CURRENCIES__PROMO__CONTENT",
+    "string": "We analysed 35 services and exchanges and found the best offer, considering price and amount."
+  },{
+    "stringKey": "CURRENCIES__PROMO__NEEDS__LIMIT__ADJUST",
+    "string": "Needs limit adjust"
+  },{
+    "stringKey": "CURRENCIES__PROMO__OTHER",
+    "string": "other"
+  },{
+    "stringKey": "CURRENCIES__PROMO__SAVE",
+    "string": "You save"
+  },{
+    "stringKey": "CURRENCIES__PROMO__SERVICE",
+    "string": "Service"
+  },{
+    "stringKey": "CURRENCIES__PROMO__EXCHANGE",
+    "string": "Exchange"
+  },
+  {
+    "stringKey": "SEO__PAIR__SECTION__TITLE",
+    "string": "Exchange cryptocurrency"
+  },
+  {
+    "stringKey": "SEO__PAIR__SECTION__CONTENT",
+    "string": "The number of cryptocurrencies and methods of handling them are extremely diverse: at least, trading vs. holding-and-rebalancing approaches. As a rule, people exchange bitcoin and altcoins at a stock exchange, but if you are not a daytrader, the process becomes painful. A stock exchange requires registration. It is unsafe to store funds because there is no light wallet. You have to pay both exchange and withdrawal fees and there is no place where all the types of altcoins are listed. A smart solution to getting quick & safe access to various cryptos, and bypassing exchanges, is through a cryptoconverter. Allow us introduce Smartjex — a smart multiconverter which can exchange bitcoins or any crypto, calculates the best rates, and quickly send it directly to your wallet. Additionally, Smartjex offers a wider variety of altcoins because it is integrated through a set of trusty platforms. We want Smartjex to ease your “cryptostory!”"
+  },
+  {
+    "stringKey":"EXCHANGE__DETAILS__REFUND__MESSAGE",
+    "string":"If something goes wrong, we will send your {CURRENCY} back to this address"
+  },
+  {
+    "stringKey":"CONVERTER__EXCHANGE__TAG",
+    "string":"tag"
+  },
+  {
+    "stringKey":"EXCHANGE__DETAILS__TAG__MESSAGE",
+    "string":"please provide additional {CURRENCY} tag"
+  },
+  {
+    "stringKey":"CONVERTER__EXCHANGE__PAYOUT",
+    "string":"deposit address"
+  },
+  {
+    "stringKey":"EXCHANGE__DETAILS__DEPOSIT__MESSAGE",
+    "string":"address for the wallet in which {CURRENCY} will be deposited"
+  },
+  {
+    "stringKey":"EXCHANGE__SUMMARY__ORDER__ID",
+    "string":"Order ID"
+  },
+  {
+    "stringKey":"EXCHANGE__SUMMARY__SEND",
+    "string":"Send"
+  },
+  {
+    "stringKey":"EXCHANGE__SUMMARY__GET",
+    "string":"Get"
+  },
+  {
+    "stringKey":"EXCHANGE__SUMMARY__COPY",
+    "string":"Copy address"
+  },
+  {
+    "stringKey":"EXCHANGE__SUMMARY__COPY__QR",
+    "string":"Copy QR"
+  },
+  {
+    "stringKey":"EXCHANGE__SUMMARY__AT__LEAST",
+    "string":"Send at least"
+  },
+  {
+    "stringKey":"EXCHANGE__SUMMARY__WONT__WORK",
+    "string":"or the transaction won't work."
+  },
+  {
+    "stringKey":"EXCHANGE__SUMMARY__INFO__START",
+    "string":"Exchange starts as soon as we receive your coins"
+  },
+  {
+    "stringKey":"EXCHANGE__SUMMARY__RECEIVED",
+    "string":"We received"
+  },
+  {
+    "stringKey":"EXCHANGE__SUMMARY__AT",
+    "string":"at"
+  },
+  {
+    "stringKey":"EXCHANGE__SUMMARY__MORE",
+    "string":"Make one more"
+  },
+  {
+    "stringKey":"EXCHANGE__SUMMARY__COMPLETED",
+    "string":"Completed!"
+  },
+  {
+    "stringKey":"EXCHANGE__SUMMARY__AT__WALLET",
+    "string":"is at your wallet"
+  },
+  {
+    "stringKey":"EXCHANGE__SUMMARY__OR__USE__QR",
+    "string":"Or use QR-code"
+  },
+  {
+    "stringKey":"EXCHANGE__PROCESS__ERROR",
+    "string":"Error"
+  },
+  {
+    "stringKey":"EXCHANGE__PROCESS__TIMEOUT",
+    "string":"Timeout"
+  },
+  {
+    "stringKey":"EXCHANGE__PROCESS__CHECK",
+    "string":"Checking..."
+  },
+  {
+    "stringKey":"EXCHANGE__PROCESS__EVERY",
+    "string":"Every 30 sec"
+  },
+  {
+    "stringKey":"EXCHANGE__PROCESS__SENT__AT",
+    "string":"sent at"
+  },
+  {
+    "stringKey":"EXCHANGE__PROCESS__SMTH__WRONG",
+    "string":"Something wrong"
+  },
+  {
+    "stringKey":"EXCHANGE__PROCESS__EXCH__SOON",
+    "string":"Exchanging soon"
+  },
+  {
+    "stringKey":"EXCHANGE__PROCESS__EXCHING",
+    "string":"Exchanging..."
+  },
+  {
+    "stringKey":"EXCHANGE__PROCESS__EXCH__COMPLETED",
+    "string":"Exchange completed"
+  },
+  {
+    "stringKey":"EXCHANGE__PROCESS__SENDING__SOON",
+    "string":"Sending soon"
+  },
+  {
+    "stringKey":"EXCHANGE__PROCESS__SENDING",
+    "string":"Sending..."
+  },
+  {
+    "stringKey":"EXCHANGE__PROCESS__SENDING__COMPLETED",
+    "string":"Sending complete"
+  },
+  {
+    "stringKey":"EXCHANGE__PROCESS__BLOCKCHAIN",
+    "string":"blockchain"
+  },
+  {
+    "stringKey":"EMAIL__SEND__DIALOG__QUESTION",
+    "string":"Send email"
+  },
+  {
+    "stringKey":"EMAIL__SEND__DIALOG__TITLE",
+    "string":"We will send summary to your address"
+  },
+  {
+    "stringKey":"EMAIL__SEND__DIALOG__INPUT__PLACEHOLDER",
+    "string":"Enter email address"
+  },
+  {
+    "stringKey":"EMAIL__SEND__DIALOG__BUTTON",
+    "string":"Send"
+  }
+
+]

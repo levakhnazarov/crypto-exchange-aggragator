@@ -1,0 +1,70 @@
+$mobile-min-screen-size = $screen-size-sm
+.footer
+  padding 50px 0
+  background #252525
+  color #727272
+  &-wrap
+    display flex
+    flex-direction column
+    align-items center
+    
+    @media (min-width $mobile-min-screen-size)
+      flex-direction row
+      align-items flex-start
+      justify-content space-between
+      
+  .menu
+    text-align center
+    margin-bottom 45px
+    
+    @media (min-width $mobile-min-screen-size)
+      text-align left
+    
+    &-social
+      width 175px
+      font-weight 300
+    &-title
+      font-size 1rem
+      margin-bottom 15px
+    ul
+      @extend .reset-list
+      // line-height 26px
+      line-height 2
+      li
+        font-size 0.875rem
+        a
+          color #fff
+          text-decoration none
+          &:hover
+            underline-solid @color
+          &.underline-dots
+            underline-dots @color
+    &-inline
+      margin-bottom 0
+      @media (min-width $mobile-min-screen-size)
+        ul
+          display flex
+          li
+            &:after
+              content "/"
+              padding 0 10px
+            &:last-child:after
+              display none
+        
+  .online, .offline
+    color #fff
+    &:before
+      content "•"
+      display inline-block
+      font-size 1.125rem
+      margin-right 0.3125rem
+      line-height 0
+      vertical-align middle
+      font-weight 700
+      margin-left -1em
+      @media (min-width $mobile-min-screen-size)
+        margin-left 0
+  .online:before
+    color #174704
+  .offline:before
+    color #642c2c

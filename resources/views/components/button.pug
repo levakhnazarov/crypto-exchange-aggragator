@@ -1,0 +1,7 @@
+mixin button(tag, ...classes)
+  #{tag}.button(class=classes.join(' '))&attributes(attributes)
+    if block
+      block
+    else
+      | Button
+

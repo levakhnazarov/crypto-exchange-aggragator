@@ -1,0 +1,319 @@
+// @import 'vars'
+// @require 'helpers'
+$responsive-min-size = $screen-size-md
+$header-height = 5rem
+.header
+  position absolute
+  top 0
+  left 0
+  right 0
+  z-index 5
+  .container
+    height $header-height
+    display flex
+    justify-content space-between
+    align-items center
+    @media (min-width $responsive-min-size)
+      justify-content flex-end
+      
+  .logo
+    position relative
+    z-index 101
+    display block
+    padding 10px
+    line-height 0
+    color #fff
+    text-decoration none
+    font-weight 900
+    font-size 1.5rem
+    @media (min-width $responsive-min-size)
+      order 1
+      margin-right auto
+ 
+
+
+  /*
+   * Nav base styles
+   */
+  .nav
+
+    @media (min-width $responsive-min-size)
+      order 2
+    &-mobile 
+      &-open, &-close
+        background transparent
+        border none
+        cursor pointer
+        line-height 0
+        margin 0
+        min-width 3rem
+        outline none
+        padding 10px
+        position relative
+        text-align right
+        z-index 101
+        display none
+        svg
+          font-size 1.5rem
+          fill #fff
+    &-container
+      display none
+      background-color rgba(#000, .25)
+      position fixed
+      margin-top $header-height
+      overflow-y scroll
+      top 0
+      left 0
+      right 0
+      bottom 0
+      z-index 100
+      &:before
+        content ''
+        position fixed
+        top 0
+        left 0
+        right 0
+        height $header-height
+        background-color rgba(#208bf9, .75)
+      @media (min-width $responsive-min-size)
+        display block
+        position relative
+        overflow auto
+        background-color transparent
+        margin-top 0
+        &:before
+          display none
+ 
+    &-component
+      display none
+      position relative
+      &:after
+        position absolute
+        bottom 0
+        left 0
+        right 0
+        display block
+        content ''
+        background red
+        box-shadow 0px 2px 12px 2px rgba(0,0,0,0.25)
+        @media (min-width $responsive-min-size)
+          display none
+  /*
+   * Nav show/hide components logic
+   */
+  .nav:not([data-nav-display='']) .nav
+    &-mobile
+      &-close
+        display block
+    &-container
+      display block 
+
+  .nav[data-nav-display=''] .nav
+    &-mobile
+      &-open
+        display block
+    &-container
+      display none
+      @media (min-width $responsive-min-size) 
+        display block
+
+  .nav[data-nav-display='menu'] .nav
+    &-component[data-nav-component='menu']
+      display block
+  
+  .nav[data-nav-display='track'] .nav
+    &-component[data-nav-component='track']
+      display block
+  
+  @media (min-width $responsive-min-size)
+    .nav
+      &-mobile
+        display none
+    .nav[data-nav-display=''] .nav
+      &-component[data-nav-component='menu']
+        display block
+
+
+
+        
+  /*
+   * Menu
+   */      
+  .menu
+    // display none
+    @extend .reset-list
+    background-color #208bf9
+    text-align center
+    font-size 1.125rem
+    font-weight 400
+    > li
+      border-top 1px solid rgba(#fff, .2)
+      > a
+        display block
+        padding 1.25rem 0
+        color #fff
+        text-decoration none
+        &:hover
+          background-color rgba(#000, .25)
+    @media (min-width $responsive-min-size)
+      text-align left
+      background-color transparent
+      font-size 1rem
+      margin-right .75rem
+      > li
+        border none
+        display inline-block
+        padding 0.4rem
+        > a
+          padding 0
+          underline-solid(transparent)
+          &:hover
+            background-color transparent
+            //underline-solid(#fff)
+   /*
+    * Track order (form)
+    */
+  .track-order
+    border-top 1px solid rgba(#fff, .2)
+    padding 2.5rem 1.5rem
+    // display none      
+    background-color #208bf9
+    $tack-color = #1364bd
+    input[type='text']
+      box-sizing border-box
+      background transparent
+      border 2px solid $tack-color
+      border-radius 2em
+      box-sizing border-box
+      color #fff
+      display block
+      font-size 1rem
+      line-height 1.5
+      text-align center
+      width 100%
+      padding .375rem 0.8rem
+      outline none
+      font-weight 300
+      margin-bottom 20px
+      &::placeholder
+        color #fff
+        font-style italic
+      &:focus
+        background rgba($tack-color, 0.3)
+    button
+      cursor pointer
+      outline none
+      background $tack-color
+      border none
+      border-radius 2em
+      box-sizing border-box
+      width 100%
+      color #fff
+      display block
+      font-size 1rem
+      font-weight 500
+      line-height 1.5
+      padding .5rem 0.8rem
+      &:hover
+        background lightness($tack-color, 35%)
+    @media (min-width $responsive-min-size)
+      border none
+      background-color transparent
+      padding 0
+      margin-right 1.25rem
+      input[type='text'], > button
+        display inline-block
+        width auto
+        margin-bottom 0
+        font-size .875rem
+      input[type='text']
+        padding .219rem .75rem
+        min-width 22rem
+        text-align left
+        margin-right .75rem
+      button
+        padding .344rem
+        min-width 6.625rem
+
+
+  .lang2
+    @media (min-width $responsive-min-size)
+      order 3
+    line-height 0
+    position relative
+    z-index 101
+    margin-top 3px
+    border-radius 0.3rem 0.3rem 0 0
+    > span
+      padding 10px 10px 15px 10px
+      display block
+      width 1.75rem
+      img
+        border-radius 0.1875rem
+        max-width 100%
+    > ul
+      @extend .reset-list
+      position absolute
+      border-radius 0 0 0.3rem 0.3rem
+      display none
+      border-bottom 2px solid rgba(0, 0, 0, 0.2)
+      li
+        a
+          opacity 0.75
+          display block
+          width 1.75rem
+          padding 0 10px 15px 10px
+          &:hover
+            opacity 1
+          img
+            border-radius 0.1875rem
+            max-width 100%
+        &:last-child a
+          padding-bottom 10px
+            
+    &:hover
+      &, > ul
+        background rgba(0, 0, 0, 0.1)
+        background rgba(7, 108, 216, 0.75)
+      > ul
+        display block
+      // background orange
+      
+
+  // .lang
+  //   ul
+  //     @extend .reset-list
+  //     height 2.7rem
+  //     display flex
+  //     flex-direction column
+  //     list-style-type none
+  //     position relative
+  //     li
+  //       display none
+  //       padding 0 10px 12px 10px
+  //       &.cur
+  //         display block
+  //         order -1
+  //         padding-top 12px
+  //       & a
+  //         width 1.75rem
+  //         line-height 0
+  //         display block
+  //         img
+  //           border-radius 0.1875rem
+  //           max-width 100%
+  //       &:not(.cur)
+  //         a
+  //           opacity 0.85
+  //           &:hover
+  //             opacity 1
+  //     &:hover
+  //       li
+  //         display block
+  //         background rgba(0, 0, 0, 0.1)
+          
+          
+        
+      
+      
+  

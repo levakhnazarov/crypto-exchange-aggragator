@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{16:function(e,t,o){"use strict";o.r(t);var c=o(18);e.hot.accept(18,function(e){c=o(18),console.log("Accepting the updated awesome module!"),Object(c.default)("prefix")})},18:function(e,t,o){"use strict";o.r(t),t.default=function(e){console.log("Awesome module")}}});

@@ -1,0 +1,70 @@
+mixin exchange-process(payin_address, state, in_currency, out_currency)
+  .exchange-process&attributes(attributes)
+
+
+    div(data-process='reception')
+      i
+        svg(width=96, height=96, viewBox="0 0 96 96", preserveAspectRatio='xMinYMin meet')
+          circle(r = 46.4, cx = 47.9, cy = 47.9, transform='rotate(-90 48 48) scale(1, -1) translate(0, -96)')
+          use(id='done', xlink:href='/assets/sprite.svg#done', width=36, height=36, transform='translate(30, 30)')
+          use(id='error', xlink:href='/assets/sprite.svg#clear', width=36, height=36, transform='translate(30, 30)')
+      div(data-status='-1')
+        p= t('EXCHANGE__PROCESS__ERROR')
+        p= t('EXCHANGE__PROCESS__TIMEOUT')
+      div(data-status='1')
+        p= t('EXCHANGE__PROCESS__CHECK')
+        p= t('EXCHANGE__PROCESS__EVERY')
+      div(data-status='2')
+        p #{in_currency} #{t('EXCHANGE__PROCESS__SENT__AT')}
+        p #{payin_address}
+
+
+    div(data-process='exchanging')
+      i
+        svg(width=96, height=96, viewBox="0 0 96 96", preserveAspectRatio='xMinYMin meet')
+          circle(r = 18, cx = 48, cy = 48, fill='transparent')
+          use(id='done', xlink:href='/assets/sprite.svg#done', width=36, height=36, transform='translate(30, 30)')
+          use(id='error', xlink:href='/assets/sprite.svg#clear', width=36, height=36, transform='translate(30, 30)')
+      div(data-status='-1')
+        p= t('EXCHANGE__PROCESS__ERROR')
+        p= t('EXCHANGE__PROCESS__SMTH__WRONG')
+      div(data-status='0')
+        p= t('EXCHANGE__PROCESS__EXCH__SOON')
+        p 
+          a(href='#btc-blockchain' class="exchange-txurl") #{in_currency} #{t('EXCHANGE__PROCESS__BLOCKCHAIN')}
+      div(data-status='1')
+        p= t('EXCHANGE__PROCESS__EXCHING')
+        p 
+          a(href='#btc-blockchain' class="exchange-txurl") #{in_currency} #{t('EXCHANGE__PROCESS__BLOCKCHAIN')}
+      div(data-status='2')
+        p= t('EXCHANGE__PROCESS__EXCH__COMPLETED')
+        p 
+          a(href='#btc-blockchain' class="exchange-txurl" ) #{in_currency} #{t('EXCHANGE__PROCESS__BLOCKCHAIN')}
+
+
+    div(data-process='sending')
+      i
+        svg(width=96, height=96, viewBox="0 0 96 96", preserveAspectRatio='xMinYMin meet')
+          g(transform='translate(32 48)')
+            circle(cx='0', cy='0', r='2.5', fill='#1e81ef')
+          g(transform='translate(48 48)')
+            circle(cx='0', cy='0', r='2.5', fill='#1e81ef')
+          g(transform='translate(64 48)')
+            circle(cx='0', cy='0', r='2.5', fill='#1e81ef')
+          use(id='done', xlink:href='/assets/sprite.svg#done', width=36, height=36, transform='translate(30, 30)')
+          use(id='error', xlink:href='/assets/sprite.svg#clear', width=36, height=36, transform='translate(30, 30)')
+      div(data-status='-1')
+        p= t('EXCHANGE__PROCESS__ERROR')
+        p= t('EXCHANGE__PROCESS__SMTH__WRONG')
+      div(data-status='0')
+        p= t('EXCHANGE__PROCESS__SENDING__SOON')
+        p 
+          a(href='#eth-blockchain' class="send-txurl") #{out_currency} #{t('EXCHANGE__PROCESS__BLOCKCHAIN')}
+      div(data-status='1')
+        p= t('EXCHANGE__PROCESS__SENDING')
+        p 
+          a(href='#eth-blockchain' class="send-txurl") #{out_currency} #{t('EXCHANGE__PROCESS__BLOCKCHAIN')}
+      div(data-status='2')
+        p= t('EXCHANGE__PROCESS__SENDING__COMPLETED')
+        p 
+          a(href='#eth-blockchain' class="send-txurl") #{out_currency} #{t('EXCHANGE__PROCESS__BLOCKCHAIN')}

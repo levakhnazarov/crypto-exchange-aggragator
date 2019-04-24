@@ -1,0 +1,26 @@
+$responsive-min-size = $screen-size-sm
+.about
+  padding $container-padding 0
+  @media (min-width $screen-size-lg)
+    padding 40px 0
+  @media (min-width $responsive-min-size)
+    display flex
+    justify-content space-between
+    // 
+  &-content
+    line-height 1.875rem
+    text-align justify
+    margin-bottom $container-padding
+    @media (min-width $responsive-min-size)
+      width 47%
+      margin-bottom 0 
+    p
+      margin 0 0 15px 0
+      padding 0
+  &-form
+    width auto
+    margin-left -($container-padding)
+    margin-right @margin-left
+    @media (min-width $responsive-min-size)
+      width 47%
+      margin 0

@@ -1,0 +1,29 @@
+extends ../layouts/main
+
+block meta
+  - title = 'Faq / QA / Add'
+  - url = '/faq'
+
+block content
+  .row
+    .col-md-6
+      form(method='post', enctype='multipart/form-data')
+        .card
+          .card-body
+            .form-group
+              label Section
+              select.form-control(name='section', required)
+                option(value='') Choose section 
+                each label, key in sections
+                  option(value=key, selected=item && item.section == key)= t(label)
+            .form-group
+              label Sort
+              input.form-control(type='number', name='sort', value=item ? item.sort : 0, required)
+            .form-group
+              label Question
+              input.form-control(type='text', name='q', value=item ? t(item.getQuestionTranslId()) : '', required)
+            .form-group
+              label Answer
+              textarea.form-control(name='a', rows=12, required)= item ? t(item.getAnswerTranslId()) : ''
+          .card-footer
+            button.btn.btn-fill.btn-primary(type='submit') Add

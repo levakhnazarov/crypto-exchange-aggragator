@@ -1,0 +1,142 @@
+$responsive-min-size = $screen-size-xs
+
+.currencies-table
+  
+  width auto
+  margin-left -($container-padding)
+  margin-right @margin-left
+  margin-top 50px
+  @media (min-width $screen-size-md)
+    margin-left 0
+    margin-right @margin-left
+  table
+    
+    width 100%
+    border-collapse collapse
+    
+    .rate
+      display none
+      @media (min-width $screen-size-sm)
+        display table-cell
+      &-24h, &-7d
+        display none // resp
+        @media (min-width $responsive-min-size)
+          display table-cell
+      
+        // display none // resp
+        // @media (min-width $screen-size-sm)
+        //   display table-cell
+    td, th
+      text-align left
+      padding 0.5rem 0
+      width 35%
+      // @media (min-width $screen-size-sm)
+        // width 25%
+      @media (min-width $responsive-min-size)
+        width 15%
+    
+    td:first-child
+      padding-left 15px
+      width 60%
+      @media (min-width $responsive-min-size)
+        width 25%
+      
+    td:last-child, th:last-child
+      padding-right 20px
+      text-align right
+      width 5%
+      @media (min-width $responsive-min-size)
+        width 15%
+    
+    thead
+      border-bottom 1px solid #ddd
+
+    thead
+      th
+        max-width 0
+        overflow hidden
+        text-overflow ellipsis
+        white-space nowrap
+        
+        cursor pointer
+        user-select none
+        font-size 1rem
+        font-weight 700
+        span
+          display inline-block
+          vertical-align middle
+        i
+          position relative
+          display inline-block
+          width 1rem
+          height 1rem
+          vertical-align middle
+          margin-right 5px
+          svg
+            display block
+            top -4px
+            left -5px
+            position absolute
+            font-size 1rem
+            fill #ccc
+        &[data-sort-direction='asc']
+          i
+            svg.asc
+              fill #000
+        &[data-sort-direction='desc']
+          i
+            svg.desc
+              fill #000
+    tbody
+      tr
+        opacity 0
+        // transform rotateX(-90deg)
+      tr.append-anim
+        opacity 1
+        // transform rotateX(0)
+        transition all 0.5s ease  
+
+      tr:nth-child(even)
+        background #f6f6f6
+    .currency
+      max-width 0
+      white-space nowrap
+      overflow hidden
+      text-overflow ellipsis
+      font-size .875rem
+      @media (min-width $screen-size-sm)
+        font-size 1rem
+      $icon-size = 1.5rem
+      $icon-margin = 10px
+      > *
+        vertical-align middle
+      img
+        height $icon-size
+        margin-right $icon-margin
+        width @height
+      &:after
+        margin-top 5px
+        margin-left $icon-size
+        padding-left $icon-margin
+        display block
+        content attr(data-rate)
+        font-size .75rem
+        font-weight 700
+        @media (min-width $screen-size-sm)
+          display none
+    .up
+      color #089d13
+      &:before
+        content '+'
+    .down
+      color #ff1c1c
+    .up, .down
+      sup
+        font-weight bold
+        font-size 0.625rem
+    .button
+      @media (min-width $screen-size-sm)
+        min-width 10rem
+      
+    
+  

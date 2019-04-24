@@ -1,0 +1,78 @@
+extends layout/main
+
+include components/container
+include components/top
+include components/paper
+include components/steps
+include components/converter
+include components/partner-logo
+include components/label
+include components/button
+include components/offers-table
+include components/offers-row
+include mixins/faq-qa-list
+
+include mixins/exchange-faq
+block meta
+  - title = t('EXCHANGE__OFFERS__META__TITLE')
+  - keywords = t('EXCHANGE__OFFERS__META__KEYWORDS')
+  - description = t('EXCHANGE__OFFERS__META__DESCRIPTION')
+block content
+  +top(style='min-height: auto;padding-bottom: 0;')
+    +paper
+      .exchange-steps
+        +steps(1)
+      .exchange-details
+        .exchange-inner
+          .exchange-details-converter
+            form(autocomplete="off")
+              +converter(false, formData)(data-type='compare' class='compare-converter')
+  +container
+    +paper(true)
+      .exchange-best(data-offer='wrap')
+        .exchange-inner
+          .exchange-best-row
+            div.exchange-best-service
+              .exchange-by= t('CONVERTER__EXCHANGE__BY__FULL')
+                +partner-logo('changelly')(data-offer='service')
+            div.exchange-best-label
+              +label= t('EXCHANGE__PAGE__EXCHANGE__BEST__OFFER')
+          .exchange-best-row
+            div
+              .exchange-best-amount(data-offer='amount')
+              .exchange-best-save #{t('OFFERS__YOU__SAVE')} #{' '}
+                span(data-offer='save-pct')
+                |
+                span(data-offer='save-fiat')
+                |
+            div
+              .exchange-best-control
+                +button('button', 'block', 'secondary', 'fill', 'gradient')(data-offer='submit') Exсhange
+              .exchange-best-wait= t('OFFERS__ESTIMATED__TIME')
+
+      .exchange-offers
+        .exchange-offers-table(
+          data-offers='other',
+          data-label-amount='You get',
+          data-label-save='You save',
+          data-label-service='Service',
+          data-label-button='Exchange'
+        )
+          +offers-table('Other offers', true)
+            //+offers-row('0.238138 ETH', '21% (~20$)', 'evercoin')
+            //+offers-row('0.283138 ETH', '15% (~14$)', 'cryptopia')
+            //+offers-row('0.283138 ETH', '15% (~14$)', 'shapeshift')
+        .exchange-offers-table(
+          data-offers='adjust-limit',
+          data-label-amount='Adjust',
+          data-label-service='Service',
+          data-label-button='Set & Exchange',
+          data-label-min = 'Min.',
+          data-label-max = 'Max.'
+        )
+          +offers-table(t('OFFERS__LIMIT__ADJUST'), false)
+            //+offers-row('min. 0.002 BTC (0.03 ETH)', false, 'evercoin', 'Set & Exchange', 'secondary')
+            //+offers-row('min. 0.002 BTC (0.03 ETH)', false, 'cryptopia', 'Set & Exchange', 'secondary')
+      +exchange-faq
+        +faq-qa-list(1)
+        //include mixins/exchange-faq-offers

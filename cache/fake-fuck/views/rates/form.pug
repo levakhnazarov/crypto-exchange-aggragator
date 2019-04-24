@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  form(method='post')
+    .form-group
+      label(for='from') From
+      select#from.form-control(name='from', required)
+        option(selected, disabled, value="") Select currency
+        for currency in currencies
+          option(value=currency.abbr, selected=currency.abbr == item.from)= currency.name
+    .form-group
+      label(for='to') To
+      select#to.form-control(name='to', required)
+        option(selected, disabled, value="") Select currency
+        for currency in currencies
+          option(value=currency.abbr, selected=currency.abbr == item.to)= currency.name
+    .form-group
+      label(for='rate') Rate
+      input#rate.form-control(type='number', name='rate', step='any', min='0' placeholder='Enter rate', required, value=item.rate)
+    .form-group.error
+      label(for='rate') Min amount
+      input#rate.form-control(type='number', name='min', step='any', min='0' placeholder='Enter min amount', required, value=item.min)
+    .form-group
+      label(for='rate') Max amount
+      input#rate.form-control(type='number', name='max', step='any', min='0' placeholder='Enter max amount', required, value=item.max)
+    button.btn.btn-success(type='submit') Add
+

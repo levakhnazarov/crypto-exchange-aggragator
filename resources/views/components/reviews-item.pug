@@ -1,0 +1,16 @@
+include svg-icon
+mixin reviews-item(review)
+  - service = review.getService()
+  .reviews-item
+    .reviews-item-top
+      .reviews-author= review.author
+      .reviews-from
+        case service
+          when 'twitter'
+          when 'facebook'
+            a.reviews-from-btn(target='_blank', href=review.url, class='reviews-from-' + service)
+              +svg-icon(service)
+          default
+            a.reviews-from-btn(target='_blank', href=review.url, class='reviews-from-' + service)= service
+    .reviews-comment= review.comment
+    .reviews-dt= moment(new Date(review.post_date)).format('LL')

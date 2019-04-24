@@ -1,0 +1,29 @@
+extends layout/main
+
+include components/top
+include components/container
+include components/currencies-table
+include components/currencies-row
+include components/preloader
+include components/rounded-field
+block meta
+  - title = t('CURRENCIES__META__TITLE')
+  - keywords = t('CURRENCIES__META__KEYWORDS')
+  - description = t('CURRENCIES__META__DESCRIPTION')
+block content
+  +top(
+    t('CURRENCIES__PAGE__TITLE'),
+    t('CURRENCIES__PAGE__SUBTITLE', false, {
+      '%d': count
+    })
+  )
+    form
+      +rounded-field(false, 'search')(data-currencies-search='', type='text', placeholder=t('CURRENCIES__SEARCH_FIELD__PLACEHOLDER'), autocomplete='off', class='search-field')
+  +container
+    +currencies-table(defaultSort)(data-currencies-table='', data-currencies-exchange-btn-template=t('CURRENCIES__TABLE__EXCHANGE_BUTTON'))
+      for coin in coins
+        +currencies-row(coin)
+    +preloader.hide
+    br
+    br
+  

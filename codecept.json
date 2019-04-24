@@ -1,0 +1,18 @@
+{
+  "tests": "./e2e-tests/*_test.js",
+  "timeout": 10000,
+  "output": "./output",
+  "helpers": {
+    "Puppeteer": {
+      "url": "http://localhost:3000",
+      "show": false
+    }
+  },
+  "include": {
+    "I": "./test/steps_file.js"
+  },
+  "bootstrap": false,
+  "mocha": {},
+  "name": "app",
+  "translation": "ru-RU"
+}

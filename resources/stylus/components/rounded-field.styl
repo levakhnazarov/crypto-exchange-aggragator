@@ -1,0 +1,103 @@
+$padding = .5rem 1rem
+$font-size = .875rem
+$line-height = 1.5
+.rounded-field
+  
+  display block
+  width 100%
+  font-size $font-size
+  line-height $line-height
+  position relative
+  
+  > input, > textarea
+    box-sizing border-box
+    display @display
+    width @width
+    background-color #fff
+    background-clip padding-box
+    font-size 1em
+    line-height @line-height
+    border-radius 1.5em
+    padding $padding
+    border 1px solid #ddd
+    outline none
+    
+    &::placeholder
+      color $placeholder-font-color
+      opacity 1 // firefox fix
+      
+    &::-ms-clear
+      display none // ms edge fix
+  > textarea
+    resize none    
+  > label
+    display block
+    user-select none
+    border 1px solid transparent
+    font-size 1em
+    font-weight 400
+    position absolute
+    top 0
+    left 0
+    line-height @line-height
+    padding $padding
+    color #999
+    transition all .15s ease-in-out 0s
+    cursor text
+    
+  > input, > textarea
+    &:focus
+      border-color $primary-color
+      ~ label
+        color @border-color
+    &:focus, &:valid
+      ~ label
+        font-size 0.8em
+        top -1.7rem
+        cursor default
+        // padding-bottom 0
+        // padding-top 0
+    &:invalid
+      box-shadow none // firefox fix
+    &.invalid
+      border-color $error-color
+      & ~ label
+        color @border-color
+        
+
+
+  > label:first-child
+    border none
+    width 1em
+    text-align center
+    > svg
+      vertical-align middle
+      font-size 1em
+      fill $placeholder-font-color
+    ~ input
+      padding-left 2.7em
+    
+
+  // search field
+    
+  &.search-field
+    margin-top 2.2rem
+    // margin-top 40px
+    // padding-bottom 50px
+    font-size 1rem
+    
+    > label:first-child
+      padding .65rem 1.2rem
+      ~ input
+        padding-left 3em
+    > input
+      box-shadow $first-screen-item-box-shadow
+      border-color transparent
+      border none
+      padding .75rem 1rem
+      font-weight 300
+      border-radius 2rem
+      &::placeholder
+        font-style italic
+      &:focus
+        box-shadow 0 0 0 3px rgba(#fff, 0.5), $first-screen-item-box-shadow

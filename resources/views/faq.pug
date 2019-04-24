@@ -1,0 +1,43 @@
+extends layout/main
+
+include components/top
+include components/container
+include components/faq-group
+include mixins/faq-qa-list
+//- include components/faq-item
+include components/button
+
+
+block meta
+  - title       = t('FAQ__META__TITLE')
+  - keywords    = t('FAQ__META__KEYWORDS')
+  - description = t('FAQ__META__DESCRIPTION')
+
+block content
+  +top(
+    t('FAQ__PAGE__TITLE'), 
+    t('FAQ__PAGE__SUBTITLE')
+  )
+  +container
+    .faq
+      //- div= faq.sections
+      each trnslateID, sectionID in faq.sections
+        +faq-group(t(trnslateID))
+          +faq-qa-list(sectionID)
+      //-   include mixins/exchange-faq-offers
+      //- +faq-group('Step 2. Details')
+      //-   include mixins/exchange-faq-details
+      //- +faq-group('Step 3. Summary')
+      //-   include mixins/exchange-faq-summary
+      //- //- for group in items
+        +faq-group( t( group.getGroupTranslationIdentifier() ) )
+          if group.qa
+            for qa in group.qa
+              +faq-item( t( qa.getQuestionTranslationIdentifier() ) )
+                | !{t( qa.getAnswerTranslationIdentifier() , true)}
+
+      +faq-group( t('FAQ__HAVE_QUESTION__TITLE') )
+        | !{t('FAQ__HAVE_QUESTION__CONTENT', true)}
+        p
+          a(href="mailto:hello@smartjex.com")
+            +button('button', 'sm')= t('FAQ__HAVE_QUESTION__CONTACT_BUTTON')

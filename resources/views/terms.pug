@@ -1,0 +1,34 @@
+extends layout/main
+
+include components/top
+include components/container
+
+block meta
+  - title = t('TERMS__META__TITLE')
+  - keywords = t('TERMS__META__KEYWORDS')
+  - description = t('TERMS__META__DESCRIPTION')
+
+block content
+  +top(
+    t('TERMS__PAGE__TITLE'), 
+    t('TERMS__PAGE__SUBTITLE')
+  )
+  +container
+    .content.terms-content!= t('TERMS__PAGE__CONTENT', true)
+      div.terms-list
+        <ul class="terms-of-use"><li>
+        Smartjex is neither the creator nor the administrator of any cryptocurrency. It merely acts as an aggregator and intermediary between the user and the various partners across the globe through external websites. </li>
+          <li>The service provided by Smartjex allows all users of the website to exchange cryptocurrency directly to other cryptocurrency from various virtual currency exchanges.</li> 
+        <li>Smartjex offers intermediary information services for users. We serve only as an interface and compilation of platforms. Financial transactions are performed by partners.</li><li>Smartjex grants you a limited nonexclusive nontransferable revocable license to use the Service free of charge.</li> <li>Smartjex takes an exchange fee for using the service. The fee is 1% of the transaction. The fee can be a subject to reasonable fluctuations due to mathematical rounding. The fee is already included in the listed offerings. Independent blockchain fees are not included in the total sum, you can check them in your wallet during the very transaction.</li> 
+        <li>Smartjex has the right to refuse operations and not to refund your Assets if you violate Terms or Legislation.</li> 
+        <li>You agree to use your own digital wallets, their addresses («Wallet»), and Assets. You must not use someone else's Wallet or Assets.</li> <li>You are prohibited from using or accessing Smartjex in an abusive manner. This may include, without limitation and in Smartjex's sole discretion, submission of transactions or other data which imposes an unreasonable or unmanageably large load on the Smartjex platform, regardless of whether or not it interferes with normal operations.</li> 
+        <li>Smartjex is not responsible for changing the exchange rate due to the volatility of the market. We fix the exchange rate at the time of sending, accurate to within 90 min. We take the data from the following sites through their API. We cannot predict how long the transaction will take and cannot state the ultimate amount of Assets you will receive. </li><li>Smartjex will return your initial Assets on the Stated Wallet if the exchange operation does not pass within the 90 minute period.</li> 
+        <li>You cannot cancel the operation after you have transferred money from your wallet.</li> 
+        <li>No valuable data is collected, stored by Smartjex or transmitted to third-party entities.</li> 
+        <li>Smartjex does not operate, transact and otherwise conduct business related ventures with fiat money. We only operate, transact and otherwise conduct business related ventures with crypto-active assets.</li> 
+        <li>No commentary, opinions, posts, review or other written or audio media on the Site, blog, or any side-projects using Smartjexâ€™s code is to be considered official or certified financial advice or recommendation for investment. Smartjex is not responsible for the security of Coins and Tokens offered by the Partners.</li> 
+        <li>Users are responsible for the accuracy of specifying their data, including but not limited to wallet addresses and assetsâ€™ specifications. Otherwise Smartjex will not be able to return, transfer and conduct other transactions.</li> 
+        <li>Smartjex makes a unilateral decision about the return of funds and the reimbursement rate. You can not appeal against it.</li> 
+        <li>Smartjex is not responsible for loss, harm or damage that comes as a result of accessing any false portrayal of the site or related services by unaffiliated entities portraying themselves intentionally or unintentionally to be related to or connected with the site. We advise that you verify that the web address is https://smartjex.com/ </li> 
+        <li>All disagreements and legal obligations are resolved according to the laws and legislation of the Republic of Cyprus.</li> 
+        <li>	Smartjex is not responsible for any loss, caused by any reason, while working with the Exchange. Any losses caused by third-party activities must be resolved by the user.</li></ul>

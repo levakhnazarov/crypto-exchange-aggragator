@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>title</title>
+    <link rel="stylesheet" href="/resources/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:300,300i,400,500,700&amp;amp;subset=cyrillic" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container"><a class="logo" href="/">Smartjex</a>
+        <form class="track-order" id="track-order">
+          <input type="text" placeholder="Enter the order ID"/>
+          <button type="button" onclick="document.getElementById(&quot;track-order&quot;).classList.toggle(&quot;show&quot;)">Track</button>
+        </form>
+        <nav class="nav" id="header-menu">
+          <ul>
+            <li><a href="#track-order" onclick="document.getElementById(&quot;track-order&quot;).classList.toggle(&quot;show&quot;); return false;">Tack order</a></li>
+            <li><a href="/coins.html">Supported currency</a></li>
+            <li class="cur"><a href="/faq.html">FAQ</a></li>
+            <li><a href="/about.html">About us</a></li>
+          </ul>
+        </nav>
+        <button class="mobile-nav-toggle" type="button" onclick="document.querySelector('#header-menu').classList.toggle('mobile-show')">
+          <svg class="svg svg-bars">
+            <use xlink:href="sprite.svg#bars"></use>
+          </svg>
+          <svg class="svg svg-times">
+            <use xlink:href="sprite.svg#times"></use>
+          </svg>
+        </button>
+        <div class="lang2"><span><img src="/resources/images/flags/en.svg"/></span>
+          <ul>
+            <li><a href="#ru.smartjex.com"><img src="/resources/images/flags/ru.svg"/></a></li>
+            <li><a href="#it.smartjex.com"><img src="/resources/images/flags/de.svg"/></a></li>
+            <li><a href="#ja.smartjex.com"><img src="/resources/images/flags/ja.svg"/></a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="top bg-primary">
+        <div class="container inner">
+          <h1 class="top-title">FAQ</h1>
+          <div class="top-subtitle">Basic  questions and answers</div>
+        </div>
+      </div>
+      <div class="container inner">
+        <div class="faq">
+          <div class="faq-group">
+            <h2 class="faq-title">About Smartjex</h2>
+            <div class="faq-body">
+              <div class="qa">
+                <h3 class="q">What is Smartjex?</h3>
+                <p class="a">Smartjex is a cryptocurrency exchange providing the best exchange rate on transactions by aggregating all leading exchanges and comparing their rates in real time. We support over 250 cryptocurrencies and more than 7000 pairs for exchange.
+                </p>
+              </div>
+              <div class="qa">
+                <h3 class="q">Why should I trust you?</h3>
+                <p class="a">Smartjex is built on the most trusted exchanges in the world. We provide a seamless experience by integrating with reliable and secure exchanges and helping our customers get the best rates while ensuring their security.
+                </p>
+              </div>
+              <div class="qa">
+                <h3 class="q">Can the rates change during the transaction?</h3>
+                <p class="a">Unlike ordinary money, cryptocurrencies are highly volatile, so the rate may fluctuate. It may happen that the exchange rate which you see before the transaction is different (high or low) after transaction gets completed. In that case, the exchanged quantity which you receive may differ from what you see during the comparison.
+                </p>
+              </div>
+              <div class="qa">
+                <h3 class="q">What is our transaction fees?</h3>
+                <p class="a">Our fees depends on the exchange you select for your transaction. The conversion rate you see is inclusive of the fees. <br> Note: Below fees does not include any amount charged by the exchange itself.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-group">
+            <h2 class="faq-title">About Wallets</h2>
+            <div class="faq-body">
+              <div class="qa">
+                <h3 class="q">What’s the wallet address?</h3>
+                <p class="a">A wallet is a digital place for your coins to be stored. Each coin has a certain wallet provider. That could be official GUI-wallets, web wallets and other applications. The wallet address represents a randomly generated combination of digits and letters. CoinSwitch doesn’t provide wallet addresses and never stores user deposits. To exchange cryptocurrencies, you need to have a wallet address.
+                </p>
+              </div>
+              <div class="qa">
+                <h3 class="q">How do I get a wallet address?</h3>
+                <p class="a">Just figure out, what coin do you want to buy and seek for a stable wallet version. As a rule, each coin has its official wallet client. Note that each wallet has its unique address or a tag with a private key that is required to restore your wallet if lost. CoinSwitch never asks your private keys. Store them in a safe place and never show anyone. Once private keys are stolen, your wallet with all the coins will be lost forever.
+                </p>
+              </div>
+              <div class="qa">
+                <h3 class="q">What's the recipient’s address?</h3>
+                <p class="a">In each transaction, there is always a sender and a recipient. The recipient’s address is the wallet address to receive the money you want to buy. For example, if you want to buy Ethereum (ETH), in the field, you should specify the ETH wallet address. In general, the recipient’s wallet address is the address we send coins bought, once a transaction is finished.
+                </p>
+              </div>
+              <div class="qa">
+                <h3 class="q">What is a hash?</h3>
+                <p class="a">A hash (or the tx/transaction ID) is a unique address of your transaction in a blockchain. Mostly, the hash is a combination of digits and lower case (upper in Ripple) letters that represents a proof that money is sent. Whenever you make a payment, you receive a hash displayed in your wallet. Hash should be located in a blockchain. Our support team may ask you to provide a hash. Sometimes it’s required to find your payment and resolve your issues if any.
+                </p>
+              </div>
+              <div class="qa">
+                <h3 class="q">Why is my wallet address recognized as invalid?</h3>
+                <p class="a">CoinSwitch supports most of the wallets. If your wallet address is recognized as invalid, there is always a reason: You confused Dash (DASH) with Dashcoin DSH). These are two different coins with two different amounts. You confused Factom (FCT) with Fantomcoin (FCN). Different currencies as well. Typo or character missing. Make sure that the address you specify matches the actual address of your wallet.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-group">
+            <h2 class="faq-title">Your issue not listed here?</h2>
+            <div class="faq-body">
+              <p>You have a problem or a question about our service?</p>
+              <p>
+                <button class="button sm">Reach us
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-wrap">
+          <div class="menu">
+            <div class="menu-title">Help & Support</div>
+            <ul class="menu-list">
+              <li><a class="underline-dots" href="#support">Support</a></li>
+              <li><a href="/faq.html">FAQ</a></li>
+              <li><a href="/coins.html">Supported currency</a></li>
+            </ul>
+          </div>
+          <div class="menu">
+            <div class="menu-title">Company & Team</div>
+            <ul class="menu-list">
+              <li><a href="#exchange">Exchange</a></li>
+              <li><a href="/about.html">About us</a></li>
+            </ul>
+          </div>
+          <div class="menu">
+            <div class="menu-title">Exchangers</div>
+            <ul class="menu-list">
+              <li class="online">Jaxx</li>
+              <li class="offline">Nem</li>
+              <li class="online">Coinomi</li>
+              <li class="online">Freewallet</li>
+            </ul>
+          </div>
+          <div class="menu menu-social">
+            <div class="menu-title">Follow us</div>
+            <div>
+              <div class="social-buttons invert"><a href="#facebook">
+                  <svg class="svg svg-facebook-square">
+                    <use xlink:href="sprite.svg#facebook-square"></use>
+                  </svg></a><a href="#twitter">
+                  <svg class="svg svg-twitter-square">
+                    <use xlink:href="sprite.svg#twitter-square"></use>
+                  </svg></a><a href="#reddit">
+                  <svg class="svg svg-reddit-square">
+                    <use xlink:href="sprite.svg#reddit-square"></use>
+                  </svg></a><a href="#medium">
+                  <svg class="svg svg-medium-square">
+                    <use xlink:href="sprite.svg#medium-square"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="menu menu-inline menu-slash">
+          <ul>
+            <li>Smartjext.com &copy; 2018</li>
+            <li><a href="/terms.html">Terms of Use</a></li>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="/resources/converter.js"></script>
+  </body>
+</html>

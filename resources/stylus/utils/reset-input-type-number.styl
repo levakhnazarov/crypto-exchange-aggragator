@@ -1,0 +1,12 @@
+input[type='number']
+  &::-ms-clear
+    display none
+  
+  // Remove controls from Safari and Chrome
+  &::-webkit-inner-spin-button, 
+  &::-webkit-outer-spin-button
+    -webkit-appearance none
+    margin 0 // Removes leftover margin
+    
+  &
+    -moz-appearance textfield

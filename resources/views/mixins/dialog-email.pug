@@ -1,0 +1,21 @@
+include ../components/dialog
+include ../components/button
+include ../components/rounded-field
+include ../components/svg-icon
+mixin dialog-email
+
+  +dialog(t('EMAIL__SEND__DIALOG__QUESTION'))&attributes(attributes)
+    div= t('EMAIL__SEND__DIALOG__TITLE')
+    form.exchange-email-form(action='/api/sendOrderEmail' method='GET')
+      div
+        +rounded-field(type='email', name='email', required, placeholder= t('EMAIL__SEND__DIALOG__INPUT__PLACEHOLDER'))
+        input(type='hidden' name='order_url' value=host + path)
+        input(type='hidden' name='path' value=path)
+      div
+        +button('button').responsive
+          span= t('EMAIL__SEND__DIALOG__BUTTON')
+          +svg-icon('chevron-right')
+    .exchange-primary-text   
+      span#path #{host}#{path}
+      button(type='button' id='clip' data-clipboard-target="#path")
+        +svg-icon('paste')

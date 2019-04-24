@@ -1,0 +1,11 @@
+mixin rounded-field(label, icon)
+  - id = attributes.id || attributes.name;
+  - label = label || false;
+  - icon = icon || false;
+  .rounded-field(class=attributes.class)
+      if icon
+        label.field-icon(for=id)
+          +svg-icon(icon)
+      input(id=id)&attributes(attributes)
+      if label
+        label.float-label(for=id)= label

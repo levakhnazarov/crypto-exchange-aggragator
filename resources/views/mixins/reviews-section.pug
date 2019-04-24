@@ -1,0 +1,8 @@
+include ../components/reviews
+include ../components/reviews-item
+include ../components/reviews-group
+mixin reviews-section
+  +reviews
+    each review in reviews
+      +reviews-item(review)
+      

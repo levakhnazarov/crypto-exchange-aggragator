@@ -1,0 +1,23 @@
+extends layout/main
+
+include components/top
+include components/container
+include components/faq-group
+include mixins/faq-qa-list
+//- include components/faq-item
+include components/button
+
+
+
+block meta
+    - title       = 'upgrade not complete'
+    - keywords    = t('HOME__META__KEYWORDS')
+    - description = t('HOME__META__DESCRIPTION')
+
+block content
+    - header = 'Maintenance'
+    - container_title = 'We are prepairing an upgrade, please be patient'
+    +top(
+    header,
+    container_title
+    )

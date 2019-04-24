@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{18:function(t,n,e){"use strict";function o(){console.log("I get called from print.js!")}e.r(n),e.d(n,"default",function(){return o})}});

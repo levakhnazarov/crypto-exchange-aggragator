@@ -1,0 +1,28 @@
+include svg-icon
+mixin steps(cur)
+  - 
+    className = function (step, cur) {
+      if (cur == step) {
+        return 'cur';
+      } else if (cur > step) {
+        return 'prev';
+      } else {
+        return ''
+      }
+    }
+  ul.steps
+    li(class=className(1, cur))
+      i
+        +svg-icon('check')(width=12 height=12)
+      if cur > 1
+        a(href='/exchange-offers.html')= t('EXCHANGE__PAGE__STEPS__OFFERS')
+      else
+        span= t('EXCHANGE__PAGE__STEPS__OFFERS')
+    li(class=className(2, cur))
+      i
+        +svg-icon('check')(width=12 height=12)
+      span= t('EXCHANGE__PAGE__STEPS__DETAILS')
+    li(class=className(3, cur))
+      i
+        +svg-icon('check')(width=12 height=12)
+      span= t('EXCHANGE__PAGE__STEPS__SUMMARY')

@@ -1,0 +1,13 @@
+include how-item
+mixin how
+  .how
+
+    +how-item('/compare.svg', t('HOW_IT_WORKS__ITEM__COMPARE__TITLE'))
+      | !{t('HOW_IT_WORKS__ITEM__COMPARE__CONTENT', true)}
+
+    +how-item('/convert.svg', t('HOW_IT_WORKS__ITEM__CONVERT__TITLE'))
+      | !{t('HOW_IT_WORKS__ITEM__CONVERT__CONTENT', true)}
+
+    +how-item('/track.svg', t('HOW_IT_WORKS__ITEM__TRACK__TITLE'))
+      | !{t('HOW_IT_WORKS__ITEM__TRACK__CONTENT', true)}
+

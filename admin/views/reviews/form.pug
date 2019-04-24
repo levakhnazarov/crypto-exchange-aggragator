@@ -1,0 +1,43 @@
+extends ../layouts/main
+
+block meta
+  - title = 'Reviews'
+  - url = '/reviews'
+
+block content
+  .row
+    .col-md-6
+      form(method='post')
+        .card
+          .card-body
+            - function hasError(path) {
+            -   return typeof err !== 'undefined' && err.get(path).length > 0
+            - };
+            - function getError(path) {
+            -   if (hasError(path)) {
+            -     return err.get(path)[0].message;
+            -   }
+            -   return null
+            - };
+            .form-group(class=hasError('url') ? 'has-danger' : '')
+              label URL
+              input.form-control(type='url', name='url', value=formData.url, required)
+
+            .form-group(class=hasError('author') ? 'has-danger' : '')
+              label Author
+              input.form-control(type='text', name='author', value=formData.author, required)
+
+            .form-group(class=hasError('comment') ? 'has-danger' : '')
+              label Comment
+              textarea.form-control(type='text', name='comment', required)= formData.comment
+
+            .form-group(class=hasError('post_date') ? 'has-danger' : '')
+              label Post date
+              input.form-control(type='date', name='post_date', value=formData.post_date, required)
+
+            .form-group(class=hasError('sort') ? 'has-danger' : '')
+              label Sort
+              input.form-control(type='number', name='sort', value=formData.sort, required)
+
+          .card-footer
+            button.btn.btn-fill.btn-primary(type='submit') Add

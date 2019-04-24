@@ -1,0 +1,25 @@
+include advantage-item
+mixin advantage
+  .advantage
+
+    +advantage-item('/trusty.svg',
+      t('ADVANTAGE__ITEM__TRUSTY__TITLE'),
+      t('ADVANTAGE__ITEM__TRUSTY__CONTENT', -1)
+    )
+
+    +advantage-item('/anonymous.svg',
+      t('ADVANTAGE__ITEM__ANONYMOUS__TITLE'),
+      t('ADVANTAGE__ITEM__ANONYMOUS__CONTENT', -1)
+    )
+
+    +advantage-item('/fast.svg',
+      t('ADVANTAGE__ITEM__FAST__TITLE'),
+      t('ADVANTAGE__ITEM__FAST__CONTENT', -1)
+    )
+
+    +advantage-item('/fair.svg',
+      t('ADVANTAGE__ITEM__FAIR__TITLE'),
+      t('ADVANTAGE__ITEM__FAIR__CONTENT', false, {
+          '%d': count
+      })
+    )

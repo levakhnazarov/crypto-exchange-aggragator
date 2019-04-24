@@ -1,0 +1,32 @@
+$responsive-min-size = $screen-size-sm
+.form
+  &-wrap
+    color #464646
+    box-sizing border-box
+    background-color #f7f7f7
+    border 1px solid #ddd
+    border-width 1px 0
+    margin 0
+    padding $container-padding
+    @media (min-width $responsive-min-size)
+      padding 25px 40px
+      border-width 1px 1px 3px 1px
+      border-radius .625rem
+  &-title
+    font-size 1.5rem
+    font-weight 700
+    margin-bottom 25px
+    text-align center
+    @media (min-width $responsive-min-size)
+      text-align left
+  &-field
+    margin-bottom 25px
+  &-bottom
+    text-align right
+  &-submit
+    display block
+    width 100%
+    @media (min-width $responsive-min-size)
+      display inline-block
+      width auto
+      min-width 7.5rem

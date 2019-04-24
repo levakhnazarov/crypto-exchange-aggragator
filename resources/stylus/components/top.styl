@@ -1,0 +1,58 @@
+$mobile-min-screen-size = $screen-size-md
+$mobile-padding = unit(40px / 16px, rem)
+$desktop-padding = unit(50px / 16px, rem)
+.top
+  position relative
+  color #fff
+  // padding 150px 0 0 0
+  box-sizing border-box
+  // min-height 300px
+  //padding ($mobile-padding * 2) 0  $mobile-padding
+  //@media (min-width $mobile-min-screen-size)
+  padding ($desktop-padding * 3) 0  $desktop-padding
+  &-title, &-subtitle
+    margin 0
+    paddin 0
+    text-align center //mobile
+    @media (min-width $mobile-min-screen-size)
+      text-align left
+  &-title
+    // max-width 900px
+    margin-bottom 10px
+    font-weight 500
+    font-size 2.25rem
+    padding-top 5px
+    //text-shadow 0px 2px 1px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1)
+    @media (min-width $screen-size-lg)
+      font-size 3rem
+    > mark
+      background-color #fff
+      display inline-block
+      line-height 1.2
+      padding 0 .1em
+      color $primary-color
+  &-subtitle
+    font-weight 400
+    line-height 1.4
+    font-size 1.125rem
+    //text-shadow 0px 2px 1px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1)
+    a
+      color white
+      font-weight lighter
+    @media (min-width $mobile-min-screen-size)
+      font-size 1.5rem
+  &.first &-title
+    font-family $secondary-font-family
+    font-weight 700
+    font-size 1.5rem
+    margin-bottom 2.5rem
+    line-height 1.2
+    @media (min-width $mobile-min-screen-size)
+      font-size 3rem
+      line-height 1.2
+      margin-bottom 1rem
+  &.first &-subtitle
+    display none
+    @media (min-width $mobile-min-screen-size)
+     display block
+      

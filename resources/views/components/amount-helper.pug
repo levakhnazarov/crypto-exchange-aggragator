@@ -1,0 +1,9 @@
+mixin amount-helper(min, currency)
+  - min = min || 0.02
+  - currency = currency || 'btc'
+  .amount-helper
+    //- .amount-helper-min(data-value=min, data-currency=currency, data-converter='input-amount-min') Min.
+    .amount-helper-minmax(data-valid='true', data-show='min', data-value=min, data-currency=currency, data-min-label='Min.', data-max-label='Max.', data-amount-helper='min-max')
+    .amount-helper-fiat
+      span in USD
+      input(type='text', data-amount-helper='usd')

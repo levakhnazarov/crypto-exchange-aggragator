@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>title</title>
+    <link rel="stylesheet" href="/resources/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:300,300i,400,500,700&amp;amp;subset=cyrillic" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container"><a class="logo" href="/">Smartjex</a>
+        <form class="track-order" id="track-order">
+          <input type="text" placeholder="Enter the order ID"/>
+          <button type="button" onclick="document.getElementById(&quot;track-order&quot;).classList.toggle(&quot;show&quot;)">Track</button>
+        </form>
+        <nav class="nav" id="header-menu">
+          <ul>
+            <li><a href="#track-order" onclick="document.getElementById(&quot;track-order&quot;).classList.toggle(&quot;show&quot;); return false;">Tack order</a></li>
+            <li><a href="/coins.html">Supported currency</a></li>
+            <li class="cur"><a href="/faq.html">FAQ</a></li>
+            <li><a href="/about.html">About us</a></li>
+          </ul>
+        </nav>
+        <button class="mobile-nav-toggle" type="button" onclick="document.querySelector('#header-menu').classList.toggle('mobile-show')">
+          <svg class="svg svg-bars">
+            <use xlink:href="sprite.svg#bars"></use>
+          </svg>
+          <svg class="svg svg-times">
+            <use xlink:href="sprite.svg#times"></use>
+          </svg>
+        </button>
+        <div class="lang2"><span><img src="/resources/images/flags/en.svg"/></span>
+          <ul>
+            <li><a href="#ru.smartjex.com"><img src="/resources/images/flags/ru.svg"/></a></li>
+            <li><a href="#it.smartjex.com"><img src="/resources/images/flags/de.svg"/></a></li>
+            <li><a href="#ja.smartjex.com"><img src="/resources/images/flags/ja.svg"/></a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="top bg-primary">
+        <div class="container inner">
+          <h1 class="top-title">Supported currency</h1>
+          <div class="top-subtitle">We are now supporting over 250 cryptocurrencies to trade across all major exchanges</div>
+          <form>
+            <div class="rounded-field search-field">
+              <label class="field-icon" for="coins_search">
+                <svg class="svg svg-search">
+                  <use xlink:href="sprite.svg#search"></use>
+                </svg>
+              </label>
+              <input class="search-field" id="coins_search" type="text" name="coins_search" required="required" placeholder="Search currencies" autocomplete="off"/>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="container inner">
+        <div class="currencies-table">
+          <table>
+            <thead>
+              <tr>
+                <th class="asc"><i>
+                    <svg class="svg svg-sort-up asd">
+                      <use xlink:href="sprite.svg#sort-up"></use>
+                    </svg>
+                    <svg class="svg svg-sort-down desc">
+                      <use xlink:href="sprite.svg#sort-down"></use>
+                    </svg></i><span>Name & Symbol</span>
+                </th>
+                <th class="rate desc"><i>
+                    <svg class="svg svg-sort-up asd">
+                      <use xlink:href="sprite.svg#sort-up"></use>
+                    </svg>
+                    <svg class="svg svg-sort-down desc">
+                      <use xlink:href="sprite.svg#sort-down"></use>
+                    </svg></i><span>Rate</span>
+                </th>
+                <th class="rate-1h"> <i>
+                    <svg class="svg svg-sort-up asd">
+                      <use xlink:href="sprite.svg#sort-up"></use>
+                    </svg>
+                    <svg class="svg svg-sort-down desc">
+                      <use xlink:href="sprite.svg#sort-down"></use>
+                    </svg></i><span>1h</span>
+                </th>
+                <th class="rate-24h"> <i>
+                    <svg class="svg svg-sort-up asd">
+                      <use xlink:href="sprite.svg#sort-up"></use>
+                    </svg>
+                    <svg class="svg svg-sort-down desc">
+                      <use xlink:href="sprite.svg#sort-down"></use>
+                    </svg></i><span>24h</span>
+                </th>
+                <th class="rate-7d"><i>
+                    <svg class="svg svg-sort-up asd">
+                      <use xlink:href="sprite.svg#sort-up"></use>
+                    </svg>
+                    <svg class="svg svg-sort-down desc">
+                      <use xlink:href="sprite.svg#sort-down"></use>
+                    </svg></i><span>7d</span>
+                </th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="currency" data-rate="$ 11001"><img src="/resources/images/currencies/btc.svg" width="24" height="24"/><span>Bitcoin (BTC)</span>
+                </td>
+                <td class="rate">$11001</td>
+                <td class="rate-1h up">2.7% <sup>$330</sup></td>
+                <td class="rate-24h up">4.5% <sup>$1330</sup></td>
+                <td class="rate-7d down">-0.5% <sup>$550</sup></td>
+                <td>
+                  <a class="button responsive" href="#exchange-btc"><span>Exсhange BTC</span>
+                    <svg class="svg svg-chevron-right">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="currency" data-rate="$ 11001"><img src="/resources/images/currencies/ltc.svg" width="24" height="24"/><span>Litecoin (LTC)</span>
+                </td>
+                <td class="rate">$11001</td>
+                <td class="rate-1h down">-1000% <sup>$330</sup></td>
+                <td class="rate-24h up">4.5% <sup>$1330</sup></td>
+                <td class="rate-7d up">0.5% <sup>$550</sup></td>
+                <td>
+                  <a class="button responsive" href="#exchange-ltc"><span>Exсhange LTC</span>
+                    <svg class="svg svg-chevron-right">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="currency" data-rate="$ 11001"><img src="/resources/images/currencies/eth.svg" width="24" height="24"/><span>Ethereum (ETH)</span>
+                </td>
+                <td class="rate">$11001</td>
+                <td class="rate-1h up">2.7% <sup>$330</sup></td>
+                <td class="rate-24h up">4.5% <sup>$1330</sup></td>
+                <td class="rate-7d down">-0.5% <sup>$550</sup></td>
+                <td>
+                  <a class="button responsive" href="#exchange-eth"><span>Exсhange ETH</span>
+                    <svg class="svg svg-chevron-right">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="currency" data-rate="$ 11001"><img src="/resources/images/currencies/btc.svg" width="24" height="24"/><span>Bitcoin (BTC)</span>
+                </td>
+                <td class="rate">$11001</td>
+                <td class="rate-1h up">2.7% <sup>$330</sup></td>
+                <td class="rate-24h up">4.5% <sup>$1330</sup></td>
+                <td class="rate-7d down">-0.5% <sup>$550</sup></td>
+                <td>
+                  <a class="button responsive" href="#exchange-btc"><span>Exсhange BTC</span>
+                    <svg class="svg svg-chevron-right">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="currency" data-rate="$ 11001"><img src="/resources/images/currencies/ltc.svg" width="24" height="24"/><span>Litecoin (LTC)</span>
+                </td>
+                <td class="rate">$11001</td>
+                <td class="rate-1h down">-1000% <sup>$330</sup></td>
+                <td class="rate-24h up">4.5% <sup>$1330</sup></td>
+                <td class="rate-7d up">0.5% <sup>$550</sup></td>
+                <td>
+                  <a class="button responsive" href="#exchange-ltc"><span>Exсhange LTC</span>
+                    <svg class="svg svg-chevron-right">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="currency" data-rate="$ 11001"><img src="/resources/images/currencies/eth.svg" width="24" height="24"/><span>Ethereum (ETH)</span>
+                </td>
+                <td class="rate">$11001</td>
+                <td class="rate-1h up">2.7% <sup>$330</sup></td>
+                <td class="rate-24h up">4.5% <sup>$1330</sup></td>
+                <td class="rate-7d down">-0.5% <sup>$550</sup></td>
+                <td>
+                  <a class="button responsive" href="#exchange-eth"><span>Exсhange ETH</span>
+                    <svg class="svg svg-chevron-right">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="currency" data-rate="$ 11001"><img src="/resources/images/currencies/btc.svg" width="24" height="24"/><span>Bitcoin (BTC)</span>
+                </td>
+                <td class="rate">$11001</td>
+                <td class="rate-1h up">2.7% <sup>$330</sup></td>
+                <td class="rate-24h up">4.5% <sup>$1330</sup></td>
+                <td class="rate-7d down">-0.5% <sup>$550</sup></td>
+                <td>
+                  <a class="button responsive" href="#exchange-btc"><span>Exсhange BTC</span>
+                    <svg class="svg svg-chevron-right">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="currency" data-rate="$ 11001"><img src="/resources/images/currencies/ltc.svg" width="24" height="24"/><span>Litecoin (LTC)</span>
+                </td>
+                <td class="rate">$11001</td>
+                <td class="rate-1h down">-1000% <sup>$330</sup></td>
+                <td class="rate-24h up">4.5% <sup>$1330</sup></td>
+                <td class="rate-7d up">0.5% <sup>$550</sup></td>
+                <td>
+                  <a class="button responsive" href="#exchange-ltc"><span>Exсhange LTC</span>
+                    <svg class="svg svg-chevron-right">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="currency" data-rate="$ 11001"><img src="/resources/images/currencies/eth.svg" width="24" height="24"/><span>Ethereum (ETH)</span>
+                </td>
+                <td class="rate">$11001</td>
+                <td class="rate-1h up">2.7% <sup>$330</sup></td>
+                <td class="rate-24h up">4.5% <sup>$1330</sup></td>
+                <td class="rate-7d down">-0.5% <sup>$550</sup></td>
+                <td>
+                  <a class="button responsive" href="#exchange-eth"><span>Exсhange ETH</span>
+                    <svg class="svg svg-chevron-right">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="currency" data-rate="$ 11001"><img src="/resources/images/currencies/btc.svg" width="24" height="24"/><span>Bitcoin (BTC)</span>
+                </td>
+                <td class="rate">$11001</td>
+                <td class="rate-1h up">2.7% <sup>$330</sup></td>
+                <td class="rate-24h up">4.5% <sup>$1330</sup></td>
+                <td class="rate-7d down">-0.5% <sup>$550</sup></td>
+                <td>
+                  <a class="button responsive" href="#exchange-btc"><span>Exсhange BTC</span>
+                    <svg class="svg svg-chevron-right">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="currency" data-rate="$ 11001"><img src="/resources/images/currencies/ltc.svg" width="24" height="24"/><span>Litecoin (LTC)</span>
+                </td>
+                <td class="rate">$11001</td>
+                <td class="rate-1h down">-1000% <sup>$330</sup></td>
+                <td class="rate-24h up">4.5% <sup>$1330</sup></td>
+                <td class="rate-7d up">0.5% <sup>$550</sup></td>
+                <td>
+                  <a class="button responsive" href="#exchange-ltc"><span>Exсhange LTC</span>
+                    <svg class="svg svg-chevron-right">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="currency" data-rate="$ 11001"><img src="/resources/images/currencies/eth.svg" width="24" height="24"/><span>Ethereum (ETH)</span>
+                </td>
+                <td class="rate">$11001</td>
+                <td class="rate-1h up">2.7% <sup>$330</sup></td>
+                <td class="rate-24h up">4.5% <sup>$1330</sup></td>
+                <td class="rate-7d down">-0.5% <sup>$550</sup></td>
+                <td>
+                  <a class="button responsive" href="#exchange-eth"><span>Exсhange ETH</span>
+                    <svg class="svg svg-chevron-right">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="currency" data-rate="$ 11001"><img src="/resources/images/currencies/btc.svg" width="24" height="24"/><span>Bitcoin (BTC)</span>
+                </td>
+                <td class="rate">$11001</td>
+                <td class="rate-1h up">2.7% <sup>$330</sup></td>
+                <td class="rate-24h up">4.5% <sup>$1330</sup></td>
+                <td class="rate-7d down">-0.5% <sup>$550</sup></td>
+                <td>
+                  <a class="button responsive" href="#exchange-btc"><span>Exсhange BTC</span>
+                    <svg class="svg svg-chevron-right">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="currency" data-rate="$ 11001"><img src="/resources/images/currencies/ltc.svg" width="24" height="24"/><span>Litecoin (LTC)</span>
+                </td>
+                <td class="rate">$11001</td>
+                <td class="rate-1h down">-1000% <sup>$330</sup></td>
+                <td class="rate-24h up">4.5% <sup>$1330</sup></td>
+                <td class="rate-7d up">0.5% <sup>$550</sup></td>
+                <td>
+                  <a class="button responsive" href="#exchange-ltc"><span>Exсhange LTC</span>
+                    <svg class="svg svg-chevron-right">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="currency" data-rate="$ 11001"><img src="/resources/images/currencies/eth.svg" width="24" height="24"/><span>Ethereum (ETH)</span>
+                </td>
+                <td class="rate">$11001</td>
+                <td class="rate-1h up">2.7% <sup>$330</sup></td>
+                <td class="rate-24h up">4.5% <sup>$1330</sup></td>
+                <td class="rate-7d down">-0.5% <sup>$550</sup></td>
+                <td>
+                  <a class="button responsive" href="#exchange-eth"><span>Exсhange ETH</span>
+                    <svg class="svg svg-chevron-right">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="preloader"> <i>
+            <svg class="svg svg-spinner">
+              <use xlink:href="sprite.svg#spinner"></use>
+            </svg></i><span>Loading</span></div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-wrap">
+          <div class="menu">
+            <div class="menu-title">Help & Support</div>
+            <ul class="menu-list">
+              <li><a class="underline-dots" href="#support">Support</a></li>
+              <li><a href="/faq.html">FAQ</a></li>
+              <li><a href="/coins.html">Supported currency</a></li>
+            </ul>
+          </div>
+          <div class="menu">
+            <div class="menu-title">Company & Team</div>
+            <ul class="menu-list">
+              <li><a href="#exchange">Exchange</a></li>
+              <li><a href="/about.html">About us</a></li>
+            </ul>
+          </div>
+          <div class="menu">
+            <div class="menu-title">Exchangers</div>
+            <ul class="menu-list">
+              <li class="online">Jaxx</li>
+              <li class="offline">Nem</li>
+              <li class="online">Coinomi</li>
+              <li class="online">Freewallet</li>
+            </ul>
+          </div>
+          <div class="menu menu-social">
+            <div class="menu-title">Follow us</div>
+            <div>
+              <div class="social-buttons invert"><a href="#facebook">
+                  <svg class="svg svg-facebook-square">
+                    <use xlink:href="sprite.svg#facebook-square"></use>
+                  </svg></a><a href="#twitter">
+                  <svg class="svg svg-twitter-square">
+                    <use xlink:href="sprite.svg#twitter-square"></use>
+                  </svg></a><a href="#reddit">
+                  <svg class="svg svg-reddit-square">
+                    <use xlink:href="sprite.svg#reddit-square"></use>
+                  </svg></a><a href="#medium">
+                  <svg class="svg svg-medium-square">
+                    <use xlink:href="sprite.svg#medium-square"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="menu menu-inline menu-slash">
+          <ul>
+            <li>Smartjext.com &copy; 2018</li>
+            <li><a href="/terms.html">Terms of Use</a></li>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="/resources/converter.js"></script>
+  </body>
+</html>

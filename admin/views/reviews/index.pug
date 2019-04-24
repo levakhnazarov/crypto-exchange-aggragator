@@ -1,0 +1,35 @@
+extends ../layouts/main
+
+block meta
+  - title = 'Reviews'
+  - url = '/reviews'
+
+block content
+  .row
+    .col-md-12
+      a.btn.btn-success.btn-outline(href='/reviews/add') Add
+      .card
+        .card-body
+          table.table
+            thead
+              tr
+                th(width=150) Author
+                th Comment
+                th(width=150) Post date
+                th Source
+                th(width=200)
+            tbody
+              for item in items
+                tr
+                  td= item.author
+                  td= item.comment
+                  td= item.post_date
+                  td
+                    a(target='_blank', href=item.url)= item.getService()
+                  td.text-right
+                    a.btn.btn-info.btn-outline.btn-sm(href='/reviews/' + item.id) Edit
+                    | &nbsp;
+                    a.btn.btn-danger.btn-outline.btn-sm(
+                      href='/reviews/delete/' + item.id, 
+                      onclick='return confirm("Are you sure?") ? true : false;'
+                    ) Delete

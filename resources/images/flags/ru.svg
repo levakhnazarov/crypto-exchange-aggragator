@@ -1,0 +1,20 @@
+<svg id="Russia" xmlns="http://www.w3.org/2000/svg" width="70" height="47" viewBox="0 0 70 47">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4a89dc;
+      }
+
+      .cls-2 {
+        fill: #f5f7fa;
+      }
+
+      .cls-3 {
+        fill: #ed5565;
+      }
+    </style>
+  </defs>
+  <rect id="Rounded_Rectangle_7_copy" data-name="Rounded Rectangle 7 copy" class="cls-1" width="70" height="47" rx="6.364" ry="6.364"/>
+  <rect id="Rectangle_1_copy_18" data-name="Rectangle 1 copy 18" class="cls-2" width="70" height="16"/>
+  <rect id="Rectangle_1_copy_18-2" data-name="Rectangle 1 copy 18" class="cls-3" y="31" width="70" height="16"/>
+</svg>

@@ -1,0 +1,6 @@
+include ../components/faq-item
+mixin faq-qa-list(sectionID)
+  each qa in faq.qa
+    if qa.section == sectionID
+      +faq-item( t(qa.getQuestionTranslId()) )
+        | !{ t(qa.getAnswerTranslId(), true, {'{copy_button}' : '<button>Copy</button>'}) }

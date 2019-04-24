@@ -1,0 +1,31 @@
+extends ../layouts/main
+
+block meta
+  - title = 'Languages'
+  - url = '/langs'
+
+block content
+  .row
+    .col-md-3
+      form(method='post', enctype='multipart/form-data')
+        .card
+          .card-body
+            - function hasError(path) {
+            -   return typeof err !== 'undefined' && err.get(path).length > 0
+            - };
+            - function getError(path) {
+            -   if (hasError(path)) {
+            -     return err.get(path)[0].message;
+            -   }
+            -   return null
+            - };
+            .form-group(class=hasError('iso') ? 'has-danger' : '')
+              label ISO
+              input.form-control(type='text', name='iso', value=formData.iso, required)
+            .form-group
+              span.btn.btn-rose.btn-round.btn-file
+                span.fileinput-new Select flag
+                //- span.fileinput-exists Change flag
+                input(type='file', name='flag', accept='image/svg+xml', required)
+          .card-footer
+            button.btn.btn-fill.btn-primary(type='submit') Add

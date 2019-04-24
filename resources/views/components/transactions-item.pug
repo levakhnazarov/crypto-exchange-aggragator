@@ -1,0 +1,16 @@
+mixin transactions-item(input, output, amount, saved, index)
+    li.transaction-item.transaction-item-show
+      .transaction-direction
+        +currency-icon(input)(width=24, height=24, data-transaction-input-currency='icon')
+        +svg-icon('exchange-arrow-right')(width=24, height=24)
+        +currency-icon(output)(width=24, height=24, data-transaction-output-currency='icon')
+      .transaction-amount
+        span(data-transaction-input-amount='') #{amount}
+        | &nbsp;
+        span(data-transaction-input-currency='ticker') #{input.toUpperCase()}
+        span.lower &nbsp;to&nbsp;
+        span(data-transaction-output-currency='ticker') #{output.toUpperCase()}
+      .transaction-saved
+        | &nbsp;
+        span(data-transaction-saved='pct') #{saved}
+        span.lower % saved

@@ -1,0 +1,49 @@
+include ../components/faq-item
+
+//- +faq-item('How do you know when I sent you my coins?')
+  p We create a unique address for every demand. You will get the hash-code (encrypted details of the transaction) to check it on the blockchain if you wish.
+  p We check and refresh the status every 60 seconds. As a rule, this is enough, but in rare cases it can take longer (3-4 checkups)
+
+//- +faq-item('Can I get new coins sent directly to my exchange address?')
+  p Yes, you can set the exchange deposit address and we will send your coins there. Go to Profile > Deposit/Withdrawals and choose the Deposit address for the selected currency.
+  p Notice that in this case the transaction could take longer.
+  p We also suggest checking  the withdrawal limit for each coin because different exchanges have different rules on how much crypto can be exchanged. It is important for your holdings to not to be “held back”.
+
+//- +faq-item('Can I deposit coins from an exchange?')
+  p Yes, you can, but be aware of additional fees and a prolonged period of time.
+
+//- +faq-item('Tell me more about the fees')
+  p There are exchange platforms’ fees – the reward that a platform demands for its service. Smartjex examines all this data and comes up with the best overall option.
+  p Аnd there are network fees which let the blockchain operate. You will see it directly in your account.
+
+//- +faq-item('How long will the transaction take?')
+  p 15-60 minutes overall, 30 minutes on average.
+
+//- +faq-item('What if the rate changes during the operation?')
+  p We consider a ~10% safety margin to cover the possible rate volatility when a transaction in process. You will get 100% of the funds available  exchanged at the moment of transaction.
+
+//- +faq-item('I calculated that I will receive one amount of crypto, but I got a slightly different amount – why?')
+  p This is because of volatility. The rate is extremely volatile due to macroeconomic reasons. For example, Bitcoin (BTC) rate changes within 1% every second. Don’t buy the exact amount of crypto you need, but leave some room for error.
+
+//- +faq-item('What is a refund address?')
+  p It is the address where you store the coins you want to exchange. For example, if you have BTC and want to get DogeCoin (DOGE), your refund address will be your BTC address.
+  p It is not necessary for it to be  the same address or wallet you send BTC from.
+  p If something goes wrong and the operation is called off, we will send your initial cryptocurrency to this address. There is an extremely low probability of this occurring, but to be safe, we provide a refund address.
+
+//- +faq-item('What is a destination address?')
+  p It is the address where you will receive coins after exchange is made. For example, if you have BTC and want to exchange it for  DOGE, your destination address would be your DOGE address.
+
+//- +faq-item('What if I put the wrong address?')
+  p We have the initial check for the address and to correlate with selected crypto currencies (e.g. Bitcoin Cash (BCC) address to start with its prefix, etc.), but if you make mistake, you risk sending your funds to a stranger or lose them in blockchain forever. This operation is irreversible. 
+  p To avoid mistakes, do not copy your address, but manually, use the “copy” button:&nbsp;
+    span.exchange-primary-text(style='display: inline-block;')   
+      button(type='button')
+        +svg-icon('paste')
+      
+
+//- +faq-item('Why can\'t I change the cryptocurrency’s destination during step three?')
+  p Once you chose the desired pair, we show you the conditions and benefits. Since you accept it, we focus on the very transaction details so you won’t be confused by the extra data. Therefore, you will be able to fill in your addresses correctly.
+  p If you want to exchange other cryptocurrencies, please visit the previous steps and make choice again.
+
+
+  

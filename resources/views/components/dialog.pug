@@ -1,0 +1,11 @@
+mixin dialog(title)
+  .dialog-overlay&attributes(attributes)
+    .dialog
+      .dialog-header
+        .dialog-title= title
+        button.dialog-close(data-dialog-close)
+          +svg-icon('times')
+      .dialog-body
+        if block
+          block
+      button.dialog-footer-close(data-dialog-close) Close

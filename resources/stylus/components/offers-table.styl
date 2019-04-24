@@ -1,0 +1,108 @@
+$responsive-min-size = $screen-size-xs
+table.offers-table
+  width 100%
+  border-collapse collapse
+    
+  > thead
+    th
+      text-align left
+    > tr:nth-child(1)
+        display block
+        @media (min-width $responsive-min-size)
+          display table-row
+        > th
+          color #252525
+          font-size 1.25rem
+          font-weight 400
+          padding-bottom 10px
+        
+      // display block
+    > tr:nth-child(2) > th
+      
+      padding .375rem 0
+      font-size 1rem
+      font-weight 500
+      color #666
+      padding-top 10px
+      display none
+      @media (min-width $responsive-min-size)
+        display table-cell
+  > tbody
+    > tr
+      display block
+      // height 3.75rem
+      border-style solid
+      border-color #dddddd
+      border-width 0 0 1px 0
+      @media (min-width $responsive-min-size)
+        display table-row
+      &:first-child
+        border-top-width 1px 
+      > td
+        display block
+        padding 0.625rem 0
+        color #252525
+        @media (min-width $responsive-min-size)
+          display table-cell
+        // width 50%
+        // margin 0 auto
+        // text-align right
+        &.get
+          font-size 1.25rem
+          font-weight 500
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+          @media (min-width $responsive-min-size)
+            font-size 1.5rem
+        &.save
+          font-size 1rem
+          font-weight 500
+          @media (min-width $responsive-min-size)
+            font-size 1.125rem
+        &.service > img
+          // max-width 100%
+          width 100px
+          
+        &.adjust
+          color #666
+          font-size 1rem
+          font-weight 400
+          font-style italic
+          // max-width 0
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+          @media (min-width $screen-size-sm)
+            width 54%
+          @media (min-width $responsive-min-size)
+            font-size 1.125rem
+            
+        &:last-child
+          text-align right
+          // width 100%
+          // margin 0
+          > .button
+            width 100%
+            @media (min-width $responsive-min-size)
+              max-width 10rem
+        &:not(:last-child):before
+          content attr(data-label)
+          display inline-block
+          vertical-align middle
+          font-weight bold
+          // text-transform capitalize
+          color #666
+          font-size 1rem
+          font-weight 700
+          width 50%
+          font-style normal
+          @media (min-width $responsive-min-size)
+            display none
+
+  // @media (min-width $screen-size-lg)
+  //   $margins = 40px
+  //   td:first-child, th:first-child
+  //     padding-left $margins !important
+  //   td:last-child, th:last-child
+  //     padding-right $margins !important

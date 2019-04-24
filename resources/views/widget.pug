@@ -1,0 +1,122 @@
+extends layout/main
+
+include components/top
+include components/container
+block meta
+    - title = t('WIDGET__META__TITLE')
+    - keywords = t('WIDGET__META__KEYWORDS')
+    - description = t('WIDGET__META__DESCRIPTION')
+    link(href="/widget/resources/css/main.css", rel="stylesheet")
+    link(href="/widget/resources/css/promo.css", rel="stylesheet")
+    link(href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:300,300i,400,500,700&amp;amp;subset=cyrillic", rel="stylesheet")
+    script(src='/widget/resources/js/processing.js')
+    script(src='//widget.smartjex.com/assets/smartjex-1.0.14.min.js')
+block content
+    <main class="main">
+    <div class="top bg-primary promo"></div>
+    <div class="container">
+    <div class="promo-block ps_1">
+    <div class="ps_1_1">
+    <h1>Accept any cryptocurrency to any single-wallet address</h1>
+    <p>Smartjex Widget is an embeddable payment form for<br> desktop, tablet, or mobile devices with built-in multiconverter.<br> Use it on your site, blog or via direct link — and let the<br> customers instantly pay in any currency without any redirect</p>
+    <div class="buttons-block">
+    <a href="https://widget.smartjex.com/" class="button fill">Get Started</a>
+    <a href="#" onclick="document.getElementsByClassName('smartjex_widget-button_wrapper')[0].click(); return false;" class="button">Demo</a>
+    <p>no registration required</p>
+    </div>
+    </div>
+    <div class="ps_1_2">
+    <img src="/widget/resources/img/s1.png">
+    </div>
+    </div>
+    <div class="promo-block ps_2">
+    <div class="ps_2_1">
+    <img src="/widget/resources/img/s2.png">
+    </div>
+    <div class="ps_2_2">
+    <h2>Multiple currencies</h2>
+    <p>Accept multiple digital currencies and get them<br> already converted at your single-currency wallet</p>
+    </div>
+    </div>
+    <div class="promo-block ps_3">
+    <div class="ps_3_1">
+    <h2>Under your control</h2>
+    <p>You get funds directly to your own wallet.<br> Smartjex serves as a mere intermediary agent</p>
+    </div>
+    <div class="ps_3_2">
+    <img src="/widget/resources/img/s3.png">
+    </div>
+    </div>
+    <div class="promo-block promo-block-bordered ps_4">
+    <div class="ps_4_1">
+    <img src="/widget/resources/img/s4.png">
+    </div>
+    <div class="ps_4_2">
+    <h2>No development needed</h2>
+    <p>You can create embeddable widget and add it<br> to your platform without writing any code</p>
+    </div>
+    </div>
+    <div class="promo-block ps_5">
+    <div class="ps_5_1">
+    <h2>Visual customization</h2>
+    <p>Configure how the widget looks and adjust it<br> as you wish in a minute</p>
+    </div>
+    <div class="ps_5_2">
+    <img src="/widget/resources/img/s5.png">
+    </div>
+    </div>
+    <div class="promo-block block-title">
+    <div>
+    <h2>Use cases</h2>
+    <p>Smartjex Widget accepts different coins and then sends you equivalent <br>
+    sums in necessary currency. Set your preferred currency and let things rock.</p>
+    </div>
+    </div>
+    <div class="promo-block ps_6__1">
+    <div class="ps_6__1_1">
+    <div class="promo-img">
+    <img src="/widget/resources/img/ps_6__1_1.jpg">
+    </div>
+    <h3>For payments</h3>
+    <p>If you’re limited to accepting a single currency, do not make your clients rush to convert their Ether, Dogecoins, or whatever. No matter how they pay, you will get what you want.</p>
+    </div>
+    <div class="ps_6__1_2">
+    <div class="promo-img">
+    <img src="/widget/resources/img/ps_6__1_2.jpg">
+    </div>
+    <h3>For donuts</h3>
+    <p>Let your audience thank you the way they like, without all the mess with a pile of wallets’ addresses. Focus on creating content, not on the accepting different coins headache.</p>
+    </div>
+    <div class="ps_6__1_3">
+    <div class="promo-img">
+    <img src="/widget/resources/img/ps_6__1_3.jpg">
+    </div>
+    <h3>For personal matters</h3>
+    <p>Create a direct link to let anybody send any coin and, on your side, receive already converted funds onto your wallet. Also, enjoy the nice thing that your wallet address remains unrevealed.</p>
+    </div>
+    </div>
+    <div class="promo-block ps_6">
+    <div class="ps_6_1">
+    <img src="/widget/resources/img/s6.png">
+    </div>
+    <div class="ps_6_2">
+    <h2>Powered by Smartjex</h2>
+    <p>Smartjex examines different exchange services, aggregates<br> all offers they provide, and picks the best options in<br> regards to the set amount, estimated fees and speed</p></div>
+    </div>
+
+    </div>
+    <div class="container ps_7_container">
+    <div class="promo-block ps_7">
+    <img id="theCanvas" src="/widget/resources/img/dandelion.svg" width="100%" />
+    <h2>Accept any digital currency via Smartjex Widget</h2>
+    <div class="buttons-block">
+    <a href="https://widget.smartjex.com/" class="button fill">Get Started</a>
+    <a href="#" onclick="document.getElementsByClassName('smartjex_widget-button_wrapper')[0].click(); return false;" class="button">Demo</a>
+    <p>no registration required</p>
+
+    </div>
+    </div>
+    <div id="smartjex-widget" style="display: none;"></div>
+    <script type="text/javascript">new SmartJex({node: 'smartjex-widget',type: 'popup',id: 'b1b40955-a',});</script>
+    </div>
+    </main>

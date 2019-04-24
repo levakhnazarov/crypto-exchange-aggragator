@@ -1,0 +1,18 @@
+.svg
+  display inline-block
+  width 1em
+  height 1em
+  fill #000
+  font-size 1rem
+  &-public
+    width auto
+    height auto
+  &-chevron-down
+    width auto
+    height auto
+
+{{#shapes}}
+.svg-{{base}}
+  font-size ({{height.inner}}/10) * 1rem
+  width ({{width.inner}}/{{height.inner}}) * 1em
+{{/shapes}}

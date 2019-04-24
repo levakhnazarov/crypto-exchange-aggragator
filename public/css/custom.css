@@ -1,0 +1,22 @@
+.text-bold {
+	font-weight: bold;
+}
+
+.partners-block img {
+  max-height:80px
+}
+.social-icons i {
+  margin: 0 5px 10px 0;
+  min-width: 40px;
+  text-align: center
+
+}
+
+.details-input-block input {
+	margin-bottom: 10px;
+}
+.faq-block {
+	background-color: #f0f0f0;
+    padding: 15px;
+}
+

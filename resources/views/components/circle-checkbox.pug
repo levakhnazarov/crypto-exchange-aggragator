@@ -1,0 +1,9 @@
+include svg-icon
+mixin circle-checkbox
+  label.circle-checkbox
+    input(type='checkbox')&attributes(attributes)
+    i
+      +svg-icon('check')(width=12 height=12)
+    if block
+      span
+        block

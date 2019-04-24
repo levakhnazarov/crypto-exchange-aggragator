@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  p
+    a.btn.btn-success(href='/rates/create') Add
+  table.table
+    thead
+      tr
+        th From
+        th To
+        th Rate
+        th Min
+        th Max
+        th(width=50)
+        th(width=50)
+    tbody
+      for item, index in list
+        tr
+          td= item.from
+          td= item.to
+          td= item.rate
+          td= item.min
+          td= item.max
+          td
+            a.btn.btn-primary(href='/rates/update/' + index) Update
+          td
+            a.btn.btn-danger(href='/rates/delete/' + index, onclick="return confirm('Are you sure?') ? true : false;") Delete

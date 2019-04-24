@@ -1,0 +1,78 @@
+@require '../layout/helpers'
+$max = 4
+$responsive-min-size = 375px
+.transactions
+  //opacity 0
+  color #fff
+  font-weight normal
+  //max-width 520px
+  margin 0 auto
+  user-select none
+  &-title
+    text-align center
+    font-size 0.875rem
+    font-weight 500
+    //margin-bottom 15px
+  &-list
+    @extend .reset-list
+    //min-height 10rem
+    .transaction
+      &-item
+        //transition all 1s ease
+        max-height 0
+        opacity 0
+        display flex
+        align-items center
+        //justify-content space-between
+        transform rotateX(-20deg)
+        // transform scale(-1, -1)
+        &-show
+          transform none
+          opacity 1
+          max-height 100px
+        &:nth-child(2)
+          transform scale(.9)
+          opacity .75
+        &:nth-child(3)
+          transform scale(.8)
+          opacity .5
+        &:nth-child(4)
+          transform scale(.7)
+          opacity .25
+        &:nth-of-type(1n+5)
+          // margin-bottom -2rem
+          margin-top 2rem
+          height 0
+          transform scale(.1) rotateX(-120deg)
+          //opacity 0
+        //&:nth-of-type(1n+6)
+          //display none
+          
+      &-direction
+        display flex
+        align-items center
+        // display none
+        img
+          height 1rem
+          width @height
+          @media (min-width $responsive-min-size)
+            height 1.5rem
+            width @height
+        svg
+          fill #fff
+          font-size 1.5rem
+          padding .2rem 0
+          @media (min-width $responsive-min-size)
+            font-size 2rem
+            padding 0
+      &-amount
+        font-size .75rem
+        @media (min-width $responsive-min-size)
+          font-size 1rem
+      &-saved
+        font-size .625rem
+        @media (min-width $responsive-min-size)
+          font-size .75rem
+        opacity .7
+      
+      

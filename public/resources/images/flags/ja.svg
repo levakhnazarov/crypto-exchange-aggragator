@@ -1,0 +1,15 @@
+<svg id="Japan" xmlns="http://www.w3.org/2000/svg" width="70" height="47" viewBox="0 0 70 47">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f5f7fa;
+      }
+
+      .cls-2 {
+        fill: #ed5565;
+      }
+    </style>
+  </defs>
+  <rect id="Rounded_Rectangle_7_copy" data-name="Rounded Rectangle 7 copy" class="cls-1" width="70" height="47" rx="6.364" ry="6.364"/>
+  <circle id="Ellipse_3_copy_2" data-name="Ellipse 3 copy 2" class="cls-2" cx="35.5" cy="23.5" r="9.5"/>
+</svg>

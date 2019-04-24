@@ -1,0 +1,22 @@
+include svg-icon
+mixin reviews(mobile, count)
+
+  .reviews(class=id, data-reviews='')
+    .reviews-visible-on-mobile(data-reviews-visible-on-mobile='')
+    .reviews-slide
+      .reviews-slide-left(data-reviews-page='prev')
+        +svg-icon('slider-arrow')
+      .reviews-slide-right(data-reviews-page='next')
+        +svg-icon('slider-arrow')
+      .reviews-list(data-reviews-list='')
+        if block
+          block
+    .reviews-pagination
+      ul(data-reviews-pagination='')
+        // - for (let p = 0; p < count; p++)
+        //   li(class=p === 0 ? 'cur' : '', data-reviews-page=p)
+        //     a(href='#slide-' + p, data-reviews-page=p)
+        //       i
+    
+    
+      

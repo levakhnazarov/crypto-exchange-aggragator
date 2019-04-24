@@ -1,0 +1,43 @@
+include currency-amount
+include amount-helper
+include svg-icon
+include button
+mixin converter(full, data, fixed_direction, secondary)
+  - full = full || false;
+  - data = data || {in_amount: 0.5, in_currency: 'eth', out_currency: 'btc'};
+  - fixed_direction = fixed_direction || false;
+  if secondary
+    - data = {in_amount: 0.00, in_currency: 'eth', out_currency: 'btc'};
+  .converter(class= full ? 'converter--full' : '', data-converter='form')&attributes(attributes)
+    input(type='hidden', name='exchanger', value= typeof data.exchanger !== 'undefined' ? data.exchanger : null)
+    input(type='hidden', name='saved', value=typeof data.saved !== 'undefined' ? data.saved : null)
+    .converter-field(data-converter='input-amount-currency')
+      +currency-amount(t('CONVERTER__YOU__SEND'), 'in_amount', data.in_amount, 'in_currency', data.in_currency, 'input',fixed_direction)(disabled=fixed_direction ? '-1' : false, min=0, max=1.1)
+      .converter-field-helper
+        +amount-helper
+    .converter-direction
+      button(type='button', data-direction = fixed_direction ? 'fixed' : 'any', data-converter='direction')
+          +svg-icon('exchange-arrow-right')(width= 48 height= 48 data-direction='fixed')
+          +svg-icon('exchange')(data-direction='any')
+          //img(class='loading' src='/resources/images/puff.svg', width=50)
+          svg(class='loading' width=96, height=96, viewBox="0 0 96 96", preserveAspectRatio='xMinYMin meet')
+            circle(cx='48', cy='48', r='18', fill='#1e81ef')
+
+    .converter-field(data-converter='output-amount-currency')
+      +currency-amount(t('CONVERTER__YOU__GET'), 'out_amount', 0, 'out_currency', data.out_currency, 'output')(disabled=fixed_direction ? '-1' : false, readonly=true)
+    if full
+      .converter-group
+        .converter-group-row
+          .converter-group-col
+            +button('button', 'secondary', 'fill', 'gradient')(data-converter='exchange')= t('CONVERTER__EXCHANGE__BUTTON')
+          .converter-group-col.saved-container
+            .converter-save= t('CONVERTER__EXCHANGE__BY') + ' '
+              span= ' '
+              =' ' + t('CONVERTER__EXCHANGE__SAVED')
+        .converter-group-row
+          .converter-group-col
+            button.converter-more.border-from-middle(type='submit', data-converter='more')= ' ' + t('CONVERTER__EXCHANGE__OR__COMPARE') + '\n '
+              span ...
+              = t('CONVERTER__EXCHANGE__MORE__OFFERS') + ' >>'
+          .converter-group-col
+      

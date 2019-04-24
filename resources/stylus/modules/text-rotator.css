@@ -1,0 +1,51 @@
+section {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.full-screen {
+    height: 100%;
+}
+.transaction-direction .svg-exchange-arrow-right{
+    fill:white
+}
+.wheel-svg {
+    margin-left: 10px;
+    border: 4px dashed yellow;
+    perspective: 300px;
+}
+.wheel-svg .term {
+    font-family: GothamLight, sans-serif;
+    font-size: 100px;
+    letter-spacing: -1px;
+    fill: #ffffff;
+    /*opacity: 0;*/
+}
+.transaction-direction {
+    position: absolute;
+    width: 115px;
+    top: 5px;
+}
+.transaction-amount{
+    padding-left:90px
+}
+.transaction-item .lower{
+    text-transform: none;
+}
+.wheel-svg .term .icon{
+    color:red;
+    opacity:1;
+}
+.wheel-svg .term.term3 {
+    opacity: 1;
+}
+.wheel-svg .term.term2,
+.wheel-svg .term.term4 {
+    /*opacity: 0.5;*/
+}
+.wheel-svg .term.term1,
+.wheel-svg .term.term5 {
+    /*opacity: 0.2;*/
+}

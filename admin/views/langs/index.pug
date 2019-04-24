@@ -1,0 +1,25 @@
+extends ../layouts/main
+
+block meta
+  - title = 'Languages'
+  - url = '/langs'
+
+block content
+  .row
+    .col-md-3
+      .card
+        .card-body
+          table.table
+            thead
+              tr
+                th Flag
+                th ISO
+            tbody
+              for lang in langs
+                tr
+                  td
+                    img(src=lang.getFlagSrc(), height=16)
+                  td= lang.iso
+                  td.text-right
+                    a.btn.btn-info.btn-outline.btn-sm(href='/langs/' + lang.id)
+                      i.now-ui-icons.loader_gear

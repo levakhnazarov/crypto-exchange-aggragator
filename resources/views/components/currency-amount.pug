@@ -1,0 +1,51 @@
+include currency-icon
+mixin currency-amount(label, amount_name, amount_value, currency_name, currency_value, type,disabled)
+  - type = type || 'input'
+  .currency-amount
+    //- placeholder=label,
+    // - readonly = attributes.readonly,
+    input(
+      type  = 'text',
+      id    = amount_name, 
+      name  = amount_name, 
+      value = amount_value,
+
+      onchange="this.value = this.value.replace(/,/g, '.')",
+      disabled = attributes.disabled > 0,
+
+      min  = attributes.min ? attributes.min : 0,
+      step = 'any',
+      max  = attributes.max ? attributes.max : null,
+      data-ca='amount-field'
+    )
+    label(for=amount_name)= label
+    // googleoff: all
+    div(data-ca='currency-dropdown')
+      input(type='hidden', name=currency_name, value=currency_value, data-ca='currency-field' onchange='mixpanel.track("best offer");')
+      button(type='button', data-len=currency_value.length, disabled=attributes.disabled, data-ca='currency-button')
+        +currency-icon(currency_value)
+        span= currency_value
+        if !disabled
+          +svg-icon('chevron-down')(width=12 height=12)
+      .cydp
+        div
+          button(type='button', data-ca='currency-list-close')
+            +svg-icon('times')
+          span= label
+          +svg-icon('search')
+          input(type='text', placeholder='Search', data-ca='currency-search-field')
+          ul(data-ca='currency-list')
+            - for (let i = 0; i < 10; i++)
+              li.ladda-button
+                +currency-icon('btc')
+                span Bitcoin
+                strong BTC
+              li.ladda-button
+                +currency-icon('eth')
+                span
+                strong
+          button(type='button', data-ca='currency-list-close') Close
+    // googleon: all
+    script.
+    if block
+      block

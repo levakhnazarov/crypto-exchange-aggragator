@@ -1,0 +1,72 @@
+.amount-helper
+  padding .4rem 1.2rem
+  color #999999
+  font-size .75rem
+  line-height 1.5
+  display flex
+  justify-content space-between
+  .first &
+    color #fff
+  &-minmax
+    cursor pointer
+    underline-dots @color
+    .first &
+      underline-dots #fff
+    &[data-show='min']:before
+      content attr(data-min-label)
+    &[data-show='max']:before
+      content attr(data-max-label)
+    &[data-show='any']
+      visibility hidden
+    &:after
+      margin-left .325rem
+      content attr(data-value) ' ' attr(data-currency)
+      text-transform uppercase
+    &[data-valid='false']
+      color $error-color
+      border-color @color
+      .first &
+        color #fbff00
+        border-color @color
+
+      
+      
+  &-fiat
+    input
+      
+      background transparent
+      border 1px solid #c0c0c0
+      .first &
+        border-color #fff
+        color #fff
+      display inline-block
+      max-width 3.6em
+      border-radius .375rem
+      font-size 1em
+      line-height 1.4
+      color @color
+      text-align center
+      font-weight 700
+      padding 0
+      margin 0 0 0 .375rem
+      outline none
+      &:focus
+        border-color $primary-color
+        color $primary-color
+      .first &:focus
+        border-color #fff
+        color $primary-color
+        background rgba(#fff, 1)
+      .first &:invalid, &:invalid
+        border-color $error-color
+        box-shadow none
+        color $error-color
+        ~ label
+          color $error-color
+        ~ div
+          background $error-color
+      .first &:invalid
+        background rgba($error-color, 1)
+        color #252552  
+      
+      

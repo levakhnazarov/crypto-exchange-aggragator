@@ -1,0 +1,53 @@
+include container
+include social-buttons
+mixin footer
+  footer.footer
+    +container(false)
+      .footer-wrap
+        .menu
+          .menu-title= t('FOOTER__MENU__HELP')
+          ul.menu-list
+            li
+              a.underline-dots(href="mailto:hello@smartjex.com")= t('FOOTER__MENU__SUPPORT')
+            li
+              a(href='/faq')= t('FAQ__MENU__ITEM')
+            li
+              a(href='/currencies')= t('CURRENCIES__MENU__ITEM')
+
+        .menu
+          .menu-title= t('FOOTER__MENU__TEAM')
+          ul.menu-list
+            li
+              a(href='/offers/btc-eth' onclick='var c = document.getElementById("converter");c.scrollIntoView({block: "end", behavior: "smooth"});')= t('CONVERTER__EXCHANGE__BUTTON')
+            li
+              a(href='/widget') Widget
+            li
+              a(href='/about')= t('ABOUT__MENU__ITEM')
+
+        .menu
+          .menu-title= t('CONVERTER__EXCHANGE__BY__FULL')
+          ul.menu-list
+            li.online Changelly
+            li.online Shapeshift
+            li.online Binance
+            li.online Bittrex
+            li.offline Poloniex
+            li.offline Kucoin
+            li.offline Huobi
+
+        .menu.menu-social
+          .menu-title= t('FOOTER__MENU__FOLLOW')
+          div
+            +social-buttons(true)
+
+    .container
+      .menu.menu-inline.menu-slash
+        ul
+          li Smartjex.com &copy; 2018
+          li
+            a(href='/terms')= t('TERMS__MENU__ITEM')
+          //- li
+          //-   a(href='/privacy')= t('PRIVACY__MENU__ITEM')
+
+  
+

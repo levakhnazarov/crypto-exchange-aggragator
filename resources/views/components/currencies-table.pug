@@ -1,0 +1,30 @@
+mixin sort-icons
+  i
+    +svg-icon('sort-up')(class='asc')
+    +svg-icon('sort-down')(class='desc')
+
+mixin currencies-table(defaultSort)
+  - defs = defaultSort || ['rate', 'desc']
+  .currencies-table&attributes(attributes)
+    table
+      thead
+        tr
+          th(data-sort-col='name', data-sort-direction=defs[0] == 'name' ? defs[1] : '')
+            +sort-icons
+            span= t('CURRENCIES__TABLE__COLUMN__NAME_AND_SYMBOL')
+          th(data-sort-col='price_usd', data-sort-direction=defs[0] == 'price_usd' ? defs[1] : '').rate
+            +sort-icons
+            span= t('CURRENCIES__TABLE__COLUMN__RATE')
+          th(data-sort-col='change_1h_pct', data-sort-direction=defs[0] == 'change_1h_pct' ? defs[1] : '').rate-1h 
+            +sort-icons
+            span= t('CURRENCIES__TABLE__COLUMN__1_HOUR_CHANGES')
+          th(data-sort-col='change_24h_pct', data-sort-direction=defs[0] == 'change_24h_pct' ? defs[1] : '').rate-24h 
+            +sort-icons
+            span= t('CURRENCIES__TABLE__COLUMN__24_HOURS_CHANGES')
+          th(data-sort-col='change_7d_pct', data-sort-direction=defs[0] == 'change_7d_pct' ? defs[1] : '').rate-7d
+            +sort-icons
+            span= t('CURRENCIES__TABLE__COLUMN__7_DAYS_CHANGES')
+          th
+      tbody
+        if block
+          block

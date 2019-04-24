@@ -1,0 +1,17 @@
+extends layout/main
+
+include components/top
+include components/container
+
+block meta
+  - title = t('PRIVACY__META__TITLE')
+  - keywords = t('PRIVACY__META__KEYWORDS')
+  - description = t('PRIVACY__META__DESCRIPTION')
+
+block content
+  +top(
+    t('PRIVACY__PAGE__TITLE'), 
+    t('PRIVACY__PAGE__SUBTITLE')
+  )
+  +container
+    .content!= t('PRIVACY__PAGE__CONTENT', true)

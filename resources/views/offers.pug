@@ -1,0 +1,70 @@
+extends layout/main
+
+include components/container
+include components/top
+include components/paper
+include components/converter
+include components/offers-table
+include components/offers-row
+
+include components/section
+include components/how
+include mixins/reviews-section
+
+
+block meta
+  - title = t('OFFERS__META__TITLE',false, {'{from_name}':formData.from_name, '{to_name}':formData.to_name,'{from_name_ticker}':formData.from_name_ticker, '{to_name_ticker}':formData.to_name_ticker})
+  - keywords = t('OFFERS__META__KEYWORDS',false, {'{from_name_ticker}':formData.from_name_ticker, '{to_name_ticker}':formData.to_name_ticker})
+  - description = t('OFFERS__META__DESCRIPTION',false, {'{from_name_ticker}':formData.from_name_ticker, '{to_name_ticker}':formData.to_name_ticker,'{pairs_count}': formData.count})
+  // - first_promo_out =
+
+block content
+  form(autocomplete="off").offers
+    +top(
+      t('CURRENCIES__PROMO__TITLE', false, {
+          '{from_name}': formData.from_name,
+          '{to_name}': formData.to_name
+      }),
+      t('CURRENCIES__PROMO__SUBTITLE', false, {
+          '{from_ticker}': formData.in_currency.toUpperCase(),
+          '{to_ticker}': formData.out_currency.toUpperCase(),
+          '{PROMO__ONE}': '<a href="' + formData.first_promo.ticker + '-'+formData.out_currency+'">' + formData.first_promo.name + '</a>',
+          '{PROMO__TWO}': '<a href="' + formData.second_promo.ticker + '-' + formData.out_currency + '">' + formData.second_promo.name + '</a>',
+          '{PROMO__THREE}': '<a href="' + formData.third_promo.ticker + '-' + formData.out_currency + '">' + formData.third_promo.name + '</a>',
+          '{pairs_count}': formData.count
+      })
+      )(class='first offers-first')
+      form.offers
+        +converter(true, formData)(data-type='full').offers-converter
+
+    +container
+      +paper.offers-paper
+        .offers
+          .offers-result.offers-main(
+            data-offers=t('CURRENCIES__PROMO__OTHER'),
+            data-label-amount=t('CONVERTER__YOU__GET'),
+            data-label-save=t('CURRENCIES__PROMO__SAVE'),
+            data-label-service=t('CURRENCIES__PROMO__SERVICE'),
+            data-label-button=t('CURRENCIES__PROMO__EXCHANGE')
+          )
+            +offers-table(t('CURRENCIES__PROMO__CONTENT'), true)
+          .offers-result.offers-adjust(
+            data-offers='adjust-limit',
+            data-label-amount='Adjust', 
+            data-label-service='Service',
+            data-label-button='Set & Exchange',
+            data-label-min = 'Min.',
+            data-label-max = 'Max.'
+          )
+            +offers-table(t('CURRENCIES__PROMO__NEEDS__LIMIT__ADJUST'), false)
+
+    include sections/advantage
+    include sections/partners
+    include sections/how-it-works
+
+    include components/section
+    +section(t('SEO__PAIR__SECTION__TITLE')).seo-section
+      .seo-content!= t('SEO__PAIR__SECTION__CONTENT', true, {'{from_name}':formData.from_name, '{to_name}':formData.to_name, '{from_ticker}': formData.in_currency.toUpperCase(), '{to_ticker}': formData.out_currency.toUpperCase(),'{pairs_count}': formData.count})
+    //include sections/reviews
+    //+section(pair ? t(pair.getSeoTitle(), false, replace) : '').seo-section
+    //  .seo-content!= pair ? t(pair.getSeoContent(), true, replace) : ' ... '

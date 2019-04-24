@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  p
+    a.btn.btn-primary(href='/currencies/create') Add
+  table.table
+    thead
+      tr
+        th Abbr
+        th Name
+        th(width=50)
+    tbody
+      for item, index in list
+        tr
+          td= item.abbr
+          td= item.name
+          td
+            a.btn.btn-danger(href='/currencies/delete/' + index, onclick="return confirm('Are you sure?') ? true : false;") delete

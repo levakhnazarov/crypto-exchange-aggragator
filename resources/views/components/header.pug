@@ -1,0 +1,58 @@
+include container
+include flag
+include svg-icon
+mixin header
+  header.header
+    +container(false)
+      a.logo(href='/' )
+        img(src="/assets/smartjex-logo-white.svg")
+      nav#nav.nav(data-nav-display='')
+        .nav-mobile
+          button.nav-mobile-open(type='button', data-nav-show='menu')
+            +svg-icon('bars')
+          button.nav-mobile-close(type='button', data-nav-close='')
+            +svg-icon('times')
+        .nav-container(data-nav-overlay='')
+          .nav-component(data-nav-component='track')
+            form.track-order(method='GET' action='/track')
+              input#track-order-input(type='text', name='id' placeholder= t('TRACK_ORDER__INPUT_PLACEHOLDER'))
+              button(type='submit')= t('TRACK_ORDER__SUBMIT_BTN')
+          .nav-component(data-nav-component='menu')
+            ul.menu.header-menu
+              li.border-from-middle
+                a(href='#track-order', data-nav-show='track')= t('TRACK_ORDER__MENU_ITEM')
+              li.border-from-middle
+                a(href='/offers/btc-eth')= t('CONVERTER__EXCHANGE__BUTTON')
+              li.border-from-middle
+                a(href='/widget')= t('HEADER__MENU__WIDGET')
+              li.border-from-middle
+                a(href='/currencies')= t('CURRENCIES__MENU__ITEM')
+              li.cur.border-from-middle
+                a(href='/faq')= t('FAQ__MENU__ITEM')
+              li.border-from-middle
+                a(href='/about')= t('ABOUT__MENU__ITEM')
+              
+            
+        
+      
+      
+
+
+      
+
+      //- .lang
+        ul
+          li
+            a(href='#ru.smartjex.com')
+              +flag('ru')
+          li
+            a(href='#it.smartjex.com')
+              +flag('de')
+          li.cur
+            a(href='#en.smartjex.com')
+              +flag('en')
+          li
+            a(href='#ja.smartjex.com')
+              +flag('ja')
+        
+        

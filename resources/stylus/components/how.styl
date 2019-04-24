@@ -1,0 +1,33 @@
+$responsive-min-size = $screen-size-sm
+.how
+  text-align center
+  @media (min-width $responsive-min-size)
+    display flex
+    flex-wrap wrap
+    justify-content space-between
+  &-item
+    margin-bottom 3.75rem
+    max-width 20rem
+    margin-left auto
+    margin-right auto
+    @media (min-width $responsive-min-size)
+      flex-basis 25%
+      margin-left 0
+      margin-right 0
+      margin-bottom 0
+    &:last-child
+      margin-bottom 0
+  //   text-align center
+  //   max-width 260px
+  &-title
+    color #3f3f3f
+    font-size 1.5rem
+    font-weight 500
+  &-img
+    margin 1.5rem
+  //   display inline-block
+  //   margin 20px 0 30px
+  &-text
+    font-size 1rem
+    color #252525
+    line-height 1.5

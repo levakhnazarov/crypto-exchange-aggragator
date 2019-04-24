@@ -1,0 +1,7 @@
+mixin transactions-list
+  - transactions_recent = t('CONVERTER__RECENT__TRANSACTIONS')
+  .transactions
+    .transactions-title= transactions_recent
+    ul(class='transactions-listy' id='transactions-list')
+      if block
+        block

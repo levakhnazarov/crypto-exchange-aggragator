@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  form(method='post')
+    .form-group
+      label(for='name') Name
+      input#name.form-control(type='text', name='name', placeholder='Enter name', required, value=item.name)
+    .form-group
+      label(for='abbr') Abbr
+      input#abbr.form-control(type='text', name='abbr', placeholder='Enter abbr', required, value=item.abbr)
+    button.btn.btn-success(type='submit') Add
+

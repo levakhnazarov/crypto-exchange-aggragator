@@ -1,0 +1,6 @@
+mixin svg-icon(name)
+  - mod = mod || ''
+  svg(class="svg svg-" + name,
+  width= attributes.width ? attributes.width : 24
+  height= attributes.height ? attributes.height : 24)&attributes(attributes)
+    use(xlink:href="/assets/sprite.svg#" + name)

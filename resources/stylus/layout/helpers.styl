@@ -1,0 +1,61 @@
+@require 'vars'
+
+button.reset
+  padding 0
+  margin 0
+  background transparent
+  border none
+  outline none
+  cursor pointer
+
+.bg-white
+  background white
+.bg-blue
+  position relative
+  &:before
+    content ''
+    background-color $primary-color
+    top 0
+    left 0
+    right 0
+    bottom 0
+    position absolute
+    z-index -2
+  &:after
+    content ''
+    
+    opacity 0.5
+    background-image url(/paticlesjs-big.png)
+    background-position top
+    top 0
+    left 0
+    right 0
+    bottom 0
+    position absolute
+    z-index -1
+.bg-lite-gray
+  background #f7f7f7
+
+.text-right
+  text-align right
+.text-center
+  text-align center
+underline(color)
+  border-bottom 1px solid rgba(@color, 0.5)
+  
+dots(color)
+  border-bottom 1px dotted @color
+
+gradient(origin, colors...)
+    
+  fallback = colors[1][0]
+
+  colors = join(', ', colors)
+  colors = unquote(colors)
+
+  background-color fallback
+  background-image -webkit-linear-gradient(origin, colors) // Chrome, Safari
+  background-image    -moz-linear-gradient(origin, colors) // Firefox (3.6 - 15)
+  background-image     -ms-linear-gradient(origin, colors) // IE 10
+  background-image      -o-linear-gradient(origin, colors) // Opera (11.1 - 12.0) 
+  background-image         linear-gradient(origin, colors) // W3C

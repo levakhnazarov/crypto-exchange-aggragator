@@ -1,0 +1,6 @@
+mixin partners
+  - logos = ['poloniex.png','bittrex.png','huobi.png','kucoin.svg','binance.svg', 'shapeshift.svg', 'changelly.png']
+  .partners
+    for logo in logos
+      .partners-item
+        img.partner-logo(src='/resources/images/partners/' + logo, height=32)

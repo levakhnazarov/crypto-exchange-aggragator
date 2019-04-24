@@ -1,0 +1,10 @@
+mixin underlined-field(label, mixed)
+  - id = attributes.id || attributes.name;
+  .underlined-field
+      input(id=id)&attributes(attributes)
+      label(for=id)= label
+      if block
+        div
+          +svg-icon('help')
+          div
+            block

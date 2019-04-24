@@ -1,0 +1,31 @@
+extends ../layouts/main
+
+block meta
+  - title = 'Meta'
+  - url = '/'
+
+block content
+  .row
+    .col-md-6
+      if (success === true)
+        .alert.alert-success
+          //- button.close(type='button', aria-hidden='true')
+            i.now-ui-icons.ui-1_simple-remove
+          span
+            b Metadata successfully updated
+        
+      form(method='post', enctype='multipart/form-data')
+        .card
+          .card-body
+            for item in items
+              .form-group
+                label= item.identifier
+                case item.identifier.replace(prefix, '')
+                  when '_META_KEYWORDS'
+                  when '_META_DESCRIPTION'
+                  when '_META_CONTENT'
+                    textarea.form-control(name=item.identifier)= item.phrase
+                  default
+                    input.form-control(type='text', name=item.identifier, value=item.phrase)
+          .card-footer
+            button.btn.btn-fill.btn-primary(type='submit') Save

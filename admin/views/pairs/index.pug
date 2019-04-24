@@ -1,0 +1,50 @@
+extends ../layouts/main
+
+block meta
+  - title = 'Pairs'
+  - url = '/pairs'
+
+block content
+  .row
+    .col-md-12
+      a.btn.btn-success.btn-outline(href='/pairs/add') Add
+      .card
+        .card-body
+          table.table
+            thead
+              tr
+                th Pairs
+
+                th Meta title
+                th Meta keywords
+                th Meta description
+
+                th Page title
+                th Page subtitle
+
+                th Seo title
+                th Seo content
+                th
+
+            tbody
+              for item in items
+                tr
+                  td.align-top= item.currencies
+
+                  td.align-top= t(item.getMetaTitle())
+                  td.align-top= t(item.getMetaKeywords())
+                  td.align-top= t(item.getMetaDescription())
+
+                  td.align-top= t(item.getPageTitle())
+                  td.align-top= t(item.getPageSubtitle())
+
+                  td.align-top= t(item.getSeoTitle())
+                  td.align-top!= t(item.getSeoContent(), true)
+
+                  td.align-top.text-right
+                    a.btn.btn-info.btn-outline.btn-sm(href='/pairs/update/' + item.id) Edit
+                    | &nbsp;
+                    a.btn.btn-danger.btn-outline.btn-sm(
+                      href='/pairs/delete/' + item.id, 
+                      onclick='return confirm("Are you sure?") ? true : false;'
+                    ) Delete

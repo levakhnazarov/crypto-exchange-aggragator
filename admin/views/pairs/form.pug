@@ -1,0 +1,47 @@
+extends ../layouts/main
+
+block meta
+  - title = 'Pairs'
+  - url = '/pairs'
+
+block content
+  .row
+    .col-md-6
+      form(method='post')
+        .card
+          .card-body
+
+            .form-group
+              label Currency pairs
+              input.form-control(type='text', name='currencies', value=item ? item.currencies : '', required)
+
+            .form-group
+              label Meta title
+              input.form-control(type='text', name='meta_title', value=item ? t(item.getMetaTitle()) : '', required)
+
+            .form-group
+              label Meta keywords
+              input.form-control(type='text', name='meta_keywords', value=item ? t(item.getMetaKeywords()) : '', required)
+
+            .form-group
+              label Meta description
+              input.form-control(type='text', name='meta_description', value=item ? t(item.getMetaDescription()) : '', required)
+
+            .form-group
+              label Page title
+              input.form-control(type='text', name='page_title', value=item ? t(item.getPageTitle()) : '', required)
+
+            .form-group
+              label Page subtitle
+              input.form-control(type='text', name='page_subtitle', value=item ? t(item.getPageSubtitle()) : '', required)
+
+            .form-group
+              label Seo title
+              input.form-control(type='text', name='seo_title', value=item ? t(item.getSeoTitle()) : '', required)
+
+            .form-group
+              label Seo content
+              textarea.form-control(name='seo_content', value='', required)= item ? t(item.getSeoContent()) : ''
+
+          .card-footer
+            button.btn.btn-fill.btn-primary(type='submit')= item ? 'Save' : 'Add'

@@ -1,0 +1,44 @@
+extends layout/main
+
+include components/top
+include components/converter
+include components/transactions-list
+include components/transactions-item
+
+include components/section
+include components/advantage
+include components/partners
+include components/how
+include mixins/reviews-section
+
+block meta
+  - title = t('HOME__META__TITLE', false, {'{pairs_count}': count, '%d':currenciesCount })
+  - keywords = t('HOME__META__KEYWORDS')
+  - description = t('HOME__META__DESCRIPTION')
+
+block content
+  +top(
+    t('HOME__PAGE__TITLE', false, {
+      '{pairs_count}': '<mark>'+count+'</mark>',
+      '%d': '<mark>'+currenciesCount+'</mark>',
+    }),
+    t('HOME__PAGE__SUBTITLE')
+  )(class='first')
+    form(autocomplete="off")
+      div#converter
+      +converter(true)(data-type='first')
+    +transactions-list
+      each order, index in orders
+        +transactions-item(order.payin_currency, order.payout_currency, order.payInAmount(), order.getSaved(), index+1)
+  div#scroll
+    include sections/advantage
+
+    include sections/partners
+
+    include sections/how-it-works
+
+    +section.bg-primary.first#second-converter
+      form.cutted
+        +converter(true,false,false,true)(data-type='first')
+
+    include sections/seo

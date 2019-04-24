@@ -1,0 +1,8 @@
+mixin rounded-textarea(label)
+  - id = attributes.id || attributes.name;
+  - label = label || false;
+  - icon = icon || false;
+  .rounded-field(class=attributes.class)
+      textarea(id=id)&attributes(attributes)
+      if label
+        label.float-label(for=id)= label

@@ -1,0 +1,10 @@
+include container
+mixin top(title, subtitle)
+  .top.bg-primary&attributes(attributes)
+    +container
+      if title
+        h1.top-title !{title}
+      if subtitle
+        div.top-subtitle !{subtitle}
+      if block
+        block

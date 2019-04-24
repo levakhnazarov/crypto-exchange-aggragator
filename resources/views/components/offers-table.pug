@@ -1,0 +1,19 @@
+mixin offers-table(title, head)
+  - cols = head ? 4 : 3;
+  - head = head || false;
+  table.offers-table&attributes(attributes)
+    thead
+      tr
+        th(colspan=cols)= title
+      if head
+        tr
+          th= t('OFFERS__TABLE__YOU__GET')
+          th= t('OFFERS__TABLE__YOU__SAVE')
+          th= t('OFFERS__TABLE__SERVICE')
+          th
+    tbody
+      if block
+        block
+      else
+        tr
+          th(colspan=cols)= t('OFFERS__TABLE__NOT__FOUND')

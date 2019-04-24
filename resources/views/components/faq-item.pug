@@ -1,0 +1,7 @@
+mixin faq-item(question, qTag)
+  - qTag = qTag || 'h3'
+  .faq-item
+    #{qTag}.faq-question= question
+    .faq-answer
+      if block
+        block

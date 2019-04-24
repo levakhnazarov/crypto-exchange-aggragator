@@ -1,0 +1,5 @@
+mixin container(inner)
+  - inner = typeof inner != "undefined" ? inner : true;
+  .container(class=inner ? 'inner' : '')&attributes(attributes)
+    if block
+      block

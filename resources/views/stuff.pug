@@ -1,0 +1,354 @@
+extends layout/main
+
+//- include mixins/top
+//- include mixins/steps
+
+//- include mixins/currency-amount
+//- include mixins/currency-img
+//- include mixins/recent-transactions
+
+
+include components/container
+include components/svg-icon
+include components/button
+include components/steps
+include components/label
+include components/circle-checkbox
+include components/qa
+include components/currency-icon
+include components/currency-amount
+include components/amount-helper
+include components/underlined-field
+include components/rounded-field
+include components/rounded-textarea
+include components/wallet
+include components/exchange-process
+include components/offers-table
+include components/offers-row
+include components/top
+include components/converter
+include components/transactions-list
+include components/transactions-item
+include components/currencies-table
+include components/currencies-row
+include components/preloader
+include components/dialog
+include mixins/dialog-script
+include mixins/dialog-email
+include mixins/dialog-qrcode
+
+block content
+  +top('Stuff', 'UI elements and usage examples')
+
+
+
+  +container
+    h2 Svg icons (sprite)
+    p
+      +svg-icon('angle-double-right')
+      +svg-icon('arrow-circle-right')
+      +svg-icon('arrow-right')
+      +svg-icon('check')
+      +svg-icon('chevron-down')
+      +svg-icon('done')
+      //- +svg-icon('dot-circle')
+      +svg-icon('envelope')
+      +svg-icon('exchange')
+      +svg-icon('exchange-arrow-right')
+      +svg-icon('facebook')
+      +svg-icon('facebook-square')
+      +svg-icon('help')
+      +svg-icon('medium-square')
+      +svg-icon('paste')
+      +svg-icon('reddit-square')
+      +svg-icon('search')
+      +svg-icon('slider-arrow')
+      //- +svg-icon('sort')
+      +svg-icon('sort-down')
+      +svg-icon('sort-up')
+      +svg-icon('spinner')
+      +svg-icon('twitter')
+      +svg-icon('twitter-square')
+      +svg-icon('times')
+      +svg-icon('bars')
+      +svg-icon('clear')
+      +svg-icon('chevron-right')
+      +svg-icon('qrcode')
+
+  br
+  hr
+
+  +container
+    h2 Buttons
+    
+    h3 Outline (default)
+    p
+      +button('button') Primary
+      +button('button', 'secondary') Secondary
+
+    h3 Fill (custom)
+    p
+      +button('button', 'fill') Primary
+      +button('button', 'secondary', 'fill') Secondary
+      //- +button('button', 'secondary', 'fill', 'gradient') Gradient
+
+    h3 Elements
+    p
+      +button('button')(type='button') Button
+      +button('a')(href='#awesome') Link
+
+    h3 Responsive icon (resize window and see result)
+    p
+      +button('a')(href='#awesome').responsive
+        span Exchange
+        +svg-icon('chevron-right')
+      +button('a')(href='#awesome').responsive
+        span Send
+        +svg-icon('arrow-right')
+
+
+  br
+  hr
+
+  +container
+    h2 Steps
+    
+    div
+      h3 Step 1
+      div(style='background: white;')
+        +steps(1)
+
+      h3 Step 2
+      div(style='background: white;')
+        +steps(2)
+
+      h3 Step 3
+      div(style='background: white;')
+        +steps(3)
+
+      h3 Step final
+      div(style='background: white;')
+        +steps(4)
+  br
+  hr
+  +container
+    h2 Label
+    p
+      +label Best rate offer
+
+  br
+  hr
+  +container
+    h2 Circle checkbox
+
+    h3 Default
+    p
+      +circle-checkbox(name='awesome', checked=true)
+
+    h3 With label
+    p
+      +circle-checkbox(checked=true) I agree with the 
+        a(href='#terms') Terms Of Use
+  
+  br
+  hr
+  +container
+    h2 QA (FAQ)
+    +qa('What is Smartjex?') Smartjex is a cryptocurrency exchange providing the best exchange rate on transactions by aggregating all leading exchanges and comparing their rates in real time. We support over 250 cryptocurrencies and more than 
+      strong 7000 
+      | pairs for exchange.
+    +qa('Why should I trust you?', 'h3') Smartjex is built on the most trusted exchanges in the world. We provide a seamless experience by integrating with reliable and secure exchanges and helping our customers get the best rates while ensuring their security.
+    +qa('Can the rates change during the transaction?') Unlike ordinary money, cryptocurrencies are highly volatile, so the rate may fluctuate. It may happen that the exchange rate which you see before the transaction is different (high or low) after transaction gets completed. In that case, the exchanged quantity which you receive may differ from what you see during the comparison.
+  
+
+  br
+  hr
+  +container
+    h2 Currency icons (260+ svg)
+    p
+      each currency in ['btc', 'eth', 'xrp', 'bch', 'ltc', 'ada', 'xlm', 'neo', 'xem', 'eos', 'dash', 'xmr']
+        +currency-icon(currency)(width=48, height=48)
+        | 
+
+  br
+  hr
+  +container
+    h2 Currency amount
+
+    div(style='max-width: 550px;')
+      h3 Basic
+      div
+        +currency-amount('You send', 'amount', 0.04, 'currency', 'btc')
+
+      h3 Ticker len 4
+      div
+        +currency-amount('You get', 'amount_len4', 0.03, 'currency_len4', 'bcpt')
+
+      h3 Ticker len 5
+      div
+        +currency-amount('You get', 'amount_len5', 0.02, 'currency_len5', 'steem')
+
+      h3 Error (invalid: min 0.02)
+      div
+        +currency-amount('You get', 'amount_invalid', 0.01, 'currency_invalid', 'dash')
+
+      h3 Disabled (currency only)
+      div
+        +currency-amount('You get', 'amount_disabled_currency', 0.02, 'currency_disabled_currency', 'btc')(disabled=-1)
+
+      h3 Disabled (amount + currency)
+      div
+        +currency-amount('You get', 'amount_disabled_all', 0.02, 'currency_disabled_all', 'btc')(disabled=true)
+
+      h3 With helper
+      div
+        +currency-amount('You send', 'amount', 0.04, 'currency', 'btc')
+        +amount-helper
+
+  br
+  hr
+  +container
+    h2 Underlined field
+    div(style='max-width: 350px;')
+      h3 Basic
+      +underlined-field('Underlined field')(type='text', id='underlined-field-basic', name='underlined_field_basic', required)
+
+      h3 Filled
+      +underlined-field('Filled label')(type='text', id='underlined-field-filled', name='underlined_field_filled', required, value='filled')
+
+      h3 Invalid
+      +underlined-field('Invalid')(type='text', id='underlined-field-invalid', name='underlined_field_invalid', required, value='invalid value', class='invalid')
+
+      h3 With helper tooltip
+      +underlined-field('Underlined field with helper')(type='text', id='underlined-field-helper', name='underlined_field_helper', required) If something goes wrong, we will send your BTC back to this address
+
+  br
+  hr
+  +container
+    h2 Rounded field
+
+    div(style='max-width: 350px;')
+
+      h3 Basic
+      +rounded-field('Basic')(type='text', name='rounded_field_basic', required)
+      
+      h3 Filled
+      +rounded-field('Filled')(type='text', name='rounded_field_filled', required, value='filled')
+
+      h3 Invalid
+      +rounded-field('Invalid')(type='text', name='rounded_field_invalid', required, value='invalid value', class='invalid')
+
+      h3 With icon
+      +rounded-field(false, 'search')(type='text', name='rounded_field_search', required, placeholder='Enter search query...')
+      br
+      +rounded-field(false, 'envelope')(type='email', name='rounded_field_envelope', required, placeholder='Enter email', class='invalid')
+
+      h3 Textarea
+      +rounded-textarea('Enter info about you...')(name='rounded_field_about', required)
+  
+  br
+  hr
+  +container
+    h2 Wallet
+    div(style='max-width: 350px;')
+      +wallet
+      br
+      +wallet('Send', 'eth', 3.23212)
+      br
+      +wallet('Get', 'ltc', 12.43543345, '1FfmbHfnpaZjKFvyi1okTjJJusN455paPH1FfmbHfnpaZjKFvyi1okTjJJusN455paPH')
+  
+  br
+  hr
+  +container
+    h2 Exchange states
+    input(type='number', min=0, step=0.5, max=3, value=0, 
+      onchange='document.querySelector("#steps").dataset.step = this.value'
+    )
+    +exchange-process(id='steps', data-step=0)
+   
+  br
+  hr
+  +container
+    h2 Offers table
+    +offers-table('Other offers', true)
+      +offers-row('0.238138 ETH', '21% (~20$)', 'evercoin')
+      +offers-row('0.283138 ETH', '15% (~14$)', 'cryptopia')
+      +offers-row('0.283138 ETH', '15% (~14$)', 'shapeshift')
+    br
+    br
+    +offers-table('Needs limit adjust', false)
+      +offers-row('min. 0.002 BTC (0.03 ETH)', false, 'evercoin', 'Set & Exchange', 'secondary')
+      +offers-row('min. 0.002 BTC (0.03 ETH)', false, 'cryptopia', 'Set & Exchange', 'secondary')
+
+  br
+  hr
+  +container
+    h2 Exchange form
+    form
+      +converter
+  br
+  hr
+  +container
+    h2 Page top
+  +container
+    h3 Home page first screen
+  +top(
+    'Convert <mark>7000</mark> cryptocurrencies at their best rates. Here & now.', 
+    'Smartjex examines 260 exchanges, provides the best offers, regarding amount, fees and speed, and allows to anonimously transact right from your wallet.'
+  )(class='first')
+    form
+      +converter(true, '_first')
+    +transactions-list
+      +transactions-item('btc', 'eth', 0.0003, 12)
+      +transactions-item('icx', 'ven', 0.0122142, 23)
+      +transactions-item('btc', 'steem', 0.002, 17)
+      +transactions-item('eth', 'gas', 0.012142, 9)
+      +transactions-item('gas', 'xrp', 0.0122142, 23)
+    button(type='button', onclick="document.querySelector('.transactions ul').prepend(document.querySelector('.transactions ul li:first-child').cloneNode(true))") add transactions
+
+  +container
+    h3 Default page top
+  +top(
+    'About Us', 
+    'About the service'
+  )
+
+
+  +container
+    h3 With rounded field
+  +top(
+    'Supported currency', 
+    'We are now supporting over 250 cryptocurrencies to trade across all major exchanges'
+  )
+    form
+      +rounded-field(false, 'search')(type='text', name='coins_search', required, placeholder='Search currencies', autocomplete='off', class='in-top')
+  
+  br
+  hr
+  +container
+    h2 Currencies table
+    +currencies-table
+      - for(let i = 1; i <= 5; i++)
+        +currencies-row('BTC', 'Bitcoin', 11001, 2.7, 330, 4.5, 1330, -0.5, 550)
+        +currencies-row('LTC', 'Litecoin', 11001, -1000, 330, 4.5, 1330, 0.5, 550)
+        +currencies-row('ETH', 'Ethereum', 11001, 2.7, 330, 4.5, 1330, -0.5, 550)
+    div
+      +preloader
+
+
+  +container
+    h2 Dialog
+    +dialog-script
+    +button('button')(data-modal-target="awesome") Open dialog
+    +dialog('Awesome dialog')#awesome
+      div This amazing
+      div So beautiful
+      div I like that
+
+    +button('button')(data-modal-target="email") Email
+    +dialog-email#email
+
+    +button('button')(data-modal-target="qrcode") QR code
+    +dialog-qrcode#qrcode
+
+      

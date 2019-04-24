@@ -1,0 +1,8 @@
+include ../components/dialog
+include ../components/button
+include ../components/rounded-field
+include ../components/svg-icon
+mixin dialog-qrcode
+  +dialog('QR code')&attributes(attributes)
+    div.text-center
+      img(src='/qr-code.svg', style='max-width:100%;max-height: 70vh;')

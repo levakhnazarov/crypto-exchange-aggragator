@@ -1,0 +1,350 @@
+// .exchange-states
+//   color red
+$dasharray = 290px
+$icon-size = 6rem
+$duration = 30
+
+$receptionSelector = "[data-process='reception']"
+$exchangingSelector = "[data-process='exchanging']"
+$sendingSelector = "[data-process='sending']"
+
+$statusNextSelector = "[data-status='0']"
+$statusCurrentSelector = "[data-status='1']"
+$statusDoneSelector = "[data-status='2']"
+$statusErrorSelector = "[data-status='-1']"
+
+$responsive-min-size = $screen-size-xs
+
+.exchange-process
+  display flex
+  justify-content space-between
+  > div
+    // display block
+    width 9rem
+    display flex
+    justify-content space-eventy
+    // justify-content center
+    align-items center
+    width 100%
+    display none
+    @media (min-width $responsive-min-size)
+      display block
+      width 8.5rem
+      // width 25%
+    > i
+      
+      // display block
+      // margin 0 auto
+      width $icon-size
+      height $icon-size
+      border-radius 100%
+      position relative
+      box-sizing border-box
+      border-width .1875rem
+      border-style solid
+      border-color #ddd
+      display flex
+      align-items center
+      justify-content center
+      transform scale(0.65)
+      flex 0 0 $icon-size
+      margin-left -15px
+      @media (min-width $responsive-min-size)
+        // display block
+        transform none
+        margin 0 auto
+      // margin-left -2rem
+      > svg
+        position absolute
+        top -(@border-width)
+        left -(@border-width)
+        width $icon-size
+        height $icon-size
+        > use
+          fill $primary-color
+          opacity 0
+          transform translate(30px, 30px)
+          transform scale(-1, -1)
+          transition all 0.5s linear
+    > div
+      display none
+      font-size 0.875rem
+      font-weight 300
+      line-height 1.5
+      // margin-top 15px
+      margin-left 5px
+      text-align left
+      @media (min-width $responsive-min-size)
+        margin-left 0
+        margin-top 15px
+        text-align center
+      &{$statusNextSelector}
+        color #999
+        a
+          color inherit
+          text-decoration none
+      &{$statusCurrentSelector}, &{$statusDoneSelector}
+        color #000
+      > p
+        padding 0
+        margin 0
+        display inline-block
+        @media (min-width $responsive-min-size)
+          display block
+        // display block
+  
+  &[data-step="1"] > {$receptionSelector},
+  &[data-step="1.5"] > {$receptionSelector},
+  &[data-step="2"] > {$receptionSelector},
+  &[data-step="2.5"] > {$receptionSelector},
+  &[data-step="3"] > {$receptionSelector},
+
+  &[data-step="2"] > {$exchangingSelector},
+  &[data-step="2.5"] > {$exchangingSelector},
+  &[data-step="3"] > {$exchangingSelector},
+
+  &[data-step="3"] > {$sendingSelector}
+    > i
+      border-color #11ca1e
+      > svg
+        > use#done
+          fill @border-color
+          opacity 1
+          transform translate(30px, 30px) scale(1, 1)
+  
+  &[data-step="0.5"] > {$receptionSelector},
+  &[data-step="1.5"] > {$exchangingSelector},
+  &[data-step="2.5"] > {$sendingSelector}
+    > i
+      border-color $error-color
+      > svg
+        > use#error
+          fill @border-color
+          opacity 1
+          transform translate(30px, 30px) scale(1, 1)
+  //
+  // Reception
+  //
+  > {$receptionSelector}
+    > i
+      // border-color red
+      &:before
+        content '28'
+        font-size 2rem
+        font-style normal
+        color $primary-color
+        font-weight 400
+        display block
+        vertical-align middle
+        text-align center
+        animation countdownLabel unit($duration, 's') linear infinite forwards
+      > svg
+        // transform rotateY(-180deg) rotateZ(-90deg)
+        > circle
+          stroke-dasharray $dasharray
+          stroke-dashoffset 0
+          stroke-linecap round
+          stroke-width 3.2
+          stroke $primary-color
+          fill transparent
+          animation countdown unit($duration, 's') linear infinite forwards
+          opacity 1
+          transition all 0.5s linear
+          
+  &[data-step="0"] > {$receptionSelector},
+  &[data-step="0.5"] > {$receptionSelector}
+    display flex
+    @media (min-width $responsive-min-size)
+      display block
+    
+  &[data-step="1"] > {$receptionSelector},
+  &[data-step="1.5"] > {$receptionSelector},
+  &[data-step="2"] > {$receptionSelector},
+  &[data-step="2.5"] > {$receptionSelector},
+  &[data-step="3"] > {$receptionSelector}
+    > i
+      border-color #11ca1e
+      &:before
+        display none
+      > svg
+        > circle
+          opacity 1
+          animation none
+          stroke @border-color
+          stroke-dashoffset 0
+  &[data-step="0.5"] > {$receptionSelector}
+    > i
+        border-color $error-color
+        &:before
+          display none
+        > svg
+          > circle
+            opacity 1
+            animation none
+            stroke @border-color
+            stroke-dashoffset 0
+
+  &[data-step="0.5"] > {$receptionSelector} > {$statusErrorSelector},
+  &[data-step="0"] > {$receptionSelector} > {$statusCurrentSelector},
+  &[data-step="1"] > {$receptionSelector} > {$statusDoneSelector},
+  &[data-step="1.5"] > {$receptionSelector} > {$statusDoneSelector},
+  &[data-step="2"] > {$receptionSelector} > {$statusDoneSelector},
+  &[data-step="2.5"] > {$receptionSelector} > {$statusDoneSelector},
+  &[data-step="3"] > {$receptionSelector} > {$statusDoneSelector}
+    display block
+  
+
+  //
+  // Exchanging
+  //
+  > {$exchangingSelector}
+    > i
+      > svg
+        // transform rotateY(-180deg) rotateZ(-90deg)
+        > circle
+          stroke-dasharray 28px
+          stroke-dashoffset 0
+          stroke-linecap round
+          stroke-width 3.2
+          
+          stroke #ddd
+          fill transparent
+          transform rotate(0)
+          transform-origin  50% 50%
+          opacity 1
+          // transition all 0.5s linear
+          // transition all 0.5s linear
+
+  &[data-step="1"]
+    > {$exchangingSelector}
+      > i
+        border-color $primary-color
+        > svg
+          > circle
+            animation spin 1.5s linear infinite forwards
+            stroke $primary-color
+            // transition all 0.5s linear
+              
+  &[data-step="1"] > {$exchangingSelector},
+  &[data-step="1.5"] > {$exchangingSelector}
+    display flex
+    @media (min-width $responsive-min-size)
+      display block       
+
+  &[data-step="1.5"] > {$exchangingSelector}
+    > i
+      border-color $error-color
+      > svg
+          // transform rotateY(-180deg) rotateZ(-90deg)
+          > circle
+            opacity 0
+            animation spin 1.5s linear infinite forwards
+            transition all 0.5s linear
+  &[data-step="2"] > {$exchangingSelector},
+  &[data-step="2.5"] > {$exchangingSelector},
+  &[data-step="3"] > {$exchangingSelector}
+      > i
+        > svg
+          // transform rotateY(-180deg) rotateZ(-90deg)
+          > circle
+            opacity 0
+            animation spin 1.5s linear infinite forwards
+            transition all 0.5s linear
+            
+  &[data-step="0.5"] > {$exchangingSelector} > {$statusNextSelector},
+  &[data-step="0"] > {$exchangingSelector} > {$statusNextSelector},
+  &[data-step="1"] > {$exchangingSelector} > {$statusCurrentSelector},
+  &[data-step="1.5"] > {$exchangingSelector} > {$statusErrorSelector},
+  &[data-step="2"] > {$exchangingSelector} > {$statusDoneSelector},
+  &[data-step="2.5"] > {$exchangingSelector} > {$statusDoneSelector},
+  &[data-step="3"] > {$exchangingSelector} > {$statusDoneSelector}
+    display block
+    
+
+  //
+  // Sending
+  //
+  > {$sendingSelector}
+    > i
+      > svg
+        // transform rotateY(-180deg) rotateZ(-90deg)
+        > g
+          > circle
+            fill #ddd
+            opacity 1
+            transition all 0.5s linear
+  &[data-step="2"] > {$sendingSelector}
+      > i
+        border-color $primary-color
+        > svg
+          > g
+            > circle
+              fill $primary-color
+              transform scale(1, 1)
+            &:nth-child(1)
+              > circle
+                animation scale 1.5s ease-in-out infinite forwards
+                animation-delay 0
+            &:nth-child(2)
+              > circle
+                animation scale 1.5s ease-in-out infinite forwards
+                animation-delay .15s
+            &:nth-child(3)
+              > circle
+                animation scale 1.5s ease-in-out infinite forwards
+                animation-delay .25s
+  
+  &[data-step="2"] > {$sendingSelector},
+  &[data-step="2.5"] > {$sendingSelector},
+  &[data-step="3"] > {$sendingSelector}
+    display flex
+    @media (min-width $responsive-min-size)
+      display block                
+
+  &[data-step="3"] > {$sendingSelector}
+      > i
+        > svg
+          > g
+            > circle
+              opacity 0
+  &[data-step="2.5"] > {$sendingSelector}
+    > i
+      border-color $error-color
+      > svg
+        > g
+          > circle
+            opacity 0
+  &[data-step="0.5"] > {$sendingSelector} > {$statusNextSelector},
+  &[data-step="0"] > {$sendingSelector} > {$statusNextSelector},
+  &[data-step="1"] > {$sendingSelector} > {$statusNextSelector},
+  &[data-step="1.5"] > {$sendingSelector} > {$statusNextSelector},
+  &[data-step="2"] > {$sendingSelector} > {$statusCurrentSelector},
+  &[data-step="2.5"] > {$sendingSelector} > {$statusErrorSelector},
+  &[data-step="3"] > {$sendingSelector} > {$statusDoneSelector}
+    display block
+    
+//
+// Animations
+// 
+@keyframes countdown
+  from
+    stroke-dashoffset 0px
+  to
+    stroke-dashoffset $dasharray
+    
+@keyframes countdownLabel
+  for sec in 0..$duration
+    {sec * 100% / $duration}
+      content "" + ($duration - sec)
+      
+@keyframes spin
+  100%
+    transform rotate(360deg)
+    
+@keyframes scale
+  0%
+    transform scale(0.1, 0.1)
+  50%
+    transform scale(1, 1)
+  100%
+    transform scale(0.1, 0.1)

@@ -1,0 +1,59 @@
+$margins-lg = 2.375rem
+// $margins-md = 45px
+$margins = $container-padding
+$responsive-min-size = $screen-size-md
+$overtop = 6.25rem
+.offers
+  padding-top $container-padding
+  &-first
+    padding-bottom 0
+    @media (min-width $responsive-min-size)
+      padding-bottom $overtop
+  &-converter
+    margin-bottom 0
+    .converter-more
+      display none
+  &-paper
+    margin-left -($margins)
+    margin-right -($margins)
+    @media (min-width $responsive-min-size)
+      padding-top ($margins-lg / 2.5)
+      margin-top ($overtop * -.85)
+  &-main
+    .offers-table thead tr:first-child th
+      font-size 1rem
+      font-weight 700
+      line-height 1.5
+      padding-bottom $container-padding
+      @media (min-width $responsive-min-size)
+        font-size 1.25rem
+        font-weight 400
+      
+  &-result
+    
+    padding-bottom 50px
+    &:last-child
+      padding-bottom 0
+      @media (min-width $responsive-min-size)
+        padding-bottom 50px
+    .offers-table
+      tr
+        padding 0 $margins
+      
+      @media (min-width $screen-size-xs)
+        td:first-child, th:first-child
+          padding-left $margins !important
+        td:last-child, th:last-child
+          padding-right $margins !important
+          
+      // @media (min-width $screen-size-sm)
+      //   td:first-child, th:first-child
+      //     padding-left $margins-md !important
+      //   td:last-child, th:last-child
+      //     padding-right $margins-md !important
+
+      @media (min-width $screen-size-md)
+        td:first-child, th:first-child
+          padding-left $margins-lg !important
+        td:last-child, th:last-child
+          padding-right $margins-lg !important

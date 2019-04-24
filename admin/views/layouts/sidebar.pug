@@ -1,0 +1,58 @@
+.sidebar(data-color='blue')
+  .logo
+    a.simple-text.logo-normal.text-center(href='/') Smartjex admin
+  .sidebar-wrapper
+    ul.nav
+
+      li
+        a(href='/')
+          i.now-ui-icons.design_app
+          p Dashboard
+
+      li
+        a(href='/langs')
+          i.now-ui-icons.objects_globe
+          p Languages
+    
+      li
+        a(href='/reviews')
+          i.now-ui-icons.ui-2_like
+          p Reviews
+
+      li
+        a(href='/faq')
+          i.now-ui-icons.design_bullet-list-67
+          p FAQ
+
+      li
+        a(href='/pairs')
+          i.now-ui-icons.arrows-1_refresh-69
+          p Exchange pairs
+
+      li
+        a(data-toggle='collapse', href='#componentsExamples', aria-expanded='false')
+          i.now-ui-icons.education_atom
+          p Pages meta
+            b.caret
+        #componentsExamples.collapse(style='')
+          ul.nav
+            li
+              a(href='/meta/home')
+                span.sidebar-mini-icon H
+                span.sidebar-normal Home
+            li
+              a(href='/meta/about')
+                span.sidebar-mini-icon A
+                span.sidebar-normal About us
+            li
+              a(href='/meta/privacy')
+                span.sidebar-mini-icon P
+                span.sidebar-normal Privacy 
+            li
+              a(href='/meta/currencies')
+                span.sidebar-mini-icon C
+                span.sidebar-normal Currencis 
+            li
+              a(href='/meta/faq')
+                span.sidebar-mini-icon F
+                span.sidebar-normal FAQ

@@ -1,0 +1,14 @@
+$margins = 1rem
+$margins-bottom = ($margins * 2)
+
+.partners
+  display flex
+  justify-content center
+  flex-flow wrap
+  margin-bottom -($margins-bottom)
+  &-item
+    margin 0 $margins $margins-bottom $margins
+    text-align center
+    flex-basis 20%
+    // img
+    //   max-width 100%

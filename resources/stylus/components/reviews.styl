@@ -1,0 +1,207 @@
+$responsive-min-size = $screen-size-md
+$item-margin-bottom = 4rem
+.reviews
+  color #252525
+  
+  &-slide
+    position relative
+    
+   
+    @media (min-width $screen-size-xs)  
+      margin-bottom ($item-margin-bottom * -1)
+    // padding 0 4rem
+    &-left, &-right
+      
+      position absolute
+      top 0
+      z-index 1
+      cursor pointer
+      margin-bottom $item-margin-bottom
+      bottom 0
+      
+      
+      
+      align-items center
+      display none
+      @media (min-width $screen-size-xs)
+        display flex  
+      svg
+        display block
+        margin auto 0
+        // vertical-align middle
+        fill #ddd
+        font-size 4rem
+      &:hover
+        svg
+          fill $primary-color
+    &-left
+      left ($item-margin-bottom * -.1)
+      transform scale(-1, 1)
+      @media (min-width $screen-size-lg)
+        left ($item-margin-bottom * -1.4)
+    &-right
+      right ($item-margin-bottom * -.2)
+      @media (min-width $screen-size-lg)
+        right ($item-margin-bottom * -1.4)
+      // display none
+        
+  // &-mobile
+  //   @media (min-width $responsive-min-size)
+  //     display none
+  // &-desktop
+  //   display none
+  //   @media (min-width $responsive-min-size)
+  //     display block
+  &-visible-on-mobile
+    height 0
+    width 0
+    opacity 0
+    @media (min-width $responsive-min-size)
+      display none
+  &-group
+    padding 0 $item-margin-bottom
+    justify-content space-evenly
+    @media (min-width $screen-size-lg)
+      padding 0
+      justify-content space-between
+      > div
+        flex-basis 47%
+    display flex
+    
+    flex-wrap wrap
+    > div
+      flex-basis 45%
+      
+  // &-list
+  //   &-mobile
+  //     @media (min-width $responsive-min-size)
+  //       display none
+  //   &-desktop
+  //     display none
+  //     @media (min-width $responsive-min-size)
+  //       display block
+  //     &-item
+  //       margin-bottom 20px
+  //       display flex
+  //       justify-content space-between
+  //       flex-wrap wrap
+  //       > div
+  //         flex-basis 45%
+  //         margin-bottom 4rem
+      
+  &-pagination
+    $icon-size = 1.125rem
+    ul
+      @extend .reset-list
+      user-select none
+      position relative
+      z-index 1
+      padding-top ($item-margin-bottom / 1.5)
+      // padding-top ($item-margin-bottom / 2)
+      // @media (min-width $screen-size-xs)
+      //   padding-top ($item-margin-bottom * 1.5)
+      //  @media (min-width $screen-size-sm)
+      //   padding-top ($item-margin-bottom * 2)
+      text-align center
+      li
+        display inline-block
+        vertical-align top
+        margin 0 .3125rem
+      a
+        font-size $icon-size
+        align-items center
+        background transparent
+        border unit(2px / 18px, em) solid #dadada
+        border-radius 50%
+        box-sizing border-box
+        display flex
+        height 1em
+        // text-align right
+        justify-content center
+        // margin-bottom .625rem
+        position relative
+        width 1em
+        z-index 2
+      li.cur a//, li a:hover
+        border-color $primary-color
+      li.cur a, li a:hover
+        &:before
+          $circle-dot-size = unit(8px / 18px, em)
+          content ''
+          display inline-block
+          background $primary-color
+          width $circle-dot-size
+          height $circle-dot-size
+          border-radius 50%
+
+  // item
+  &-item
+    // margin-bottom $item-margin-bottom
+    padding 0 ($item-margin-bottom * .5) 
+    @media (min-width $screen-size-xs)
+      padding 0 ($item-margin-bottom * 1.5)
+      margin-bottom $item-margin-bottom 
+    @media (min-width $responsive-min-size)
+      padding 0
+    &-top
+      display flex
+      justify-content space-between
+      margin-bottom .75rem
+  &-author
+    font-size 1.25rem
+    font-weight 700
+  &-from
+    
+    &-btn
+      box-sizing border-box
+      font-size .75rem
+      font-weight 700
+      display inline-block
+      border .125rem solid #6a6a6a
+      border-radius 2em
+      min-width 2.625rem
+      text-align center
+      line-height 1.4
+      padding .1875rem .5rem
+      color #6a6a6a
+      text-decoration none
+      text-transform capitalize
+      svg
+        vertical-align middle
+        font-size 1rem
+        margin-top -1px
+        fill @color
+        
+      &:hover
+        background-color @color
+        color #fff
+        svg
+          fill @color
+        
+        
+    &-twitter
+      color #1da1f2
+      border-color @color
+      svg
+        fill @color
+      &:hover
+        background-color @color
+    &-facebook
+      color #3b5998
+      border-color @color
+      svg
+        fill @color
+      &:hover
+        background-color @color
+      
+  &-comment
+    font-size .875rem
+    font-weight 300
+    font-style italic
+    line-height 1.6
+    margin-bottom .75rem
+  &-dt
+    font-size .75rem
+    font-weight 300
+    font-style italic
+    color #666

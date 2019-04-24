@@ -1,0 +1,10 @@
+include currency-icon
+mixin wallet(label, currency, amount, address)
+  - currency = currency || 'btc'
+  - address = address || '1FfmbHfnpaZjKFvyi1okTjJJusN455paPH'
+  - amount = amount || 0.05
+  .wallet
+    i
+      +currency-icon(currency)(width=26, height=26)
+    strong #{label} #{amount} #{currency.toUpperCase()}
+    span(title=address)= address

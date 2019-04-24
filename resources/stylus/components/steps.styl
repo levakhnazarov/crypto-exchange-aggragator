@@ -1,0 +1,97 @@
+$font-size = .75rem
+$icon-size = 1.125rem
+
+ul.steps
+  overflow hidden
+  padding 0
+  margin 0
+  list-style-type none
+  display flex
+  font-size $font-size
+  font-weight 300
+  justify-content space-between
+  position relative
+  background inherit
+  &:before
+    border-bottom 1px dotted #999999
+    content ''
+    display block
+    left 0
+    position absolute
+    right 0
+    top ($icon-size / 2) 
+    z-index 1
+  
+  li
+    color #757575
+    position relative
+    background inherit
+    display inline-block
+    display flex
+    flex-direction column
+    // justify-content center
+    align-items center
+    &:before, &:after
+      content ''
+      display block
+      position absolute
+      top 0
+      width $icon-size + $icon-size
+      height $icon-size
+      background inherit
+      z-index 1
+    &:first-child
+      &:after
+        left 0
+        width 50%
+    &:last-child
+      &:after
+        right -1px // [bugfix] one dot
+        width 50%
+        
+  a
+    text-decoration none
+    
+  // icon
+  i
+    font-size $icon-size
+    align-items center
+    background transparent
+    border unit(2px / 18px, em) solid #dadada
+    border-radius 50%
+    box-sizing border-box
+    display flex
+    height 1em
+    // text-align right
+    justify-content center
+    margin-bottom .625rem
+    position relative
+    width 1em
+    z-index 2
+    svg
+      display none
+      font-size unit(10px / 18px, em)
+      // font-size .625rem
+      vertical-align middle
+      fill transparent
+  
+  .cur, .prev
+    color #000
+
+  .cur > i
+    border-color $primary-color
+    &:before
+      $circle-dot-size = unit(8px / 18px, em)
+      content ''
+      display inline-block
+      background $primary-color
+      width $circle-dot-size
+      height $circle-dot-size
+      border-radius 50%
+  .prev > i
+    background-color $primary-color
+    border-color $primary-color
+    svg
+      display inline-block
+      // margin 0 0 0 1px
+      fill #fff   

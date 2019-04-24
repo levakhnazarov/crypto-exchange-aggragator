@@ -1,0 +1,5 @@
+mixin currency-icon(currency)
+  svg(class='svg svg-' + currency,
+  width= attributes.width ? attributes.width : 24
+  height= attributes.height ? attributes.height : 24)&attributes(attributes)
+    use(xlink:href="/assets/sprite.svg#" + currency)

@@ -1,0 +1,39 @@
+extends ../layout
+
+block content
+  table.table
+    thead
+      tr
+        th id
+        th From
+        th To
+        th Amount
+        th Date/Time
+        th(width=50)
+        th(width=50)
+    tbody
+      for item, index in list
+        tr
+          td= item.id
+          td= item.from
+          td= item.to
+          td= item.amount
+          td #{item.dt.toLocaleString()}
+          td= statuses[item.status]
+          td
+            - var urlPath = ['/orders', 'status', index]
+            case item.status
+              when 0
+                - urlPath.push(1)
+                a.btn.btn-primary(href=urlPath.join('/')) Accept && Exchange
+              when 1
+                - urlPath.push(2)
+                a.btn.btn-primary(href=urlPath.join('/')) Send
+              when 2
+                - urlPath.push(3)
+                a.btn.btn-primary(href=urlPath.join('/')) Done
+            
+          td
+            if item.status !== 3 && item.status !== -1
+              - var url = ['/orders', 'status', index, -1]
+              a.btn.btn-danger(href=url.join('/')) Set status Fail

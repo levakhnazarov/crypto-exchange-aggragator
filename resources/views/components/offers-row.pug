@@ -1,0 +1,14 @@
+include partner-logo
+mixin offers-row(amount, save, service, btn_label, ...btn_classes)
+  - btn_label = btn_label || 'Exсhange';
+  - btn_color = btn_color || 2;
+  tr
+    if save
+      td(data-label='You get').get= amount
+      td(data-label='You save').save= save
+    else
+      td(data-label='Adjust').adjust= amount
+    td(data-label='Service').service
+      +partner-logo(service)
+    td
+      +button('button', ...btn_classes)= btn_label

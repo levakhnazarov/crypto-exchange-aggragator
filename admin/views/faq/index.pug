@@ -1,0 +1,36 @@
+extends ../layouts/main
+
+block meta
+  - title = 'Faq'
+  - url = '/faq'
+
+block content
+  .row
+    .col-md-12
+      a.btn.btn-success(href='/faq/add') Add
+      each translateID, sectionID in sections
+        .card
+          .card-header
+            h4.card-title= t(translateID)
+          .card-body
+            //- .table-responsive
+            table.table
+              thead
+                tr
+                  th(width=300) Question
+                  th Answer
+                  th(width=200)
+              tbody
+                each qa in qas
+                  if qa.section == sectionID
+                    tr(id='item-' + qa.id)
+                      th.align-top
+                        p= t(qa.getQuestionTranslId())
+                      td.align-top!= t(qa.getAnswerTranslId(), true)
+                      td.text-right.align-top
+                        a.btn.btn-info.btn-sm(href='/faq/update/' + qa.id) Edit
+                        | &nbsp;
+                        a.btn.btn-danger.btn-sm(
+                          onclick='return confirm("Are you sure?") ? true : false;',
+                          href='/faq/delete/' + qa.id
+                        ) Delete

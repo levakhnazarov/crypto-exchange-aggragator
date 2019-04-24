@@ -1,0 +1,432 @@
+$margins-lg = 110px
+$margins-md = 55px
+$margins = 20px
+.exchange
+  
+  &-inner
+    padding 0 $margins
+    @media (min-width $screen-size-sm)
+       padding 0 $margins-md
+    @media (min-width $screen-size-md)
+       padding 0 $margins-lg
+  &-steps
+    padding 20px 30px 15px
+
+    background #f7f7f7
+    border-bottom 1px solid #dddddd
+    
+    @media (min-width $screen-size-sm)
+      padding 30px 30px 20px
+      .steps
+        max-width 550px
+        margin 0 auto
+  $details-responsive-min-size = $screen-size-sm
+  &-details
+    padding-top 25px
+    padding-bottom 30px
+    display flex
+    flex-direction column
+    justify-content center
+    min-height 150px
+    &-title
+      padding 0 1.2rem
+      margin-bottom 20px
+    &-fields
+      // padding 40px 0 0
+      padding 30px 0 0
+      display flex
+      flex-direction column
+      div.tag
+        color red
+      @media (min-width $details-responsive-min-size)
+        padding 20px 0 0
+        flex-direction row
+        justify-content space-between
+        // align-content stretch
+      // @media (min-width $screen-size-sm)
+      &-empty
+        display none
+        flex 0 0 $converter-arrows-width
+        @media (min-width $details-responsive-min-size)
+          display block
+      & > div:not(&-empty)
+        width auto
+        // max-width 295px
+        padding 0 .45rem
+        // padding 0
+        margin-bottom 2rem
+        @media (min-width $details-responsive-min-size)
+          width 100%
+          margin-bottom 0
+        &:last-child
+          margin-bottom 0
+
+    // &-converter
+    //   margin 0 -1rem
+  
+  &-by
+    color #282828
+    font-weight 700
+    font-size 1.25rem
+    
+    @media (min-width $screen-size-sm)
+      font-size 1.5rem
+      
+    img
+      margin-left 10px
+      margin-bottom -5px
+      //width 100px
+      //filter grayscale(100%) invert(100%) brightness(50%)
+        
+  &-best, &-confirmation, &-progress
+    
+    background-color #f7f7f7
+    border-style solid
+    border-color #ddd
+    border-width 1px 0
+  
+  $best-responsive-min-size = $screen-size-xs
+  &-best
+    padding 25px 0 15px
+
+    @media (min-width $screen-size-md)
+      padding 40px 0 25px
+      
+    &-row
+      display flex
+      flex-direction column
+      
+      
+      text-align center
+      
+      @media (min-width $best-responsive-min-size)
+        flex-direction row
+        justify-content space-between
+        text-align left
+        
+    &-label
+      order -1
+      margin-bottom 15px
+      @media (min-width $best-responsive-min-size)
+        order 2
+    &-service
+      margin-bottom 15px
+      
+
+    &-amount
+      color #2c2c2c
+      font-size 1.875rem
+      font-weight 500
+      margin-bottom 15px
+      @media (min-width $best-responsive-min-size)
+        margin-top 10px
+        // margin-bottom 20px
+        
+    &-save
+      color #0ec11b
+      font-weight 700
+      margin-bottom 20px
+      font-size 1rem
+      
+      @media (min-width $best-responsive-min-size)
+        font-size .875rem
+    
+    &-control
+      text-align right
+      max-width 240px
+      margin 0 auto
+      margin-bottom 20px
+        
+    &-wait
+      color #4f4f4f
+      font-size .875rem
+      font-weight 400
+  $confirmation-responsive-min-size = $screen-size-xs
+  &-confirmation
+    padding 0 1rem
+    > *
+      min-height 5rem
+      display flex
+      justify-content center
+      align-items center
+      @media (min-width $confirmation-responsive-min-size)
+        justify-content space-between
+      @media (min-width $screen-size-md)
+        min-height 7.5rem
+    // &-checkbox
+    //   text-align center
+    &-button
+      z-index 50
+      position fixed
+      bottom 0
+      left 0
+      right 0
+      @media (max-width ($confirmation-responsive-min-size - 1px))
+        .button
+          border-radius 0
+      @media (min-width $confirmation-responsive-min-size)
+        position relative
+        min-width 220px
+      
+  $summary-responsive-min-size = $screen-size-sm
+  $progress-responsive-min-size = $screen-size-xs
+  &-progress
+    // padding-top 35px
+    // padding-bottom 30px
+    position fixed
+    bottom 0
+    left 0
+    right 0
+    z-index 50
+    
+    @media (min-width $progress-responsive-min-size)
+      position initial
+      padding 25px 0 20px
+      
+    @media (min-width $screen-size-md)
+      padding 35px 0 30px
+  &-wallets
+    
+    padding-bottom 10px
+    @media (min-width $summary-responsive-min-size)
+      display flex
+      justify-content space-between
+    > div
+      margin-bottom 10px
+      @media (min-width $summary-responsive-min-size)
+        width 48%
+  &-button
+    &s
+      margin-bottom 15px
+      @media (min-width $summary-responsive-min-size)
+        display none
+    &-dotted
+      line-height 1.5
+      outline none
+      background transparent
+      border none
+      color $primary-color
+      font-size .875rem
+      cursor pointer
+      underline-dots @color
+      padding 0
+      margin 0 10px 0 0
+      // span, svg
+      //   display inline-block
+      //   vertical-align middle
+      svg
+        margin-right .42em
+        margin-bottom -.1em
+        font-size 1em
+        fill @color
+  &-order-id
+    padding 12px 0
+    @media (min-width $summary-responsive-min-size)
+      padding 0
+    > strong
+      font-weight 700
+    > svg
+      font-size .625rem
+      fill #595959
+      margin 0 .3125rem
+    > button
+      @extend .reset-button
+      display inline-block
+      vertical-align middle
+      font-size 1rem
+      > svg
+        fill $primary-color
+        font-size 1em
+  &-email-form
+    display flex
+    justify-content space-between
+    padding 15px 0
+    div:first-child
+      width 100%
+      margin-right 10px
+    div:last-child
+      .button
+        @media (min-width $summary-responsive-min-size)
+          min-width 7.5rem
+  
+  &-primary-text
+    // margin-bottom 15px
+    font-size 1em
+    color $primary-color
+    position relative
+    span
+      vertical-align middle
+      display inline-block
+      overflow hidden
+      text-overflow ellipsis
+      white-space nowrap
+      max-width 90%
+      
+    svg
+      vertical-align middle
+      font-size 1em
+      fill $primary-color
+      
+      // &:last-child
+      //   margin-left 5px
+    button
+      @extend .reset-button
+      
+  &-summary
+    padding-top 20px
+    padding-bottom 20px
+    @media (min-width $summary-responsive-min-size)
+      padding-bottom 30px
+      min-height 150px
+    &-top
+      @media (min-width $summary-responsive-min-size)
+        display flex
+        justify-content space-between
+        align-items center
+        margin-bottom 20px
+    &-title
+      margin-bottom 20px
+    &-row
+      @media (min-width $summary-responsive-min-size)
+        display flex
+        justify-content space-between
+    &-primary
+      display none
+      [data-step='0'] &[data-process='1'],
+      [data-step='0.5'] &[data-process='1'],
+      [data-step='1'] &[data-process='2'],
+      [data-step='1.5'] &[data-process='2'],
+      [data-step='2'] &[data-process='2'],
+      [data-step='2.5'] &[data-process='2'],
+      [data-step='3'] &[data-process='3']
+        display block
+    &-secondary
+      display none
+      text-align center
+      @media (min-width $summary-responsive-min-size)
+        display block
+      
+    &-qr
+      opacity 0.15 
+      [data-step='0'] &,
+      [data-step='0.5'] &
+        opacity 1
+      img
+        width 160px
+    &-title
+      &-one
+        font-size 1.125rem
+        font-weight 700
+        margin-bottom 5px
+        // margin-bottom 15px
+      &-two
+        font-size 1.75rem
+        font-weight 700
+        margin-bottom 15px
+        // margin-bottom 15px
+        span
+          underline-dots(#252525)
+        sub
+          display inline-block
+          bottom 0
+          font-size .65em
+    &-wallet
+      margin-bottom 15px
+      font-size 1.125rem
+      
+      > * 
+        > span 
+          margin-left 1.45em
+        > svg:first-child
+          position absolute
+          left 0
+          bottom 0
+      button
+        display none
+        @media (min-width $summary-responsive-min-size)
+          display inline-block
+    //   color $primary-color
+    //   position relative
+    //   span
+    //     vertical-align middle
+    //     display inline-block
+    //     overflow hidden
+    //     text-overflow ellipsis
+    //     white-space nowrap
+    //     max-width 90%
+    //     margin-left 1.25em
+    //   svg
+    //     vertical-align middle
+    //     font-size 1em
+    //     fill $primary-color
+    //   > svg:first-child
+    //       // margin-right 6px
+    //       position absolute
+    //       left 0
+    //       bottom 0
+    //     // &:last-child
+    //     //   margin-left 5px
+    //   button
+    //     padding 0
+    //     margin 0
+    //     border none
+    //     outline none
+    //     background transparent
+    //     cursor pointer
+    //     display none
+    //     @media (min-width $summary-responsive-min-size)
+    //       display inline-block
+      
+    &-text
+      font-size .875rem
+      line-height 1.5
+      // font-size 1rem
+      p
+        padding 0
+        margin 0
+      strong, b
+        font-weight 700
+
+    // &-more .button
+    //   font-weight 300
+      
+  &-qa
+    padding 20px 0
+    @media (min-width $screen-size-sm)
+      padding 40px 0
+    &-title
+      font-size 1.875rem
+      font-weight 700
+      margin 0 0 20px 0
+      padding 0
+
+  &-offers
+    &-table
+      padding 40px 0 0 0
+      .offers-table
+        tr
+          padding 0 $margins
+        
+        @media (min-width $screen-size-xs)
+          td:first-child, th:first-child
+            padding-left $margins !important
+          td:last-child, th:last-child
+            padding-right $margins !important
+            
+        @media (min-width $screen-size-sm)
+          td:first-child, th:first-child
+            padding-left $margins-md !important
+          td:last-child, th:last-child
+            padding-right $margins-md !important
+
+        @media (min-width $screen-size-md)
+          td:first-child, th:first-child
+            padding-left $margins-lg !important
+          td:last-child, th:last-child
+            padding-right $margins-lg !important
+        
+    
+ 
+    
+
+        

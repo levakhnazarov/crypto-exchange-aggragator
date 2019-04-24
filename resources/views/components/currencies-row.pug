@@ -1,0 +1,38 @@
+include currency-icon
+include svg-icon
+include button
+mixin currencies-row(data)
+  - ticker = data.ticker || 'BTC';
+  - name = data.name || 'Bitcoin';
+  - rate = data.price_usd || 7000;
+
+  - pct_1h = data.change_1h_pct || 0;
+  - amount_1h = data.change_1h_usd || 0;
+  - pct_24h = data.change_24h_pct || 0;
+  - amount_24h = data.change_24h_usd || 0;
+
+  - pct_7d = data.change_7d_pct || 0;
+  - amount_7d = data.change_7d_usd || 0;
+  - to = (ticker.toLowerCase() === 'btc' ) ? 'eth' : 'btc'
+
+  - title_signature = t('CURRENCIES__TABLE__EXCHANGE_BUTTON', false, {'%s': name + " (" +ticker.toUpperCase()+")"})
+  tr.append-anim
+    td.currency(data-rate='$ ' + rate)
+      +currency-icon(ticker.toLowerCase())
+      span #{name} (#{ticker.toUpperCase()})
+
+    td.rate $#{rate}
+
+    td.rate-1h(class=pct_1h > 0 ? 'up' : 'down') #{pct_1h}% 
+      sup $#{amount_1h}
+
+    td.rate-24h(class=pct_24h > 0 ? 'up' : 'down') #{pct_24h}% 
+      sup $#{amount_24h}
+
+    td.rate-7d(class=pct_7d > 0 ? 'up' : 'down') #{pct_7d}% 
+      sup $#{amount_7d}
+
+    td
+      +button('a')(href='offers/' + ticker.toLowerCase() +'-' + to, title= title_signature).responsive
+        span= t('CURRENCIES__TABLE__EXCHANGE_BUTTON', false, {'%s': ticker.toUpperCase()})
+        +svg-icon('chevron-right')

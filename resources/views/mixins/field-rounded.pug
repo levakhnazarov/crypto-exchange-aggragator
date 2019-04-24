@@ -1,0 +1,12 @@
+include svg-sprite
+mixin field-rounded(name, label, type, show_label, icon)
+  - type = type || 'text';
+  - show_label = !!show_label;
+  - icon = icon || false;
+  .field.rounded
+    if icon
+      .icon
+        +svg-sprite(icon)
+    input(id=name, type=type, name=name, placeholder=label)
+    if show_label
+      label(for=name)= label

@@ -1,0 +1,14 @@
+mixin coins-row(currency, label)
+  tr
+    td.currency
+      +currency-img(currency)
+      span #{label} (#{currency.toUpperCase()})
+    td $ 11,110.32
+    td.up +2.8% 
+      sup $330
+    td.up +13.6% 
+      sup $1,330
+    td.down -2.3%
+      sup $310
+    td
+      button.btn.primary.outline Exсhange #{currency.toUpperCase()}

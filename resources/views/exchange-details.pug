@@ -1,0 +1,60 @@
+extends layout/main
+
+include components/container
+include components/top
+include components/paper
+include components/steps
+include components/converter
+include components/partner-logo
+include components/button
+include components/underlined-field
+include components/circle-checkbox
+include mixins/faq-qa-list
+
+include mixins/exchange-faq
+block meta
+  - title = t('DETAILS__META__TITLE')
+  - keywords = t('DETAILS__META__KEYWORDS')
+  - description = t('DETAILS__META__DESCRIPTION')
+block content
+  form(autocomplete="off")
+    +top(style='min-height: auto;padding-bottom: 0;')
+      +paper
+        .exchange-steps
+          +steps(2)
+        .exchange-details.details
+          .exchange-inner
+            .exchange-details-title
+              .exchange-b= t('CONVERTER__EXCHANGE__BY__FULL')
+                +partner-logo(formData.exchanger)(height= 36)
+            .exchange-details-converter
+              +converter(false, formData)(data-type='details')
+            .exchange-details-fields
+              div
+                +underlined-field(formData.in_currency + ' ' +t('CONVERTER__EXCHANGE__REFUND'), formData.in_currency_tag)(type='text', name='refund_address', required)= t('EXCHANGE__DETAILS__REFUND__MESSAGE', false, {'{CURRENCY}': formData.in_currency.toUpperCase() })
+              .exchange-details-fields-empty
+              div
+               +underlined-field(formData.out_currency+ ' '+t('CONVERTER__EXCHANGE__PAYOUT'), formData.out_currency_tag)(type='text', name='payout_address', required)= t('EXCHANGE__DETAILS__DEPOSIT__MESSAGE', false, {'{CURRENCY}': formData.out_currency.toUpperCase() })
+            .exchange-details-fields
+              if formData.in_currency_tag
+                div.tag
+                 +underlined-field(formData.in_currency + ' ' +t('CONVERTER__EXCHANGE__TAG'), formData.in_currency_tag)(type='text', name='refund_address_ext', required)= t('EXCHANGE__DETAILS__TAG__MESSAGE', false, {'{CURRENCY}': formData.in_currency.toUpperCase() })
+                .exchange-details-fields-empty
+              if formData.out_currency_tag
+                div.tag
+                  +underlined-field(formData.out_currency+ ' '+t('CONVERTER__EXCHANGE__TAG'), formData.out_currency_tag)(type='text', name='payout_address_ext', required)= t('EXCHANGE__DETAILS__TAG__MESSAGE', false, {'{CURRENCY}': formData.out_currency.toUpperCase() })
+
+    +container
+      +paper(true)
+        .exchange-confirmation
+          .exchange-inner
+            .exchange-confirmation-checkbox
+              +circle-checkbox()(required)= t('CONVERTER__EXCHANGE__AGREE')
+                a(href='/terms' target="_blank")= t('CONVERTER__EXCHANGE__TERMS')
+            .exchange-confirmation-button
+              +button('button', 'block', 'secondary', 'fill', 'gradient')= t('CONVERTER__EXCHANGE__BUTTON__SUBMIT')
+          
+        +exchange-faq
+          +faq-qa-list(2)
+
+        //  include mixins/exchange-faq-details

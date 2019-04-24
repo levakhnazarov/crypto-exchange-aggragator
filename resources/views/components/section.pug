@@ -1,0 +1,8 @@
+include container
+mixin section(title)
+  .section&attributes(attributes)
+    +container
+      h2.section-title= title
+      .section-body
+        if block
+          block

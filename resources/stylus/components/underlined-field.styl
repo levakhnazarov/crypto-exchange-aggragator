@@ -1,0 +1,113 @@
+$placeholder-font-color = #999
+$basic-border-color = #ddd
+.underlined-field
+  display block
+  font-size 0.875rem
+
+  line-height 1.5
+  position relative
+  
+  > input
+    background transparent
+    border-color $basic-border-color
+    border-style solid
+    border-width 0 0 1px 0
+    box-sizing border-box
+    color #383838
+    display block
+    font-size 1em
+    font-weight 400
+    line-height @line-height
+    outline none
+    padding .2rem .43rem
+    width 100%  
+    
+    &::placeholder
+      color $placeholder-font-color
+      opacity 1 // firefox fix
+      
+    &::-ms-clear
+      display none
+      
+  > label
+    user-select none
+    color $placeholder-font-color
+    cursor text
+    font-weight 400
+    left 0
+    padding .21rem .43rem
+    position absolute
+    top 0
+    transition all .15s ease-in-out 0s
+    
+  > input
+    &:focus
+      border-color $primary-color
+      ~ label
+        color @border-color
+    &:focus, &:valid
+      ~ label
+        font-size 0.8em
+        top -1.6em
+        cursor default
+    &:invalid
+      box-shadow none // firefox fix
+    &.invalid
+      border-color $error-color
+      & ~ label
+        color @border-color
+    
+  
+
+  // tooltip   
+  > div
+    > svg
+      cursor help
+      position absolute
+      right 0
+      top -5px
+      font-size 1.2em
+      padding .35rem .15rem
+      fill $basic-border-color
+      &:hover
+        fill $placeholder-font-color
+    > div
+      box-sizing border-box
+      position absolute
+      top 0
+      right 0
+      left 0
+      z-index 10
+      padding 0.5rem 0.625rem
+      font-size 0.75rem
+      font-size 0.75rem
+      font-weight 400
+      margin-top 2.4rem
+      color #7f7e7e
+      background-color #f5f5f5
+      border-color #dddddd
+      // border-color red
+      border-style solid
+      border-width 1px
+      display none
+      
+      &:after
+        position absolute
+        content ''
+        top 0
+        right 0
+        width 0.375rem
+        height 0.375rem
+        font-size 1.2rem
+        margin-right .4375rem
+        margin-top -.25rem
+        background-color @background-color
+        transform rotate(45deg)
+        border-color @border-color
+        border-style solid
+        border-width @border-width 0 0 @border-width
+
+    > svg:hover
+      fill $placeholder-font-color
+      ~ div
+        display block

@@ -1,0 +1,44 @@
+$responsive-min-size = $screen-size-sm
+$margins-bottom = 3.75rem
+.advantage
+  @media (min-width $responsive-min-size)
+    display flex
+    flex-wrap wrap
+    justify-content space-between
+    //margin-bottom ($margins-bottom * -1)
+  &-item
+    text-align center
+    margin-bottom 3.75rem
+    max-width 20rem
+    margin-left auto
+    margin-right auto
+    &:last-child
+      margin-bottom 0
+    @media (min-width $responsive-min-size)
+      margin-left 0
+      margin-right 0
+      max-width none
+      text-align left
+      display flex
+      // width 47%
+      flex-basis 47%
+      margin-bottom 7rem
+    @media (min-width $screen-size-md)
+      // width 43%
+      flex-basis 43%
+      
+  &-body
+    @media (min-width $responsive-min-size)
+      margin-left 2rem
+  &-title
+    margin-top 1.5rem
+    color #3f3f3f
+    font-size 1.5rem
+    font-weight 500
+    @media (min-width $responsive-min-size)
+      margin-top 0
+  &-text
+    margin-top .75rem
+    font-size 1rem
+    color #252525
+    line-height 1.5

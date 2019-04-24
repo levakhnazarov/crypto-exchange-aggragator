@@ -1,0 +1,52 @@
+mixin dialog-script
+  script.
+    document.addEventListener('click', function (event) {
+      var el = event.target
+      if (el.closest('[data-modal-target]')) {
+        var id = el.closest('[data-modal-target]').getAttribute('data-modal-target')
+        showDialog(id)
+      }
+      if (el.closest('[data-dialog-close]')) {
+        var dialog = el.closest('.dialog-overlay')
+        console.log(el)
+        if (dialog) {
+          hideDialog(dialog.id)  
+        }
+      }
+      if (el.classList.contains('dialog-overlay')) {
+        hideDialog(el.id)
+      }
+    }, false)
+
+    document.addEventListener('keydown', function (event) {
+      if (event.keyCode === 27) {
+        var els = document.querySelectorAll('.dialog-overlay')
+        for (var i = 0; i < els.length; i++) {
+          var el = els[i]
+          if (el.classList.contains('show')) {
+            hideDialog(el.id)
+          }
+        }
+      }
+    })
+
+    function showDialog (id) {
+      document.getElementById(id).classList.add('show')
+      document.body.classList.add('dialog-is-open')
+      document.body.style.paddingRight = _getScrollbarWidth() + 'px'
+    }
+
+    function hideDialog (id) {
+      document.getElementById(id).classList.remove('show')
+      document.body.classList.remove('dialog-is-open')
+      document.body.style.paddingRight = ''
+    }
+
+    function _getScrollbarWidth() {
+      const scrollDiv = document.createElement('div')
+      scrollDiv.className = 'dialog-scrollbar-measure'
+      document.body.appendChild(scrollDiv)
+      const scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth
+      document.body.removeChild(scrollDiv)
+      return scrollbarWidth
+    }

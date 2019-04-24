@@ -1,0 +1,38 @@
+extends layout/main
+
+include components/top
+include components/container
+include components/social-buttons
+include components/rounded-field
+include components/rounded-textarea
+include components/button
+
+block meta
+  - title       = t('ABOUT__META__TITLE')
+  - keywords    = t('ABOUT__META__KEYWORDS')
+  - description = t('ABOUT__META__DESCRIPTION')
+
+block content
+  +top(
+    t('ABOUT__PAGE__TITLE'), 
+    t('ABOUT__PAGE__SUBTITLE')
+  )
+  +container.upgrade
+    .about
+      .about-content!= t('ABOUT__PAGE__CONTENT', true)
+      .about-form
+        form.form-wrap(action='/api/sendAboutEmail' method='GET')
+          .form-header
+            .form-title= t('CONTACT_FORM__TITLE')
+          .form-body
+            .form-field
+              +rounded-field(t('CONTACT_FORM__EMAIL_FIELD__LABEL'))(type='text', name='email', required)
+            .form-field
+              +rounded-field(t('CONTACT_FORM__NAME_FIELD__LABEL'))(type='text', name='name', required)
+            .form-field
+              +rounded-field(t('CONTACT_FORM__SUBJECT_FIELD__LABEL'))(type='text', name='subject', required)
+            .form-field
+              +rounded-textarea(t('CONTACT_FORM__MESSAGE_FIELD__LABEL'))(name='text', required, rows=4)
+          .form-bottom
+            +button('button').form-submit(type='submit')= t('CONTACT_FORM__SUBMIT_BTN__LABEL')
+          

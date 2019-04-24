@@ -1,0 +1,8 @@
+mixin top(title, subtitle, first_screen)
+  - first_screen = first_screen || false;
+  .bg-blue.top&attributes(attributes)
+    .container
+      h1.top-title= title
+      p.top-subtitle= subtitle
+      if block
+        block

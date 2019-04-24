@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{18:function(e,o,t){"use strict";t.r(o),o.default=function(e){console.log("Awesome module aaa")}}});

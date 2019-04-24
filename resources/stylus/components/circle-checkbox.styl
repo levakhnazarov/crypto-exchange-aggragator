@@ -1,0 +1,39 @@
+$icon-size = 1.5rem
+.circle-checkbox
+  display inline-block
+  user-select none
+  > input
+    cursor pointer
+    opacity 0
+    position absolute
+  > i
+    align-items center
+    background transparent
+    border unit(2px / 24px, em) solid $primary-color
+    border-radius 100%
+    box-sizing border-box
+    color $primary-color
+    cursor pointer
+    display inline-flex
+    font-size $icon-size
+    height $icon-size
+    justify-content center
+    line-height $icon-size
+    position relative
+    vertical-align middle
+    width $icon-size
+    svg
+      fill @color
+      font-size 0.5em
+      margin-top 0.15em
+      opacity 0
+  > input:checked ~ i
+    > svg
+      opacity 1
+  > span
+    cursor pointer
+    display inline-block
+    font-size 1rem
+    line-height $icon-size
+    margin-left 0.75rem
+    vertical-align middle

@@ -1,0 +1,105 @@
+extends layout/main
+
+include components/container
+include components/top
+include components/paper
+include components/steps
+include components/partner-logo
+include components/button
+include components/exchange-process
+include components/wallet
+include components/svg-icon
+
+include mixins/exchange-faq
+include mixins/dialog-email
+include mixins/dialog-qrcode
+include mixins/dialog-script
+include mixins/faq-qa-list
+block meta
+  - title = t('SUMMARY__META__TITLE')
+  - keywords = t('SUMMARY__META__KEYWORDS')
+  - description = t('SUMMARY__META__DESCRIPTION')
+
+block content
+  +top(style='min-height: auto;padding-bottom: 0;')
+    +paper
+      .exchange-steps
+        +steps(3)
+      .exchange-summary
+        .exchange-inner
+          .exchange-summary-top
+            .exchange-by= t('CONVERTER__EXCHANGE__BY__FULL')
+              +partner-logo(order.exchanger)(height= 36)
+            .exchange-order-id
+              span= t('EXCHANGE__SUMMARY__ORDER__ID') + ": "
+              strong #{order.public_id}
+              +svg-icon('angle-double-right')(width= 12 height=12)
+              button(data-modal-target='email')
+                +svg-icon('envelope')
+            +dialog-email#email
+            +dialog-script
+          .exchange-wallets
+            div
+              +wallet(t('EXCHANGE__SUMMARY__SEND'), order.payin_currency, order.payInAmount(), order.payin_address)
+            div
+              +wallet(t('EXCHANGE__SUMMARY__GET'), order.payout_currency, order.payOutAmount(), order.payout_address)
+          #info.exchange-summary-row(data-exchanger=order.exchanger, data-step=order.getStep(), data-order=order.public_id)
+
+            .exchange-summary-primary(data-process='1')
+
+              .exchange-summary-title-one= t('EXCHANGE__SUMMARY__SEND')
+
+              .exchange-summary-title-two.
+                <span>#{order.payInAmount()}</span> #{order.payin_currency.toUpperCase()} <sub>#{t('EXCHANGE__SUMMARY__TO__ADDRESS')}</sub>
+
+              .exchange-summary-wallet
+                .exchange-primary-text   
+                  +svg-icon('arrow-circle-right')
+                  span(id='clipboard-address')= order.payin_address
+                  | &nbsp;
+                  button(type='button' id='clip' data-clipboard-target="#clipboard-address")
+                    +svg-icon('paste')
+
+              .exchange-buttons
+                button.exchange-button-dotted
+                  +svg-icon('paste')
+                  span= t('EXCHANGE__SUMMARY__COPY')
+                button.exchange-button-dotted(data-modal-target='qrcode')
+                  +svg-icon('qrcode')
+                  span= t('EXCHANGE__SUMMARY__COPY__QR')
+
+              .exchange-summary-text
+                p.
+                  #{t('EXCHANGE__SUMMARY__AT__LEAST')} <strong> #{order.payInAmountMin()} #{order.payin_currency.toUpperCase()}</strong> #{t('EXCHANGE__SUMMARY__WONT__WORK')}
+                p= t('EXCHANGE__SUMMARY__INFO__START')
+
+            .exchange-summary-primary(data-process='2')
+              .exchange-summary-title-one= t('EXCHANGE__SUMMARY__RECEIVED')
+              .exchange-summary-title-two #{order.filledAmount()} #{order.payin_currency.toUpperCase()}
+              .exchange-summary-text
+                p #{t('EXCHANGE__SUMMARY__AT')} #{order.payin_address}
+
+            .exchange-summary-primary(data-process='3')
+              .exchange-summary-title-one= t('EXCHANGE__SUMMARY__COMPLETED')
+              .exchange-summary-title-two #{order.payout_currency.toUpperCase()} #{t('EXCHANGE__SUMMARY__AT__WALLET')}
+              .exchange-summary-more
+                +button('a')(href='/offers/btc-eth')= t('EXCHANGE__SUMMARY__MORE')
+
+            .exchange-summary-secondary
+              .exchange-summary-title-one= t('EXCHANGE__SUMMARY__OR__USE__QR')
+              .exchange-summary-qr
+                img(src='/img/orders/'+order.public_id+'.svg', width=150, height=150)
+            +dialog-qrcode#qrcode
+  +container
+    +paper(true)
+      //.div(style='position: absolute; top: 0; left: 0; opacity: 0.25;')
+      //  input(type='number', min=0, step=0.5, max=3, value=0
+      //    onchange='document.querySelector("#steps").dataset.step = this.value; document.querySelector("#info").dataset.step = this.value'
+      //  )
+      .exchange-progress
+        .exchange-inner
+          +exchange-process(order.payin_address, 0, order.payin_currency.toUpperCase(), order.payout_currency.toUpperCase())(data-step=order.getStep())#steps
+        
+      +exchange-faq
+        +faq-qa-list(3)
+        //include mixins/exchange-faq-summary

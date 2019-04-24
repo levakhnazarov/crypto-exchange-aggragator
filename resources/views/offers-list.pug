@@ -1,0 +1,78 @@
+extends layout/main
+
+include components/container
+include components/top
+include components/paper
+include components/steps
+include components/converter
+include components/partner-logo
+include components/label
+include components/button
+include components/offers-table
+include components/offers-row
+
+include mixins/exchange-faq
+block content
+  +top(
+  t('CURRENCIES__PROMO__TITLE', false, {
+      '{FROM__NAME}': formData.from_name,
+      '{TO__NAME}': formData.to_name
+  }),
+  t('CURRENCIES__PROMO__SUBTITLE', false, {
+      '{PROMO__ONE}': '<a href="offers/'+formData.first_promo.ticker+'">'+formData.first_promo.name+'</a>',
+      '{PROMO__TWO}': '<a href="offers/'+formData.second_promo.ticker+'">'+formData.second_promo.name+'</a>',
+      '{PROMO__THREE}': '<a href="offers/'+formData.third_promo.ticker+'">'+formData.third_promo.name+'</a>',
+      '{COUNT}' : formData.count
+  })
+  )(class='first')
+    form
+      div#converter
+      +converter(true, formData)(data-type='compare')
+  +container
+    +paper(true)
+      .exchange-best(data-offer='wrap')
+        .exchange-inner
+          .exchange-best-row
+            div.exchange-best-service
+              .exchange-by= t('CONVERTER__EXCHANGE__BY__FULL')
+                +partner-logo('changelly')( data-offer='service')
+            div.exchange-best-label
+              +label= t('EXCHANGE__PAGE__EXCHANGE__BEST__OFFER')
+          .exchange-best-row
+            div
+              .exchange-best-amount(data-offer='amount') 0.238138 ETH
+              .exchange-best-save You save&nbsp;
+                span(data-offer='save-pct') 24
+                | %&nbsp;(~$
+                span(data-offer='save-fiat') 22.5
+                | )
+            div
+              .exchange-best-control
+                +button('button', 'block', 'secondary', 'fill', 'gradient')(data-offer='submit') Exсhange
+              .exchange-best-wait Estimated time 15—60 min
+
+      .exchange-offers
+        .exchange-offers-table(
+          data-offers='other',
+          data-label-amount='You get',
+          data-label-save='You save',
+          data-label-service='Service',
+          data-label-button='Exchange'
+        )
+          +offers-table('Other offers', true)
+            +offers-row('0.238138 ETH', '21% (~20$)', 'evercoin')
+            +offers-row('0.283138 ETH', '15% (~14$)', 'cryptopia')
+            +offers-row('0.283138 ETH', '15% (~14$)', 'shapeshift')
+        .exchange-offers-table(
+          data-offers='adjust-limit',
+          data-label-amount='Adjust',
+          data-label-service='Service',
+          data-label-button='Set & Exchange',
+          data-label-min = 'Min.',
+          data-label-max = 'Max.'
+        )
+          +offers-table('Needs limit adjust', false)
+            +offers-row('min. 0.002 BTC (0.03 ETH)', false, 'evercoin', 'Set & Exchange', 'secondary')
+            +offers-row('min. 0.002 BTC (0.03 ETH)', false, 'cryptopia', 'Set & Exchange', 'secondary')
+      +exchange-faq
+        include mixins/exchange-faq-offers

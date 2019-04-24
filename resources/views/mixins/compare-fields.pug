@@ -1,0 +1,18 @@
+include currency-amount
+include svg-sprite
+mixin compare-fields(invert)
+  - invert = invert || false;
+  div(class=invert ? 'invert' : '')
+    .compare-fields
+      .field
+        +currency-amount('Btc', 'You send')
+      button.swap(type='button')
+        +svg-sprite('exchange')
+      .field
+        +currency-amount('eth', 'You get')
+      if invert
+        .submit-group
+          button.btn.secondary.gradient.submit(type='submit') Exсhange
+          button.more(type='submit') or compare 5 more offers
+      if invert
+        .saved by Binance 5% saved
