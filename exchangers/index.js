@@ -30,7 +30,6 @@ exchangers.getExplorerTxInfo = function(orderId, receivedAmount){
             };
         let stringifed =  queryString.stringify(label, {sort: false});
 
-        console.log("hello")
         console.log(models.conf.api.explorerAggregator.host + models.conf.api.explorerAggregator.methods.txByAddress + '?' + stringifed)
         let response = await crawler(models.conf.api.explorerAggregator.host + models.conf.api.explorerAggregator.methods.txByAddress + '?' + stringifed)
             resolve(response)
@@ -71,7 +70,6 @@ exchangers.updateRatesForPairs = function(from, to) {
                     // let response = await getRatesMethod(from, to);
                     // processedExchangers ++
                     //     if(response){
-                    //         console.log(response)
                     //         updatedRatesForExchangers.push({
                     //             exchanger:response.exchanger, rate:response.rate,
                     //             min:response.min_amount, max:response.max_amount });
@@ -84,7 +82,6 @@ exchangers.updateRatesForPairs = function(from, to) {
                             // if (processedExchangers === exchangersArray.length) resolve(updatedRatesForExchangers);
                         // })
                         // .catch(err=>{
-                        //     console.log("err")
                         //     console.log(err)
                         //
                         //     reject(err, " has UPDATE_RATES_BY_PAIR finished with error");
@@ -98,7 +95,6 @@ exchangers.updateRatesForPairs = function(from, to) {
             })
         Promise.all(updatedRatesForExchangers)
             .then(results => {
-                // console.log(results)
                 var offers = [];
                 for(let i = 0; i < results.length;i++){
                     if (results[i]){
